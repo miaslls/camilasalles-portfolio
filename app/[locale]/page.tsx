@@ -1,14 +1,18 @@
 import styles from './page.module.css';
 
 import { getI18n } from '@/locales/server';
+import MainNav from '@components/main-nav/main-nav';
 
-export default async function Home() {
+export default async function HomePage() {
   const t = await getI18n();
 
   return (
-    <div>
-      <h1>{t('home')}</h1>
-      <p>{t('home.hello', { name: <strong>miaslls</strong> })}</p>
-    </div>
+    <>
+      <MainNav />
+
+      <main>
+        <h1>{t('home')}</h1>
+      </main>
+    </>
   );
 }
