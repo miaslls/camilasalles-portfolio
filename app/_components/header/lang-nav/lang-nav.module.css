@@ -1,0 +1,8 @@
+.locale_link {
+  margin: 0.25rem;
+  font-size: 1.25rem;
+}
+
+.active_locale {
+  text-decoration: underline;
+}
