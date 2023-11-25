@@ -1,27 +1,59 @@
 :root {
-  /* variables - light */
+  color-scheme: light;
+
+  --bg-color: #fff3e7;
+  --fg-color: #09141e;
+
+  --default-accent: #112e3e;
+
+  --accent-1: #3e5664;
+  --accent-2: #78919a;
+  --accent-3: #cdcac2;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    /* variables - light */
-    /* variables - dark */
-  }
+:root[data-theme='dark'] {
+  color-scheme: dark;
+
+  --bg-color: #09141e;
+  --fg-color: #fff3e7;
+
+  --accent-1: #76a6bc;
+  --accent-2: #3a6878;
+  --accent-3: #112e3e;
 }
 
-* {
-  /* reset */
+html * {
+  outline: none;
+  box-sizing: border-box;
+  color: inherit;
+  margin: 0;
+  padding: 0;
+  border: 0;
 }
 
-html,
+button,
+input,
+a {
+  border: none;
+  border-radius: 0;
+  padding: 0;
+  margin: 0;
+  user-select: none;
+  text-decoration: none;
+  background: transparent;
+  cursor: pointer;
+  appearance: none;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+html {
+  font-size: 16px;
+}
+
 body {
-}
-
-body {
-}
-
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
+  font-size: 1rem;
 }

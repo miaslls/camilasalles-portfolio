@@ -24,6 +24,12 @@
       "@components/*": ["./app/_components/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts",
+    "app/_components/header/set-theme.jsx"
+  ],
   "exclude": ["node_modules"]
 }
