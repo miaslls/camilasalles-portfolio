@@ -1,8 +1,7 @@
 import './globals.css';
 
-import type { Metadata } from 'next';
+import type { Metadata, Viewport } from 'next';
 
-import { Inter } from 'next/font/google';
 import { getStaticParams } from '@/locales/server';
 import { I18nProviderClient } from '@/locales/client';
 import { getTheme } from '@lib/getTheme';
@@ -10,11 +9,55 @@ import { getTheme } from '@lib/getTheme';
 import Header from '@components/header/header';
 import Footer from '@components/footer/footer';
 
-const inter = Inter({ subsets: ['latin'] });
+export const viewport: Viewport = {
+  themeColor: [
+    { media: '(prefers-color-scheme: light)', color: '#cdcac2' },
+    { media: '(prefers-color-scheme: dark)', color: '#09141e' },
+  ],
+  colorScheme: 'light dark',
+};
 
 export const metadata: Metadata = {
-  title: 'Camila Salles | Portfolio',
-  description: 'description',
+  title: {
+    template: '%s | Camila Salles • development & design',
+    default: 'Camila Salles • development & design',
+  },
+
+  description:
+    "Camila Salles' professional portfolio showcasing front-end development and web design skills. Specializing in React, Next.js, and TypeScript; Figma, and Adobe Suite.",
+
+  keywords: [
+    'Front-End Developer',
+    'Web Designer',
+    'React',
+    'Next.js',
+    'TypeScript',
+    'Figma',
+    'Photoshop',
+    'Illustrator',
+    'Development Portfolio',
+    'Web Design Projects',
+    'Projects Showcase',
+  ],
+
+  authors: [
+    {
+      name: 'Camila Salles',
+      url: new URL('https://github.com/miaslls'),
+    },
+  ],
+
+  alternates: {
+    canonical: '/',
+    languages: {
+      en: '/en',
+      pt: '/pt',
+    },
+  },
+
+  generator: 'Next.js',
+  referrer: 'no-referrer',
+  metadataBase: new URL('https://camilasalles.dev'),
 };
 
 export function generateStaticParams() {
@@ -34,7 +77,7 @@ export default function RootLayout({
         <script dangerouslySetInnerHTML={{ __html: getTheme }} />
       </head>
 
-      <body className={inter.className}>
+      <body>
         <Header />
 
         <I18nProviderClient locale={params.locale}>
