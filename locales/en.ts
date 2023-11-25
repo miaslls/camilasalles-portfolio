@@ -1,8 +1,18 @@
 export default {
-  home: 'Home',
-  'home.hello': 'Hello {name}!',
+  home: {
+    title: 'Home',
+    featured_projects: 'featured projects',
+  },
 
-  projects: 'Projects',
-  about: 'About',
-  contact: 'Contact',
+  projects: {
+    title: 'Projects',
+  },
+
+  about: {
+    title: 'About',
+  },
+
+  contact: {
+    title: 'Contact',
+  },
 } as const;

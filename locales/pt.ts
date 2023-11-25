@@ -1,8 +1,18 @@
 export default {
-  home: 'Página Inicial',
-  'home.hello': 'Olá {name}!',
+  home: {
+    title: 'Página Inicial',
+    featured_projects: 'projetos em destaque',
+  },
 
-  projects: 'Projetos',
-  about: 'Sobre',
-  contact: 'Contato',
+  projects: {
+    title: 'Projetos',
+  },
+
+  about: {
+    title: 'Sobre',
+  },
+
+  contact: {
+    title: 'Contato',
+  },
 } as const;
