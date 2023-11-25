@@ -1,5 +1,7 @@
 'use client';
 
+import styles from './header.module.css';
+
 import dynamic from 'next/dynamic';
 import { useChangeLocale, useCurrentLocale } from '@/locales/client';
 
@@ -14,21 +16,34 @@ export default function Header() {
       <nav>
         <ul>
           <li>
-            <button type="button" onClick={() => changeLocale('en')}>
+            <button
+              className={
+                styles.locale_button +
+                ' ' +
+                (currentLocale === 'en' ? styles.active_locale : null)
+              }
+              type="button"
+              onClick={() => changeLocale('en')}
+            >
               en
             </button>
           </li>
 
           <li>
-            <button type="button" onClick={() => changeLocale('pt')}>
+            <button
+              className={
+                styles.locale_button +
+                ' ' +
+                (currentLocale === 'pt' ? styles.active_locale : null)
+              }
+              type="button"
+              onClick={() => changeLocale('pt')}
+            >
               pt
             </button>
           </li>
-
-          <li>
-            <SetTheme />
-          </li>
         </ul>
+        <SetTheme />
       </nav>
     </header>
   );

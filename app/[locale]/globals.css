@@ -4,7 +4,7 @@
   --bg-color: #fff3e7;
   --fg-color: #09141e;
 
-  --default-accent: #112e3e;
+  --accent-default: #112e3e;
 
   --accent-1: #3e5664;
   --accent-2: #78919a;
@@ -55,5 +55,35 @@ html {
 }
 
 body {
-  font-size: 1rem;
+  font-family: var(--font-work_sans);
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1.5rem;
+  color: var(--fg-color);
+}
+
+h1,
+h2 {
+  font-family: var(--font-outfit);
+  font-weight: 500;
+  margin-bottom: 2rem;
+}
+
+h1 {
+  font-size: 2.25rem;
+}
+
+h2 {
+  font-size: 1.75rem;
+}
+
+a {
+  font-family: var(--font-outfit);
+  color: var(--accent-1);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  a:hover {
+    text-decoration: underline;
+  }
 }
