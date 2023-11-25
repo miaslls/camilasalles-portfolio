@@ -1,6 +1,5 @@
 import { setStaticParamsLocale } from 'next-international/server';
 import { getScopedI18n } from '@/locales/server';
-import MainNav from '@components/main-nav/main-nav';
 
 export default async function HomePage({
   params: { locale },
@@ -11,13 +10,9 @@ export default async function HomePage({
   const t = await getScopedI18n('home');
 
   return (
-    <>
-      <MainNav />
-
-      <main>
-        <h1>{t('title')}</h1>
-        <h2>{t('featured_projects')}</h2>
-      </main>
-    </>
+    <main>
+      <h1>{t('title')}</h1>
+      <h2>{t('featured_projects')}</h2>
+    </main>
   );
 }

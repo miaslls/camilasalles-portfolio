@@ -2,10 +2,9 @@
 
 import styles from './header.module.css';
 
-import dynamic from 'next/dynamic';
 import { useChangeLocale, useCurrentLocale } from '@/locales/client';
-
-const SetTheme = dynamic(() => import('./set-theme'));
+import SetTheme from './set-theme';
+import MainNav from './main-nav/main-nav';
 
 export default function Header() {
   const currentLocale = useCurrentLocale();
@@ -45,6 +44,8 @@ export default function Header() {
         </ul>
         <SetTheme />
       </nav>
+
+      <MainNav />
     </header>
   );
 }

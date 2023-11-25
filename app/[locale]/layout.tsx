@@ -89,13 +89,13 @@ export default function RootLayout({
       </head>
 
       <body>
-        <Header />
-
-        <I18nProviderClient locale={params.locale}>
-          {children}
-        </I18nProviderClient>
-
-        <Footer />
+        <div className="layout_container">
+          <I18nProviderClient locale={params.locale}>
+            <Header />
+            <div className="child_container">{children}</div>
+            <Footer />
+          </I18nProviderClient>
+        </div>
       </body>
     </html>
   );
