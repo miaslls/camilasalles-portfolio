@@ -10,6 +10,7 @@ import { getTheme } from '@lib/getTheme';
 
 import Header from '@components/header/header';
 import Footer from '@components/footer/footer';
+import DeviceProvider from '@providers/device-provider';
 
 const ThemeProvider = dynamic(() => import('@providers/theme-provider'), {
   ssr: false,
@@ -94,15 +95,17 @@ export default function RootLayout({
       </head>
 
       <body>
-        <div className="layout_container">
-          <I18nProviderClient locale={params.locale}>
-            <ThemeProvider>
-              <Header />
-              <div className="child_container">{children}</div>
-              <Footer />
-            </ThemeProvider>
-          </I18nProviderClient>
-        </div>
+        <DeviceProvider>
+          <ThemeProvider>
+            <I18nProviderClient locale={params.locale}>
+              <div className="layout_container">
+                <Header />
+                <div className="child_container">{children}</div>
+                <Footer />
+              </div>
+            </I18nProviderClient>
+          </ThemeProvider>
+        </DeviceProvider>
       </body>
     </html>
   );
