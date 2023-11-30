@@ -1,6 +1,6 @@
 export default {
   home: {
-    title: 'Página Inicial',
+    title: 'Home',
     featured_projects: 'projetos em destaque',
   },
 

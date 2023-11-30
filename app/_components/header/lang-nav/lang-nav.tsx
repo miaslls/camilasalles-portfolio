@@ -9,7 +9,7 @@ export default function LangNav() {
 
   return (
     <nav>
-      <ul>
+      <ul className={styles.locales_list}>
         <li>
           <a
             href={'/en' + rawPath}

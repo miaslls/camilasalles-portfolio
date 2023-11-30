@@ -11,8 +11,8 @@ export default function MainNav() {
   const t = useI18n();
 
   return (
-    <nav>
-      <ul>
+    <nav className={styles.container}>
+      <ul className={styles.links_list}>
         <li>
           <Link
             href="/"

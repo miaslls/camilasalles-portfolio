@@ -29,7 +29,7 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    "app/_components/header/set-theme.jsx"
+    "app/_components/header/set-theme/set-theme.jsx"
   ],
   "exclude": ["node_modules"]
 }
