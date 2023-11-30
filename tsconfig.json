@@ -21,7 +21,8 @@
     "paths": {
       "@/*": ["./*"],
       "@lib/*": ["./app/_lib/*"],
-      "@components/*": ["./app/_components/*"]
+      "@components/*": ["./app/_components/*"],
+      "@providers/*": ["./app/_providers/*"]
     }
   },
   "include": [
@@ -29,7 +30,7 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    "app/_components/header/set-theme/set-theme.jsx"
+    "app/_providers/theme-provider.jsx"
   ],
   "exclude": ["node_modules"]
 }

@@ -2,6 +2,7 @@ import './globals.css';
 
 import type { Metadata, Viewport } from 'next';
 
+import dynamic from 'next/dynamic';
 import { Work_Sans, Outfit } from 'next/font/google';
 import { getStaticParams } from '@/locales/server';
 import { I18nProviderClient } from '@/locales/client';
@@ -9,6 +10,10 @@ import { getTheme } from '@lib/getTheme';
 
 import Header from '@components/header/header';
 import Footer from '@components/footer/footer';
+
+const ThemeProvider = dynamic(() => import('@providers/theme-provider'), {
+  ssr: false,
+});
 
 export const viewport: Viewport = {
   themeColor: [
@@ -91,9 +96,11 @@ export default function RootLayout({
       <body>
         <div className="layout_container">
           <I18nProviderClient locale={params.locale}>
-            <Header />
-            <div className="child_container">{children}</div>
-            <Footer />
+            <ThemeProvider>
+              <Header />
+              <div className="child_container">{children}</div>
+              <Footer />
+            </ThemeProvider>
           </I18nProviderClient>
         </div>
       </body>
