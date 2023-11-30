@@ -93,10 +93,8 @@ body {
 .child_container {
   flex: 1;
   width: 100%;
-  padding-top: 3.5rem;
-  padding-bottom: 2.5rem;
-  padding-left: var(--layout-padding-desktop);
-  padding-right: var(--layout-padding-desktop);
+  margin: 3.5rem 0 2.5rem 0;
+  padding: 0 var(--layout-padding-desktop);
 }
 
 h1,
@@ -119,6 +117,10 @@ a {
   color: var(--accent-01);
 }
 
+p {
+  margin-bottom: 1rem;
+}
+
 /* 📌 @media */
 
 @media (hover: hover) and (pointer: fine) {
@@ -129,18 +131,13 @@ a {
 
 @media (max-width: 700px) {
   .child_container {
-    padding-top: 3.5rem;
-    padding-bottom: 2.5rem;
-    padding-left: var(--layout-padding-mobile);
-    padding-right: var(--layout-padding-mobile);
+    margin: 2rem 0 2.5rem 0;
+    padding: 0 var(--layout-padding-mobile);
   }
 }
 
 @media (min-width: 701px) and (max-width: 1120px) {
   .child_container {
-    padding-top: 3.5rem;
-    padding-bottom: 2.5rem;
-    padding-left: var(--layout-padding-tablet);
-    padding-right: var(--layout-padding-tablet);
+    padding: 0 var(--layout-padding-tablet);
   }
 }

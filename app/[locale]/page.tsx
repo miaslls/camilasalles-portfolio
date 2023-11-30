@@ -11,7 +11,6 @@ export default async function HomePage({
 
   return (
     <main>
-      <h1>{t('title')}</h1>
       <h2>{t('featured_projects')}</h2>
       <p>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ligula
