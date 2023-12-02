@@ -53,12 +53,30 @@
 
 @media (max-width: 700px) {
   .top_nav {
-    padding: 0.5rem var(--layout-padding-mobile) 1rem
+    padding: 0.5rem var(--layout-padding-mobile) 0.5rem
       var(--layout-padding-mobile);
+    justify-content: space-between;
+    align-items: center;
+
+    gap: 0.5rem;
   }
 
   .top_nav_home {
     padding: 0.5rem var(--layout-padding-mobile) 0 var(--layout-padding-mobile);
+  }
+
+  .mobile_nav_title {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-family: var(--font-outfit);
+    font-size: 1rem;
+    font-weight: 300;
+    color: var(--light-color);
+  }
+
+  .mobile_menu_icon {
+    justify-self: flex-end;
   }
 
   .home_img_container {
@@ -75,12 +93,6 @@
     padding-right: var(--layout-padding-mobile);
     top: 7rem;
     left: 20%;
-  }
-
-  .mobile_menu_icon {
-    margin-top: 0.75rem;
-    padding-right: var(--layout-padding-mobile);
-    align-self: flex-end;
   }
 }
 

@@ -13,8 +13,7 @@ import MainNav from './main-nav/main-nav';
 
 import homeImgLight from '@/public/images/HOME-light.jpg';
 import homeImgDark from '@/public/images/HOME-dark.jpg';
-import menuIconLight from '@/public/icons/fff3e7/menu-line.svg';
-import menuIconDark from '@/public/icons/09141E/menu-line.svg';
+import menuIcon from '@/public/icons/fff3e7/menu-line.svg';
 
 export default function Header() {
   const pathname = usePathname();
@@ -33,8 +32,20 @@ export default function Header() {
       <div
         className={styles.top_nav + ' ' + (isHome ? styles.top_nav_home : null)}
       >
-        <LangNav />
-        <ToggleThemeButton />
+        {device !== 'mobile' && <LangNav />}
+        {device !== 'mobile' && <ToggleThemeButton />}
+
+        <div className={styles.mobile_nav_title}>
+          {device === 'mobile' &&
+            !isHome &&
+            'Camila Salles • development & design'}
+        </div>
+
+        {device === 'mobile' && (
+          <div className={styles.mobile_menu_icon}>
+            <Image src={menuIcon} alt="" width={24} height={24} />
+          </div>
+        )}
       </div>
 
       {isHome && (
@@ -60,13 +71,7 @@ export default function Header() {
         </>
       )}
 
-      {device === 'mobile' ? (
-        <div className={styles.mobile_menu_icon}>
-          <Image src={theme === 'dark' ? menuIconLight : menuIconDark} alt="" />
-        </div>
-      ) : (
-        <MainNav />
-      )}
+      {device !== 'mobile' && <MainNav />}
     </header>
   );
 }
