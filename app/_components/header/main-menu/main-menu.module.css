@@ -1,26 +1,19 @@
 .container {
   width: 100%;
-  margin-top: 2rem;
   padding: 0 var(--layout-padding-desktop);
 }
 
-.links_list {
+.list {
   display: flex;
   gap: 4rem;
 }
 
-.nav_link {
+.link {
   font-size: 1.5rem;
 }
 
-.active_path {
+.active {
   text-decoration: underline;
-}
-
-@media (max-width: 700px) {
-  .container {
-    padding: 0rem var(--layout-padding-mobile);
-  }
 }
 
 @media (min-width: 701px) and (max-width: 1120px) {

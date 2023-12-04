@@ -8,7 +8,7 @@
   --accent-02: #78919a;
   --accent-03: #cdcac2;
 
-  --top-nav-home: #112e3e;
+  --top-bar-home: #102d3e;
 
   --dark-color: #09141e;
   --light-color: #fff3e7;
@@ -29,7 +29,7 @@
   --accent-02: #3a6878;
   --accent-03: #112e3e;
 
-  --top-nav-home: #0a141e;
+  --top-bar-home: #09141e;
 }
 
 html * {

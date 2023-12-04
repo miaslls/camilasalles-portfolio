@@ -11,7 +11,7 @@ const ToggleThemeButton = () => {
   const { theme, toggleTheme } = useTheme();
 
   return (
-    <button className={styles.toggle_button} onClick={toggleTheme}>
+    <button className={styles.button} onClick={toggleTheme}>
       <Image
         src={theme === 'dark' ? moonIcon : sunIcon}
         alt=""

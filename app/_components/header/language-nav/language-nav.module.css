@@ -1,16 +1,16 @@
-.locales_list {
+.list {
   display: flex;
   align-items: center;
   gap: 0.5rem;
 }
 
-.locale_link {
+.link {
   margin: 0.25rem;
   font-size: 1.25rem;
   font-weight: 300;
-  color: var(--light-color);
+  color: inherit;
 }
 
-.active_locale {
+.active {
   text-decoration: underline;
 }
