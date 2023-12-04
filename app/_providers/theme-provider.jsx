@@ -8,7 +8,10 @@ export function useTheme() {
   const context = useContext(ThemeContext);
 
   if (!context) {
-    throw new Error('Use ThemeProvider in a parent component');
+    throw new Error(
+      'useTheme must be used within a component wrapped with ThemeProvider. ' +
+        'ThemeProvider sets up the theme context and provides a function for toggling the theme.',
+    );
   }
 
   return context;
