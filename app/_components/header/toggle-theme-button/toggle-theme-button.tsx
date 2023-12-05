@@ -7,7 +7,7 @@ import Image from 'next/image';
 import sunIcon from '@/public/icons/fff3e7/sun-line.svg';
 import moonIcon from '@/public/icons/fff3e7/moon-line.svg';
 
-const ToggleThemeButton = () => {
+export default function ToggleThemeButton() {
   const { theme, toggleTheme } = useTheme();
 
   return (
@@ -20,6 +20,4 @@ const ToggleThemeButton = () => {
       />
     </button>
   );
-};
-
-export default ToggleThemeButton;
+}
