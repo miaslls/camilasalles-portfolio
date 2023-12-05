@@ -3,6 +3,7 @@
 
   --bg-color: #fff3e7;
   --fg-color: #09141e;
+  --fg-transparent: rgba(9, 20, 30, 0.25);
 
   --accent-01: #3e5664;
   --accent-02: #78919a;
@@ -24,10 +25,11 @@
 
   --bg-color: #09141e;
   --fg-color: #fff3e7;
+  --fg-transparent: rgba(255, 243, 231, 0.25);
 
   --accent-01: #76a6bc;
   --accent-02: #3a6878;
-  --accent-03: #112e3e;
+  --accent-03: #0d212e;
 
   --top-bar-home: #09141e;
 }

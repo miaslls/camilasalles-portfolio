@@ -10,7 +10,10 @@ import { getTheme } from '@lib/getTheme';
 
 import Header from '@components/header/header';
 import Footer from '@components/footer/footer';
-import DeviceProvider from '@providers/device-provider';
+
+const DeviceProvider = dynamic(() => import('@providers/device-provider'), {
+  ssr: false,
+});
 
 const ThemeProvider = dynamic(() => import('@providers/theme-provider'), {
   ssr: false,

@@ -14,7 +14,11 @@ const ToggleThemeButton = dynamic(
   () => import('@components/header/toggle-theme-button/toggle-theme-button'),
 );
 
-export default function TopBar() {
+export type TopBarProps = {
+  openMenu(open?: boolean): void;
+};
+
+export default function TopBar({ openMenu }: TopBarProps) {
   const isHomePage = usePathname().length === 3;
   const isMobile = useDevice() === 'mobile';
 
@@ -27,7 +31,10 @@ export default function TopBar() {
       )}
 
       {isMobile ? (
-        <button className={styles.mobile_menu_btn}>
+        <button
+          className={styles.mobile_menu_btn}
+          onClick={() => openMenu(true)}
+        >
           <Image src={menuIcon} alt="" width={24} height={24} />
         </button>
       ) : (
