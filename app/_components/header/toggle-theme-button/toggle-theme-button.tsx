@@ -4,16 +4,34 @@ import styles from './toggle-theme-button.module.css';
 
 import { useTheme } from '@providers/theme-provider';
 import Image from 'next/image';
-import sunIcon from '@/public/icons/fff3e7/sun-line.svg';
-import moonIcon from '@/public/icons/fff3e7/moon-line.svg';
 
-export default function ToggleThemeButton() {
+import sunIcon_light from '@/public/icons/fff3e7/sun-line.svg';
+import moonIcon_light from '@/public/icons/fff3e7/moon-line.svg';
+import sunIcon_dark from '@/public/icons/09141e/sun-line.svg';
+import moonIcon_dark from '@/public/icons/09141e/moon-line.svg';
+
+type ToggleThemeButtonProps = {
+  isIconVariable: boolean;
+};
+
+export default function ToggleThemeButton({
+  isIconVariable,
+}: ToggleThemeButtonProps) {
   const { theme, toggleTheme } = useTheme();
+  const isDarkTheme = theme === 'dark';
+
+  let moonIcon = moonIcon_light;
+  let sunIcon = sunIcon_light;
+
+  if (isIconVariable) {
+    moonIcon = isDarkTheme ? moonIcon_light : moonIcon_dark;
+    sunIcon = isDarkTheme ? sunIcon_light : sunIcon_dark;
+  }
 
   return (
     <button className={styles.button} onClick={toggleTheme}>
       <Image
-        src={theme === 'dark' ? moonIcon : sunIcon}
+        src={isDarkTheme ? moonIcon : sunIcon}
         alt=""
         width={20}
         height={20}
