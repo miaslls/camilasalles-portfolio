@@ -4,7 +4,11 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useI18n } from '@/locales/client';
 
-export default function MainMenu() {
+export type MainMenuProps = {
+  closeMenu?(): void;
+};
+
+export default function MainMenu({ closeMenu }: MainMenuProps) {
   const t = useI18n();
 
   const localizedPath = usePathname();
@@ -17,6 +21,12 @@ export default function MainMenu() {
     { href: '/contact', label: t('contact.title') },
   ];
 
+  const handleLinkClick = () => {
+    if (closeMenu) {
+      closeMenu();
+    }
+  };
+
   return (
     <nav className={styles.container}>
       <ul className={styles.list}>
@@ -24,6 +34,7 @@ export default function MainMenu() {
           <li key={item.href}>
             <Link
               href={item.href}
+              onClick={handleLinkClick}
               className={`${styles.link} ${
                 rawPath === item.href ? styles.active : ''
               }`}

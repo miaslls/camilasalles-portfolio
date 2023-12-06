@@ -2,6 +2,23 @@
 
 import styles from './mobile-menu.module.css';
 
+import Image from 'next/image';
+import { useTheme } from '@providers/theme-provider';
+import { usePathname } from 'next/navigation';
+
+import MainMenu from '../main-menu/main-menu';
+import LanguageNav from '../language-nav/language-nav';
+import ToggleThemeButton from '../toggle-theme-button/toggle-theme-button';
+
+import closeIcon_light from '@/public/icons/fff3e7/close-circle-fill.svg';
+import closeIcon_dark from '@/public/icons/09141E/close-circle-fill.svg';
+import girlieImg from '@/public/images/girlie.svg';
+import pcImg_light from '@/public/images/pc-light.svg';
+import pcImg_dark from '@/public/images/pc-dark.svg';
+import phoneImg from '@/public/images/phone.svg';
+import bugImg_light from '@/public/images/bug-light.svg';
+import bugImg_dark from '@/public/images/bug-dark.svg';
+
 type OverlayProps = {
   children: React.ReactNode;
   close(): void;
@@ -16,32 +33,82 @@ function Overlay({ children, close }: OverlayProps) {
 }
 
 type MobileMenuProps = {
+  isMenuOpen: boolean;
   closeMenu(): void;
 };
 
-export default function MobileMenu({ closeMenu }: MobileMenuProps) {
-  type HandleClickParams = {
-    e:
-      | React.MouseEvent<HTMLButtonElement, MouseEvent>
-      | React.MouseEvent<HTMLDivElement, MouseEvent>;
-    closeIsAllowed: boolean;
+export default function MobileMenu({ isMenuOpen, closeMenu }: MobileMenuProps) {
+  const { theme } = useTheme();
+  const isDarkTheme = theme === 'dark';
+
+  const localizedPath = usePathname();
+  const rawPath = localizedPath.length > 3 ? localizedPath.slice(3) : '/';
+  const isHome = rawPath === '/';
+
+  const menuImages: Record<string, string> = {
+    '/projects': isDarkTheme ? pcImg_dark : pcImg_light,
+    '/about': girlieImg,
+    '/contact': phoneImg,
   };
 
-  function handleClick({ e, closeIsAllowed }: HandleClickParams) {
+  const menuImg = menuImages[rawPath] || girlieImg;
+
+  function handleClick(
+    e: React.MouseEvent<HTMLButtonElement | HTMLDivElement>,
+  ) {
     e.stopPropagation();
 
-    if (closeIsAllowed) {
+    if (e.currentTarget instanceof HTMLButtonElement) {
       closeMenu();
     }
   }
 
   return (
     <Overlay close={closeMenu}>
-      <div
-        className={styles.container}
-        onClick={(e) => handleClick({ e, closeIsAllowed: false })}
-      >
-        mobile menu
+      <div className={styles.container} onClick={handleClick}>
+        <div className={styles.wrapper}>
+          <div className={styles.header}>
+            <button className={styles.close_btn} onClick={handleClick}>
+              <Image
+                src={isDarkTheme ? closeIcon_light : closeIcon_dark}
+                alt=""
+                width={32}
+                height={32}
+              />
+            </button>
+
+            <div className={styles.secondary_menu}>
+              <LanguageNav />
+              <ToggleThemeButton isIconVariable={isMenuOpen} />
+            </div>
+          </div>
+
+          <div className={styles.menu}>
+            <MainMenu closeMenu={closeMenu} />
+
+            {!isHome && (
+              <div className={styles.img_container}>
+                <Image
+                  className={`${styles.menu_img} ${
+                    isDarkTheme ? styles.dark_img : ''
+                  }`}
+                  src={menuImg}
+                  alt=""
+                />
+              </div>
+            )}
+          </div>
+        </div>
+
+        {isHome && (
+          <div className={styles.bug_container}>
+            <Image
+              className={styles.bug_img}
+              src={isDarkTheme ? bugImg_dark : bugImg_light}
+              alt=""
+            />
+          </div>
+        )}
       </div>
     </Overlay>
   );

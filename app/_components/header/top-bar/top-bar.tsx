@@ -15,10 +15,11 @@ const ToggleThemeButton = dynamic(
 );
 
 export type TopBarProps = {
+  isMenuOpen: boolean;
   openMenu(open?: boolean): void;
 };
 
-export default function TopBar({ openMenu }: TopBarProps) {
+export default function TopBar({ isMenuOpen, openMenu }: TopBarProps) {
   const isHomePage = usePathname().length === 3;
   const isMobile = useDevice() === 'mobile';
 
@@ -40,7 +41,7 @@ export default function TopBar({ openMenu }: TopBarProps) {
       ) : (
         <div className={styles.secondary_menu}>
           <LanguageNav />
-          <ToggleThemeButton />
+          <ToggleThemeButton isIconVariable={isMenuOpen} />
         </div>
       )}
     </div>

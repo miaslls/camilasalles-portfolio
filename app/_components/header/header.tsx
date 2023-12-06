@@ -17,25 +17,27 @@ export default function Header() {
   const isHomePage = usePathname().length === 3;
   const isMobile = useDevice() === 'mobile';
 
-  const [menuIsOpen, setMenuIsOpen] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const handleMenu = (open?: boolean) => {
     if (open) {
-      setMenuIsOpen(true);
+      setIsMenuOpen(true);
     } else {
-      setMenuIsOpen(false);
+      setIsMenuOpen(false);
     }
   };
 
   return (
     <header className={styles.container}>
       <div className="wrapper">
-        <TopBar openMenu={handleMenu} />
+        <TopBar openMenu={handleMenu} isMenuOpen={isMenuOpen} />
         {isHomePage && <HomeImg />}
       </div>
 
       {isMobile ? (
-        menuIsOpen && <MobileMenu closeMenu={handleMenu} />
+        isMenuOpen && (
+          <MobileMenu closeMenu={handleMenu} isMenuOpen={isMenuOpen} />
+        )
       ) : (
         <MainMenu />
       )}
