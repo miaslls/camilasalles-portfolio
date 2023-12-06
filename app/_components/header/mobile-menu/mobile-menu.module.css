@@ -4,9 +4,14 @@
   display: flex;
   justify-content: flex-end;
   position: fixed;
-  top: 0;
-  left: 0;
   z-index: 1;
+  top: 0;
+  right: -100%;
+  transition: right 300ms ease;
+}
+
+.open {
+  right: 0;
 }
 
 .container {

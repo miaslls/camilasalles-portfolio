@@ -21,12 +21,16 @@ import bugImg_dark from '@/public/images/bug-dark.svg';
 
 type OverlayProps = {
   children: React.ReactNode;
+  isOpen: boolean;
   close(): void;
 };
 
-function Overlay({ children, close }: OverlayProps) {
+function Overlay({ children, isOpen, close }: OverlayProps) {
   return (
-    <div className={styles.overlay} onClick={() => close()}>
+    <div
+      className={`${styles.overlay} ${isOpen ? styles.open : ''}`}
+      onClick={() => close()}
+    >
       {children}
     </div>
   );
@@ -64,7 +68,7 @@ export default function MobileMenu({ isMenuOpen, closeMenu }: MobileMenuProps) {
   }
 
   return (
-    <Overlay close={closeMenu}>
+    <Overlay isOpen={isMenuOpen} close={closeMenu}>
       <div className={styles.container} onClick={handleClick}>
         <div className={styles.wrapper}>
           <div className={styles.header}>

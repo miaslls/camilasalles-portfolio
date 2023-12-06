@@ -19,25 +19,19 @@ export default function Header() {
 
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  const handleMenu = (open?: boolean) => {
-    if (open) {
-      setIsMenuOpen(true);
-    } else {
-      setIsMenuOpen(false);
-    }
+  const handleToggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
   };
 
   return (
     <header className={styles.container}>
       <div className="wrapper">
-        <TopBar openMenu={handleMenu} isMenuOpen={isMenuOpen} />
+        <TopBar openMenu={handleToggleMenu} isMenuOpen={isMenuOpen} />
         {isHomePage && <HomeImg />}
       </div>
 
       {isMobile ? (
-        isMenuOpen && (
-          <MobileMenu closeMenu={handleMenu} isMenuOpen={isMenuOpen} />
-        )
+        <MobileMenu isMenuOpen={isMenuOpen} closeMenu={handleToggleMenu} />
       ) : (
         <MainMenu />
       )}

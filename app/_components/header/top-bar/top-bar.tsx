@@ -16,7 +16,7 @@ const ToggleThemeButton = dynamic(
 
 export type TopBarProps = {
   isMenuOpen: boolean;
-  openMenu(open?: boolean): void;
+  openMenu(): void;
 };
 
 export default function TopBar({ isMenuOpen, openMenu }: TopBarProps) {
@@ -32,10 +32,7 @@ export default function TopBar({ isMenuOpen, openMenu }: TopBarProps) {
       )}
 
       {isMobile ? (
-        <button
-          className={styles.mobile_menu_btn}
-          onClick={() => openMenu(true)}
-        >
+        <button className={styles.mobile_menu_btn} onClick={openMenu}>
           <Image src={menuIcon} alt="" width={24} height={24} />
         </button>
       ) : (
