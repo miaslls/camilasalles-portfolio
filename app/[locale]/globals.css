@@ -119,10 +119,6 @@ a {
   color: var(--accent-01);
 }
 
-p {
-  margin-bottom: 1rem;
-}
-
 /* 📌 @media */
 
 @media (hover: hover) and (pointer: fine) {

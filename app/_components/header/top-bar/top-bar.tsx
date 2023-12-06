@@ -26,9 +26,7 @@ export default function TopBar({ isMenuOpen, openMenu }: TopBarProps) {
   return (
     <div className={`${styles.container} ${isHomePage ? styles.home : ''}`}>
       {!isHomePage && (
-        <div className={styles.title}>
-          <span>Camila Salles • development & design</span>
-        </div>
+        <p className={styles.title}>Camila Salles • development & design</p>
       )}
 
       {isMobile ? (
