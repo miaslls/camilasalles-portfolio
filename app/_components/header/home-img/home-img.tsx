@@ -4,8 +4,8 @@ import Image from 'next/image';
 import { useTheme } from '@providers/theme-provider';
 import { useDevice } from '@providers/device-provider';
 
-import imgLight from '@/public/images/HOME-light.jpg';
-import imgDark from '@/public/images/HOME-dark.jpg';
+import img_light from '@/public/images/home-light.svg';
+import img_dark from '@/public/images/home-dark.svg';
 
 export default function HomeImg() {
   const { theme } = useTheme();
@@ -22,9 +22,7 @@ export default function HomeImg() {
         <Image
           priority
           className={styles.img}
-          src={theme === 'dark' ? imgDark : imgLight}
-          placeholder="blur"
-          quality={100}
+          src={theme === 'dark' ? img_dark : img_light}
           alt=""
         />
       </div>
