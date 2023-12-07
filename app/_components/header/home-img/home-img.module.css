@@ -19,13 +19,14 @@
   padding-right: var(--layout-padding-desktop);
   position: absolute;
   top: 7rem;
-  left: 33%;
+  left: 25%;
 }
 
 .title {
   font-size: 2.5rem;
   font-weight: 400;
-  margin-bottom: 0.75rem;
+  line-height: 1.5rem;
+  margin-bottom: unset;
 }
 
 .subtitle {
@@ -43,8 +44,8 @@
 
   .text_container {
     padding-right: var(--layout-padding-mobile);
-    top: 3.75rem;
-    left: 20%;
+    top: 3rem;
+    left: 25%;
   }
 
   .title {
@@ -64,7 +65,7 @@
 
   .text_container {
     padding-right: var(--layout-padding-tablet);
-    top: 3.5rem;
+    top: 4rem;
     left: 27.5%;
   }
 }
