@@ -2,16 +2,14 @@
 
 import styles from './footer.module.css';
 
-import Link from 'next/link';
-import Image from 'next/image';
 import { useTheme } from '@providers/theme-provider';
 import { useDevice } from '@providers/device-provider';
 
-import externalLinkIcon_light from '@/public/icons/light-accent-01/arrow-right-up-line.svg';
+import FooterLink from './footer-link/footer-link';
+
 import githubIcon_light from '@/public/icons/light-accent-01/github-fill.svg';
 import linkedinIcon_light from '@/public/icons/light-accent-01/linkedin-box-fill.svg';
 import locationIcon_light from '@/public/icons/light-accent-01/map-pin-line.svg';
-import externalLinkIcon_dark from '@/public/icons/dark-accent-01/arrow-right-up-line.svg';
 import githubIcon_dark from '@/public/icons/dark-accent-01/github-fill.svg';
 import linkedinIcon_dark from '@/public/icons/dark-accent-01/linkedin-box-fill.svg';
 import locationIcon_dark from '@/public/icons/dark-accent-01/map-pin-line.svg';
@@ -22,6 +20,27 @@ export default function Footer() {
 
   const device = useDevice();
 
+  const links = [
+    {
+      url: 'https://maps.app.goo.gl/vzsyxqckDcDaemHz8',
+      icon: isDarkTheme ? locationIcon_dark : locationIcon_light,
+      text: device === 'desktop' ? 'São Paulo, SP' : 'maps',
+      isExternal: true,
+    },
+    {
+      url: 'https://linkedin.com/in/salles-camila',
+      icon: isDarkTheme ? linkedinIcon_dark : linkedinIcon_light,
+      text: device === 'desktop' ? 'in/salles-camila' : 'linkedin',
+      isExternal: true,
+    },
+    {
+      url: 'https://github.com/miaslls',
+      icon: isDarkTheme ? githubIcon_dark : githubIcon_light,
+      text: device === 'desktop' ? '/miaslls' : 'github',
+      isExternal: true,
+    },
+  ];
+
   return (
     <footer className={styles.container}>
       <div className={styles.title_container}>
@@ -31,128 +50,17 @@ export default function Footer() {
 
       <nav className={styles.nav}>
         <ul className={styles.list}>
-          <li>
-            <Link
-              className={styles.link}
-              href={'https://maps.app.goo.gl/vzsyxqckDcDaemHz8'}
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              <div className={styles.icon_container}>
-                <Image
-                  className={styles.link_icon}
-                  src={isDarkTheme ? locationIcon_dark : locationIcon_light}
-                  alt=""
-                />
-              </div>
-
-              {device !== 'mobile' && (
-                <>
-                  <span className={styles.link_text}>
-                    {device === 'tablet' ? 'maps' : 'São Paulo, SP'}
-                  </span>
-
-                  {device !== 'tablet' && (
-                    <div className={styles.icon_container}>
-                      <Image
-                        className={styles.link_icon}
-                        src={
-                          isDarkTheme
-                            ? externalLinkIcon_dark
-                            : externalLinkIcon_light
-                        }
-                        alt=""
-                      />
-                    </div>
-                  )}
-                </>
-              )}
-            </Link>
-          </li>
-
-          <li>
-            <Link
-              className={styles.link}
-              href={'https://linkedin.com/in/salles-camila'}
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              <div className={styles.icon_container}>
-                <Image
-                  className={styles.link_icon}
-                  src={isDarkTheme ? linkedinIcon_dark : linkedinIcon_light}
-                  alt=""
-                />
-              </div>
-
-              {device !== 'mobile' && (
-                <>
-                  <span className={styles.link_text}>
-                    {device === 'tablet' ? 'linkedin' : 'in/salles-camila'}
-                  </span>
-
-                  {device !== 'tablet' && (
-                    <div className={styles.icon_container}>
-                      <Image
-                        className={styles.link_icon}
-                        src={
-                          isDarkTheme
-                            ? externalLinkIcon_dark
-                            : externalLinkIcon_light
-                        }
-                        alt=""
-                      />
-                    </div>
-                  )}
-                </>
-              )}
-            </Link>
-          </li>
-
-          <li>
-            <Link
-              className={styles.link}
-              href={'https://github.com/miaslls'}
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              <div className={styles.icon_container}>
-                <Image
-                  className={styles.link_icon}
-                  src={isDarkTheme ? githubIcon_dark : githubIcon_light}
-                  alt=""
-                />
-              </div>
-
-              {device !== 'mobile' && (
-                <>
-                  <span className={styles.link_text}>
-                    {device === 'tablet' ? 'github' : '/miaslls'}
-                  </span>
-
-                  {device !== 'tablet' && (
-                    <div className={styles.icon_container}>
-                      <Image
-                        className={styles.link_icon}
-                        src={
-                          isDarkTheme
-                            ? externalLinkIcon_dark
-                            : externalLinkIcon_light
-                        }
-                        alt=""
-                      />
-                    </div>
-                  )}
-                </>
-              )}
-            </Link>
-          </li>
+          {links.map((link) => (
+            <li key={link.text}>
+              <FooterLink {...link} />
+            </li>
+          ))}
         </ul>
       </nav>
 
       {device !== 'mobile' && (
         <p className={styles.legal}>{`© ${new Date().getFullYear()} ${
-          device === 'tablet' ? 'miaslls' : 'Camila Salles'
+          device === 'desktop' ? 'Camila Salles' : 'miaslls'
         }`}</p>
       )}
     </footer>
