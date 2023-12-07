@@ -1,6 +1,6 @@
 .container {
   width: 100%;
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
   padding: 0 var(--layout-padding-desktop);
   display: flex;
   align-items: center;
