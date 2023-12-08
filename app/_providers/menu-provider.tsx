@@ -1,6 +1,7 @@
 'use client';
 
-import React, { createContext, useContext, useEffect, useState } from 'react';
+import React, { createContext, useContext, useEffect } from 'react';
+import { useSessionStorage } from '@lib/storage';
 
 type MenuContextState = {
   isMenuOpen: boolean;
@@ -14,7 +15,8 @@ export function useMenu() {
 
   if (!context) {
     throw new Error(
-      'useMobileMenu must be used within a component wrapped with MobileMenuProvider'
+      'useMenu must be used within a component wrapped with MenuProvider. ' +
+        'Wrap your component tree with <MenuProvider> to enable menu functionality.'
     );
   }
 
@@ -26,20 +28,23 @@ export default function MenuProvider({
 }: {
   children: React.ReactNode;
 }) {
-  const [isMenuOpen, setIsMenuOpen] = useState<boolean>(() => {
-    const storedValue = sessionStorage.getItem('isMenuOpen');
-
-    return storedValue ? JSON.parse(storedValue) : false;
-  });
+  const [isMenuOpen, setIsMenuOpen] = useSessionStorage('isMenuOpen', false);
 
   useEffect(() => {
-    sessionStorage.setItem('isMenuOpen', JSON.stringify(isMenuOpen));
+    function applyBodyOverflow(isMenuOpen: boolean) {
+      document.body.style.overflow = isMenuOpen ? 'hidden' : 'auto';
+    }
+
+    setIsMenuOpen(isMenuOpen);
+    applyBodyOverflow(isMenuOpen);
+
+    return () => {
+      applyBodyOverflow(false);
+    };
   }, [isMenuOpen]);
 
   const handleToggleMenu = () => {
     setIsMenuOpen((current) => !current);
-
-    document.body.style.overflow = isMenuOpen ? 'auto' : 'hidden';
   };
 
   return (
