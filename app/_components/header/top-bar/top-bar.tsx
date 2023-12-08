@@ -5,7 +5,7 @@ import dynamic from 'next/dynamic';
 import { usePathname } from 'next/navigation';
 import { useDevice } from '@providers/device-provider';
 
-import menuIcon from '@/public/icons/light/menu-line.svg';
+import menuIcon from '@icons/light/menu-line.svg';
 
 const LanguageNav = dynamic(
   () => import('@components/header/language-nav/language-nav')

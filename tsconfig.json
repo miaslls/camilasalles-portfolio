@@ -22,7 +22,9 @@
       "@/*": ["./*"],
       "@lib/*": ["./app/_lib/*"],
       "@components/*": ["./app/_components/*"],
-      "@providers/*": ["./app/_providers/*"]
+      "@providers/*": ["./app/_providers/*"],
+      "@images/*": ["./public/images/*"],
+      "@icons/*": ["./public/icons/*"]
     }
   },
   "include": [

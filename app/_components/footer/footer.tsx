@@ -7,12 +7,12 @@ import { useDevice } from '@providers/device-provider';
 
 import FooterLink from './footer-link/footer-link';
 
-import githubIcon_light from '@/public/icons/light-accent-01/github-fill.svg';
-import linkedinIcon_light from '@/public/icons/light-accent-01/linkedin-box-fill.svg';
-import locationIcon_light from '@/public/icons/light-accent-01/map-pin-line.svg';
-import githubIcon_dark from '@/public/icons/dark-accent-01/github-fill.svg';
-import linkedinIcon_dark from '@/public/icons/dark-accent-01/linkedin-box-fill.svg';
-import locationIcon_dark from '@/public/icons/dark-accent-01/map-pin-line.svg';
+import githubIcon_light from '@icons/light-accent-01/github-fill.svg';
+import linkedinIcon_light from '@icons/light-accent-01/linkedin-box-fill.svg';
+import locationIcon_light from '@icons/light-accent-01/map-pin-line.svg';
+import githubIcon_dark from '@icons/dark-accent-01/github-fill.svg';
+import linkedinIcon_dark from '@icons/dark-accent-01/linkedin-box-fill.svg';
+import locationIcon_dark from '@icons/dark-accent-01/map-pin-line.svg';
 
 export default function Footer() {
   const { theme } = useTheme();

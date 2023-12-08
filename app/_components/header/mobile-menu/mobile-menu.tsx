@@ -10,14 +10,14 @@ import MainMenu from '../main-menu/main-menu';
 import LanguageNav from '../language-nav/language-nav';
 import ToggleThemeButton from '../toggle-theme-button/toggle-theme-button';
 
-import closeIcon_light from '@/public/icons/light/close-line.svg';
-import closeIcon_dark from '@/public/icons/dark/close-line.svg';
-import girlieImg from '@/public/images/girlie.svg';
-import pcImg_light from '@/public/images/pc-light.svg';
-import officeImg_light from '@/public/images/office-light.svg';
-import officeImg_dark from '@/public/images/office-dark.svg';
-import pcImg_dark from '@/public/images/pc-dark.svg';
-import phoneImg from '@/public/images/phone.svg';
+import closeIcon_light from '@icons/light/close-line.svg';
+import closeIcon_dark from '@icons/dark/close-line.svg';
+import girlieImg from '@images/girlie.svg';
+import pcImg_light from '@images/pc-light.svg';
+import officeImg_light from '@images/office-light.svg';
+import officeImg_dark from '@images/office-dark.svg';
+import pcImg_dark from '@images/pc-dark.svg';
+import phoneImg from '@images/phone.svg';
 
 type OverlayProps = {
   children: React.ReactNode;

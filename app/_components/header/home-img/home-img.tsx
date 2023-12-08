@@ -4,8 +4,8 @@ import Image from 'next/image';
 import { useTheme } from '@providers/theme-provider';
 import { useDevice } from '@providers/device-provider';
 
-import img_light from '@/public/images/home-light.svg';
-import img_dark from '@/public/images/home-dark.svg';
+import img_light from '@images/home-light.svg';
+import img_dark from '@images/home-dark.svg';
 
 export default function HomeImg() {
   const { theme } = useTheme();

@@ -7,8 +7,8 @@ import Image, { StaticImageData } from 'next/image';
 import { useTheme } from '@providers/theme-provider';
 import { useDevice } from '@providers/device-provider';
 
-import externalLinkIcon_light from '@/public/icons/light-accent-01/arrow-right-up-line.svg';
-import externalLinkIcon_dark from '@/public/icons/dark-accent-01/arrow-right-up-line.svg';
+import externalLinkIcon_light from '@icons/light-accent-01/arrow-right-up-line.svg';
+import externalLinkIcon_dark from '@icons/dark-accent-01/arrow-right-up-line.svg';
 
 export type FooterLinkProps = {
   url: string;
