@@ -19,7 +19,11 @@
   overflow: hidden;
   text-overflow: ellipsis;
   font-family: var(--font-outfit);
-  font-weight: 300;
+  font-weight: 200;
+}
+
+.title span {
+  font-weight: 400;
 }
 
 .secondary_menu {

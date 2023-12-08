@@ -10,8 +10,8 @@ import MainMenu from '../main-menu/main-menu';
 import LanguageNav from '../language-nav/language-nav';
 import ToggleThemeButton from '../toggle-theme-button/toggle-theme-button';
 
-import closeIcon_light from '@/public/icons/light/close-circle-fill.svg';
-import closeIcon_dark from '@/public/icons/dark/close-circle-fill.svg';
+import closeIcon_light from '@/public/icons/light/close-line.svg';
+import closeIcon_dark from '@/public/icons/dark/close-line.svg';
 import girlieImg from '@/public/images/girlie.svg';
 import pcImg_light from '@/public/images/pc-light.svg';
 import pcImg_dark from '@/public/images/pc-dark.svg';
@@ -58,7 +58,7 @@ export default function MobileMenu({ isMenuOpen, closeMenu }: MobileMenuProps) {
   const menuImg = menuImages[rawPath] || girlieImg;
 
   function handleClick(
-    e: React.MouseEvent<HTMLButtonElement | HTMLDivElement>,
+    e: React.MouseEvent<HTMLButtonElement | HTMLDivElement>
   ) {
     e.stopPropagation();
 

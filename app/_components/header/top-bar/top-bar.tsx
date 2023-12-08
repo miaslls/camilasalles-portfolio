@@ -8,10 +8,10 @@ import { useDevice } from '@providers/device-provider';
 import menuIcon from '@/public/icons/light/menu-line.svg';
 
 const LanguageNav = dynamic(
-  () => import('@components/header/language-nav/language-nav'),
+  () => import('@components/header/language-nav/language-nav')
 );
 const ToggleThemeButton = dynamic(
-  () => import('@components/header/toggle-theme-button/toggle-theme-button'),
+  () => import('@components/header/toggle-theme-button/toggle-theme-button')
 );
 
 export type TopBarProps = {
@@ -26,7 +26,9 @@ export default function TopBar({ isMenuOpen, openMenu }: TopBarProps) {
   return (
     <div className={`${styles.container} ${isHomePage ? styles.home : ''}`}>
       {!isHomePage && (
-        <p className={styles.title}>Camila Salles • development & design</p>
+        <p className={styles.title}>
+          <span>Camila Salles</span> &nbsp; development & design
+        </p>
       )}
 
       {isMobile ? (

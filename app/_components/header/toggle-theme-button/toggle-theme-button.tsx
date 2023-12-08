@@ -5,10 +5,10 @@ import styles from './toggle-theme-button.module.css';
 import { useTheme } from '@providers/theme-provider';
 import Image from 'next/image';
 
-import sunIcon_light from '@/public/icons/light/sun-line.svg';
-import moonIcon_light from '@/public/icons/light/moon-line.svg';
-import sunIcon_dark from '@/public/icons/dark/sun-line.svg';
-import moonIcon_dark from '@/public/icons/dark/moon-line.svg';
+import sunIcon_light from '@/public/icons/light/sun-fill.svg';
+import moonIcon_light from '@/public/icons/light/moon-fill.svg';
+import sunIcon_dark from '@/public/icons/dark/sun-fill.svg';
+import moonIcon_dark from '@/public/icons/dark/moon-fill.svg';
 
 type ToggleThemeButtonProps = {
   isIconVariable: boolean;
