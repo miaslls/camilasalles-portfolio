@@ -6,13 +6,29 @@ export default {
 
   projects: {
     title: 'Projetos',
+
+    main: {},
+
+    aside: {
+      featured_projects: 'projetos em destaque',
+    },
   },
 
   about: {
     title: 'Sobre',
+    main: {},
+
+    aside: {
+      latest_projects: 'projetos recentes',
+    },
   },
 
   contact: {
     title: 'Contato',
+    main: {},
+
+    aside: {
+      message: 'mensagem',
+    },
   },
 } as const;

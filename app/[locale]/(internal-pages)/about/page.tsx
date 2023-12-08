@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import { setStaticParamsLocale } from 'next-international/server';
 import { getScopedI18n } from '@/locales/server';
 
@@ -19,5 +20,21 @@ export default async function AboutPage({
   setStaticParamsLocale(locale);
   const t = await getScopedI18n('about');
 
-  return <h1>{t('title')}</h1>;
+  return (
+    <div className="page_container">
+      <main>
+        <h1>{t('title')}</h1>
+      </main>
+
+      <aside>
+        <div className="aside_img_container">
+          <Image className="aside_img" src={''} alt="" />
+        </div>
+
+        <section>
+          <h2>{t('aside.latest_projects')}</h2>
+        </section>
+      </aside>
+    </div>
+  );
 }

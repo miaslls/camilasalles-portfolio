@@ -1,3 +1,5 @@
+import styles from './page.module.css';
+
 import { setStaticParamsLocale } from 'next-international/server';
 import { getScopedI18n } from '@/locales/server';
 
@@ -10,7 +12,7 @@ export default async function HomePage({
   const t = await getScopedI18n('home');
 
   return (
-    <main>
+    <main className={styles.main_home}>
       <h2>{t('featured_projects')}</h2>
       <p>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ligula
@@ -24,6 +26,9 @@ export default async function HomePage({
         dapibus augue. Maecenas id risus laoreet, vestibulum ante ut, ultricies
         dui.
       </p>
+
+      <br />
+
       <p>
         Nam facilisis elementum enim nec fermentum. Etiam mollis erat sed nulla
         fringilla, vel vestibulum elit congue. Mauris et dapibus nibh. Maecenas
