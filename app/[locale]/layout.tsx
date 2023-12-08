@@ -4,13 +4,14 @@ import type { Metadata, Viewport } from 'next';
 
 import dynamic from 'next/dynamic';
 import { Work_Sans, Outfit } from 'next/font/google';
+
 import { getStaticParams } from '@/locales/server';
 import { I18nProviderClient } from '@/locales/client';
 import { getTheme } from '@lib/getTheme';
 
 import Header from '@components/header/header';
 import Footer from '@components/footer/footer';
-import MobileMenu from '@components/header/mobile-menu/mobile-menu';
+import MobileMenu from '@components/menu/mobile-menu/mobile-menu';
 
 const DeviceProvider = dynamic(() => import('@providers/device-provider'), {
   ssr: false,

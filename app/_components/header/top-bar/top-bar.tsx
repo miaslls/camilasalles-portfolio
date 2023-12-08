@@ -3,24 +3,19 @@ import styles from './top-bar.module.css';
 import Image from 'next/image';
 import dynamic from 'next/dynamic';
 import { usePathname } from 'next/navigation';
+
 import { useDevice } from '@providers/device-provider';
 import { useMenu } from '@/app/_providers/menu-provider';
-
 import menuIcon from '@icons/light/menu-line.svg';
 
 const LanguageNav = dynamic(
-  () => import('@components/header/language-nav/language-nav')
+  () => import('@components/menu/language-nav/language-nav')
 );
+
 const ToggleThemeButton = dynamic(
-  () => import('@components/header/toggle-theme-button/toggle-theme-button')
+  () => import('@components/menu/toggle-theme-button/toggle-theme-button')
 );
 
-// export type TopBarProps = {
-//   isMenuOpen: boolean;
-//   openMenu(): void;
-// };
-
-// export default function TopBar({ isMenuOpen, openMenu }: TopBarProps) {
 export default function TopBar() {
   const isHomePage = usePathname().length === 3;
   const isMobile = useDevice() === 'mobile';
