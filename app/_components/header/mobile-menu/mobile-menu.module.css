@@ -4,9 +4,9 @@
   display: flex;
   justify-content: flex-end;
   position: fixed;
-  z-index: 1;
   top: 0;
   right: -100%;
+  z-index: 666;
   transition: right 300ms ease;
 }
 
@@ -19,10 +19,10 @@
   height: 100%;
   padding: 2rem 2rem 2rem 1.5rem;
   background: var(--accent-03);
-  box-shadow: -4px 0px 0px 0px var(--fg-transparent);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  box-shadow: -4px 0px 0px 0px var(--fg-transparent);
 }
 
 .wrapper {

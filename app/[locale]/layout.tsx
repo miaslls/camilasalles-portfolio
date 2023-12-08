@@ -10,12 +10,17 @@ import { getTheme } from '@lib/getTheme';
 
 import Header from '@components/header/header';
 import Footer from '@components/footer/footer';
+import MobileMenu from '@components/header/mobile-menu/mobile-menu';
 
 const DeviceProvider = dynamic(() => import('@providers/device-provider'), {
   ssr: false,
 });
 
 const ThemeProvider = dynamic(() => import('@providers/theme-provider'), {
+  ssr: false,
+});
+
+const MenuProvider = dynamic(() => import('@/app/_providers/menu-provider'), {
   ssr: false,
 });
 
@@ -100,13 +105,16 @@ export default function RootLayout({
       <body>
         <DeviceProvider>
           <ThemeProvider>
-            <I18nProviderClient locale={params.locale}>
-              <div className="layout_container">
-                <Header />
-                <div className="child_container">{children}</div>
-                <Footer />
-              </div>
-            </I18nProviderClient>
+            <MenuProvider>
+              <I18nProviderClient locale={params.locale}>
+                <div className="layout_container">
+                  <Header />
+                  <MobileMenu />
+                  <div className="child_container">{children}</div>
+                  <Footer />
+                </div>
+              </I18nProviderClient>
+            </MenuProvider>
           </ThemeProvider>
         </DeviceProvider>
       </body>

@@ -3,8 +3,10 @@
 import styles from './mobile-menu.module.css';
 
 import Image from 'next/image';
-import { useTheme } from '@providers/theme-provider';
 import { usePathname } from 'next/navigation';
+import { useDevice } from '@providers/device-provider';
+import { useMenu } from '@providers/menu-provider';
+import { useTheme } from '@providers/theme-provider';
 
 import MainMenu from '../main-menu/main-menu';
 import LanguageNav from '../language-nav/language-nav';
@@ -36,12 +38,11 @@ function Overlay({ children, isOpen, close }: OverlayProps) {
   );
 }
 
-type MobileMenuProps = {
-  isMenuOpen: boolean;
-  closeMenu(): void;
-};
+export default function MobileMenu() {
+  const { isMenuOpen, handleToggleMenu: closeMenu } = useMenu();
 
-export default function MobileMenu({ isMenuOpen, closeMenu }: MobileMenuProps) {
+  const isMobile = useDevice() === 'mobile';
+
   const { theme } = useTheme();
   const isDarkTheme = theme === 'dark';
 
@@ -68,44 +69,46 @@ export default function MobileMenu({ isMenuOpen, closeMenu }: MobileMenuProps) {
   }
 
   return (
-    <Overlay isOpen={isMenuOpen} close={closeMenu}>
-      <div className={styles.container} onClick={handleClick}>
-        <div className={styles.wrapper}>
-          <div className={styles.header}>
-            <button className={styles.close_btn} onClick={handleClick}>
-              <Image
-                src={isDarkTheme ? closeIcon_light : closeIcon_dark}
-                alt=""
-                width={32}
-                height={32}
-              />
-            </button>
+    isMobile && (
+      <Overlay isOpen={isMenuOpen} close={closeMenu}>
+        <div className={styles.container} onClick={handleClick}>
+          <div className={styles.wrapper}>
+            <div className={styles.header}>
+              <button className={styles.close_btn} onClick={handleClick}>
+                <Image
+                  src={isDarkTheme ? closeIcon_light : closeIcon_dark}
+                  alt=""
+                  width={32}
+                  height={32}
+                />
+              </button>
 
-            <div className={styles.secondary_menu}>
-              <LanguageNav />
-              <ToggleThemeButton isIconVariable={isMenuOpen} />
+              <div className={styles.secondary_menu}>
+                <LanguageNav />
+                <ToggleThemeButton isIconVariable={isMenuOpen} />
+              </div>
+            </div>
+
+            <div className={styles.menu}>
+              <MainMenu closeMenu={closeMenu} />
+
+              <div className={styles.img_container}>
+                <Image
+                  className={`${styles.menu_img} ${
+                    isDarkTheme ? styles.dark_img : ''
+                  }`}
+                  src={menuImg}
+                  alt=""
+                />
+              </div>
             </div>
           </div>
 
-          <div className={styles.menu}>
-            <MainMenu closeMenu={closeMenu} />
-
-            <div className={styles.img_container}>
-              <Image
-                className={`${styles.menu_img} ${
-                  isDarkTheme ? styles.dark_img : ''
-                }`}
-                src={menuImg}
-                alt=""
-              />
-            </div>
-          </div>
+          <p className={styles.legal}>
+            © {new Date().getFullYear()} Camila Salles
+          </p>
         </div>
-
-        <p className={styles.legal}>
-          © {new Date().getFullYear()} Camila Salles
-        </p>
-      </div>
-    </Overlay>
+      </Overlay>
+    )
   );
 }
