@@ -32,7 +32,7 @@ export default function MenuProvider({
 
   useEffect(() => {
     function applyBodyOverflow(isMenuOpen: boolean) {
-      document.body.style.overflow = isMenuOpen ? 'hidden' : 'auto';
+      document.body.style.overflowY = isMenuOpen ? 'hidden' : 'auto';
     }
 
     setIsMenuOpen(isMenuOpen);
