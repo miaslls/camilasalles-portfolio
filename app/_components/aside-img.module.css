@@ -12,3 +12,17 @@
 .dark_img {
   filter: saturate(0.9) opacity(0.9);
 }
+
+@media (min-width: 701px) and (max-width: 1120px) {
+  .img_container {
+    width: 45%;
+    height: unset;
+    display: flex;
+    justify-content: center;
+  }
+
+  .img {
+    width: 16rem;
+    height: 18rem;
+  }
+}
