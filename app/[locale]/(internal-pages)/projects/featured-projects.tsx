@@ -25,6 +25,7 @@ export default function FeaturedProjects() {
         />
         <h2 className={styles.title}>{t('featured_projects')}</h2>
       </div>
+
       <p>
         Lorem ipsum, dolor sit amet consectetur adipisicing elit. Hic quisquam
         temporibus fuga beatae quos corrupti, consectetur ipsum quaerat facilis

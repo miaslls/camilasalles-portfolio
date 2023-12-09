@@ -3,7 +3,7 @@
 import styles from './footer-link.module.css';
 
 import Link from 'next/link';
-import Image, { StaticImageData } from 'next/image';
+import Image from 'next/image';
 import { useTheme } from '@providers/theme-provider';
 import { useDevice } from '@providers/device-provider';
 

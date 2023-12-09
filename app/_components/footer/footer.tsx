@@ -5,7 +5,7 @@ import styles from './footer.module.css';
 import { useTheme } from '@providers/theme-provider';
 import { useDevice } from '@providers/device-provider';
 
-import FooterLink from './footer-link/footer-link';
+import FooterLink from './footer-link';
 
 import githubIcon_light from '@icons/light-accent-01/github-fill.svg';
 import linkedinIcon_light from '@icons/light-accent-01/linkedin-box-fill.svg';

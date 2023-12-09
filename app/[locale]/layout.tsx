@@ -11,7 +11,7 @@ import { getTheme } from '@lib/getTheme';
 
 import Header from '@components/header/header';
 import Footer from '@components/footer/footer';
-import MobileMenu from '@components/menu/mobile-menu/mobile-menu';
+import MobileMenu from '@/app/_components/menu/mobile-menu';
 
 const DeviceProvider = dynamic(() => import('@providers/device-provider'), {
   ssr: false,

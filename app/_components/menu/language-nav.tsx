@@ -1,5 +1,4 @@
 import styles from './language-nav.module.css';
-
 import { usePathname } from 'next/navigation';
 
 export default function LanguageNav() {

@@ -8,9 +8,9 @@ import { useDevice } from '@providers/device-provider';
 import { useMenu } from '@providers/menu-provider';
 import { useTheme } from '@providers/theme-provider';
 
-import MainMenu from '../main-menu/main-menu';
-import LanguageNav from '../language-nav/language-nav';
-import ToggleThemeButton from '../toggle-theme-button/toggle-theme-button';
+import MainMenu from './main-menu';
+import LanguageNav from './language-nav';
+import ToggleThemeButton from './toggle-theme-button';
 
 import closeIcon_light from '@icons/light/close-line.svg';
 import closeIcon_dark from '@icons/dark/close-line.svg';

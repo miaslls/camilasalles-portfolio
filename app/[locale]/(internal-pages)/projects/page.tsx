@@ -74,9 +74,6 @@ export default async function ProjectsPage({
 
         <div className="aside_content">
           <FeaturedProjects />
-          {/* <section>
-            <h2>{t('aside.featured_projects')}</h2>
-          </section> */}
         </div>
       </aside>
     </div>

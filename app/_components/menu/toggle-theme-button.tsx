@@ -2,8 +2,8 @@
 
 import styles from './toggle-theme-button.module.css';
 
-import { useTheme } from '@providers/theme-provider';
 import Image from 'next/image';
+import { useTheme } from '@providers/theme-provider';
 
 import sunIcon_light from '@icons/light/sun-fill.svg';
 import moonIcon_light from '@icons/light/moon-fill.svg';

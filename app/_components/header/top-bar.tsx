@@ -3,17 +3,16 @@ import styles from './top-bar.module.css';
 import Image from 'next/image';
 import dynamic from 'next/dynamic';
 import { usePathname } from 'next/navigation';
-
 import { useDevice } from '@providers/device-provider';
-import { useMenu } from '@/app/_providers/menu-provider';
+import { useMenu } from '@providers/menu-provider';
+
 import menuIcon from '@icons/light/menu-line.svg';
 
-const LanguageNav = dynamic(
-  () => import('@components/menu/language-nav/language-nav')
-);
+const LanguageNav = dynamic(() => import('@components/menu/language-nav'));
 
 const ToggleThemeButton = dynamic(
-  () => import('@components/menu/toggle-theme-button/toggle-theme-button')
+  () => import('@components/menu/toggle-theme-button'),
+  { ssr: false }
 );
 
 export default function TopBar() {
