@@ -184,6 +184,10 @@ a {
     margin: 2rem 0 2.5rem 0;
     padding: 0 var(--layout-padding-mobile);
   }
+
+  .aside_section {
+    padding-left: 2rem;
+  }
 }
 
 /* ⚠️ tablet */

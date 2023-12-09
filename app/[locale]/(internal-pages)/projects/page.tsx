@@ -2,7 +2,8 @@ import { setStaticParamsLocale } from 'next-international/server';
 import { getScopedI18n } from '@/locales/server';
 import type { Metadata } from 'next';
 
-import AsideImg from '@/app/_components/aside-img';
+import AsideImg from '@components/aside-img';
+import FeaturedProjects from './featured-projects';
 
 export async function generateMetadata(): Promise<Metadata> {
   const t = await getScopedI18n('projects');
@@ -72,9 +73,10 @@ export default async function ProjectsPage({
         <AsideImg />
 
         <div className="aside_content">
-          <section>
+          <FeaturedProjects />
+          {/* <section>
             <h2>{t('aside.featured_projects')}</h2>
-          </section>
+          </section> */}
         </div>
       </aside>
     </div>
