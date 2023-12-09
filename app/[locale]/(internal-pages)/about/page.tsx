@@ -3,6 +3,7 @@ import { getScopedI18n } from '@/locales/server';
 import type { Metadata } from 'next';
 
 import AsideImg from '@components/aside-img';
+import LatestProjects from './latest-projects';
 
 export async function generateMetadata(): Promise<Metadata> {
   const t = await getScopedI18n('about');
@@ -72,9 +73,7 @@ export default async function AboutPage({
         <AsideImg />
 
         <div className="aside_content">
-          <section>
-            <h2>{t('aside.latest_projects')}</h2>
-          </section>
+          <LatestProjects />
         </div>
       </aside>
     </div>

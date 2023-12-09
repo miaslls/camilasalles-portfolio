@@ -3,6 +3,7 @@ import { getScopedI18n } from '@/locales/server';
 import type { Metadata } from 'next';
 
 import AsideImg from '@components/aside-img';
+import MessageMe from './message-me';
 
 export async function generateMetadata(): Promise<Metadata> {
   const t = await getScopedI18n('contact');
@@ -72,9 +73,7 @@ export default async function ContactPage({
         <AsideImg />
 
         <div className="aside_content">
-          <section>
-            <h2>{t('aside.message')}</h2>
-          </section>
+          <MessageMe />
         </div>
       </aside>
     </div>

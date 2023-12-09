@@ -4,11 +4,11 @@ import { useScopedI18n } from '@/locales/client';
 import { useTheme } from '@providers/theme-provider';
 import SectionTitle from '@components/section-title';
 
-import starIcon_light from '@icons/light/star-line.svg';
-import starIcon_dark from '@icons/dark/star-line.svg';
+import mailIcon_light from '@icons/light/mail-send-line.svg';
+import mailIcon_dark from '@icons/dark/mail-send-line.svg';
 
-export default function FeaturedProjects() {
-  const t = useScopedI18n('projects.aside');
+export default function MessageMe() {
+  const t = useScopedI18n('contact.aside');
 
   const { theme } = useTheme();
   const isDarkTheme = theme === 'dark';
@@ -16,8 +16,8 @@ export default function FeaturedProjects() {
   return (
     <section className="aside_section">
       <SectionTitle
-        title={t('featured_projects')}
-        icon={isDarkTheme ? starIcon_light : starIcon_dark}
+        title={t('message')}
+        icon={isDarkTheme ? mailIcon_light : mailIcon_dark}
       />
 
       <p>
