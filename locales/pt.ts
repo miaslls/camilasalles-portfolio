@@ -7,7 +7,9 @@ export default {
   projects: {
     title: 'Projetos',
 
-    main: {},
+    main: {
+      all_projects: 'todos os projetos',
+    },
 
     aside: {
       featured_projects: 'projetos em destaque',

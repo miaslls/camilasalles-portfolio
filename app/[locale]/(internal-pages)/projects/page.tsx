@@ -1,9 +1,16 @@
+import styles from './page.module.css';
+
+import Image from 'next/image';
 import { setStaticParamsLocale } from 'next-international/server';
 import { getScopedI18n } from '@/locales/server';
 import type { Metadata } from 'next';
 
 import AsideImg from '@components/aside-img';
 import FeaturedProjects from './featured-projects';
+
+import miataskImg from '@images/projects/miatask.jpg';
+import labaredaImg from '@images/projects/labareda.png';
+import miaplayImg from '@images/projects/miaplay.jpg';
 
 export async function generateMetadata(): Promise<Metadata> {
   const t = await getScopedI18n('projects');
@@ -22,51 +29,66 @@ export default async function ProjectsPage({
   const t = await getScopedI18n('projects');
 
   return (
-    <div className="page_content">
-      <main>
-        <h1>{t('title')}</h1>
+    <div className="page_container">
+      <main className="page_content">
+        <header className="content_header">
+          <h1>{t('title')}</h1>
 
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ligula
-          tellus, gravida ut consequat quis, luctus nec neque. Fusce imperdiet
-          consectetur neque, sit amet imperdiet augue venenatis id. Proin et
-          eros leo. Morbi fermentum luctus ex, sit amet euismod est porta at.
-          Duis dictum hendrerit sagittis. Nam eget luctus turpis. Etiam
-          consequat ante ut sem volutpat blandit. Praesent in lacus convallis,
-          tempor tellus in, interdum lacus. Vivamus feugiat justo in vehicula
-          pharetra. Pellentesque lacus metus, bibendum eu viverra at, varius
-          vitae massa. Fusce id dapibus augue. Maecenas id risus laoreet,
-          vestibulum ante ut, ultricies dui.
-        </p>
+          <p className="default">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ligula
+            tellus, gravida ut consequat quis, luctus nec neque. Fusce imperdiet
+            consectetur neque, sit amet imperdiet augue venenatis id.
+          </p>
+        </header>
 
-        <br />
+        <section className={styles.projects}>
+          <h2 className="hidden">{t('main.all_projects')}</h2>
 
-        <p>
-          Nam facilisis elementum enim nec fermentum. Etiam mollis erat sed
-          nulla fringilla, vel vestibulum elit congue. Mauris et dapibus nibh.
-          Maecenas bibendum auctor purus, vel rutrum lacus semper vitae. Aliquam
-          gravida nisl lorem, eget cursus nisi fermentum nec. Etiam ac interdum
-          risus. Vivamus hendrerit tortor vitae semper aliquam. Suspendisse
-          porta nibh sed enim congue, vitae bibendum est mollis. Vestibulum erat
-          neque, rhoncus et tellus vitae, vehicula vestibulum ante. Fusce massa
-          odio, condimentum non viverra ut, congue eget erat. Nam porttitor
-          fermentum mi, non placerat ligula. Fusce pretium ultrices fermentum.
-        </p>
+          <div className={styles.project_grid}>
+            <article className={styles.project_container}>
+              <div className="wrapper">
+                <h3 className={styles.project_title}>MiaTask</h3>
+                <Image className={styles.project_img} src={miataskImg} alt="" />
+              </div>
 
-        <br />
+              <ul className={styles.tag_list}>
+                <li className={styles.tag}>React</li>
+                <li className={styles.tag}>Next.js</li>
+                <li className={styles.tag}>TypeScript</li>
+              </ul>
+            </article>
 
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ligula
-          tellus, gravida ut consequat quis, luctus nec neque. Fusce imperdiet
-          consectetur neque, sit amet imperdiet augue venenatis id. Proin et
-          eros leo. Morbi fermentum luctus ex, sit amet euismod est porta at.
-          Duis dictum hendrerit sagittis. Nam eget luctus turpis. Etiam
-          consequat ante ut sem volutpat blandit. Praesent in lacus convallis,
-          tempor tellus in, interdum lacus. Vivamus feugiat justo in vehicula
-          pharetra. Pellentesque lacus metus, bibendum eu viverra at, varius
-          vitae massa. Fusce id dapibus augue. Maecenas id risus laoreet,
-          vestibulum ante ut, ultricies dui.
-        </p>
+            <article className={styles.project_container}>
+              <div className="wrapper">
+                <h3 className={styles.project_title}>Labareda drinks & BBQ</h3>
+                <Image
+                  className={styles.project_img}
+                  src={labaredaImg}
+                  alt=""
+                />
+              </div>
+
+              <ul className={styles.tag_list}>
+                <li className={styles.tag}>React</li>
+                <li className={styles.tag}>NestJS</li>
+                <li className={styles.tag}>TypeScript</li>
+              </ul>
+            </article>
+
+            <article className={styles.project_container}>
+              <div className="wrapper">
+                <h3 className={styles.project_title}>MiaPlay</h3>
+                <Image className={styles.project_img} src={miaplayImg} alt="" />
+              </div>
+
+              <ul className={styles.tag_list}>
+                <li className={styles.tag}>React</li>
+                <li className={styles.tag}>NestJS</li>
+                <li className={styles.tag}>TypeScript</li>
+              </ul>
+            </article>
+          </div>
+        </section>
       </main>
 
       <aside>
