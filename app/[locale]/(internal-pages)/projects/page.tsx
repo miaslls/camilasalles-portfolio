@@ -35,16 +35,28 @@ export default async function ProjectsPage({
       title: 'MiaTask',
       img: miataskImg,
       tags: ['React', 'Next.js', 'TypeScript'],
+      links: {
+        live_demo_url: 'https://miatask.vercel.app/',
+        github_single_url: 'https://github.com/miaslls/MiaTask#readme',
+      },
     },
     {
       title: 'Labareda drinks & BBQ',
       img: labaredaImg,
       tags: ['React', 'NestJS', 'TypeScript'],
+      links: {
+        live_demo_url: 'https://www.drinksnbbq.com.br/',
+      },
     },
     {
       title: 'MiaPlay',
       img: miaplayImg,
       tags: ['React', 'NestJS', 'TypeScript'],
+      links: {
+        live_demo_url: 'https://miaplay.vercel.app/',
+        github_front_url: 'https://github.com/miaslls/MiaPlay#readme',
+        github_back_url: 'https://github.com/miaslls/MiaPlay-server#readme',
+      },
     },
   ];
 

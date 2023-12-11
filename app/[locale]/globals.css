@@ -193,6 +193,7 @@ p.default {
   font-size: 0.9rem;
   font-weight: 400;
   color: var(--bg-color);
+  opacity: 0.6;
 }
 
 .hidden {
