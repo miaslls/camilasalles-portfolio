@@ -33,7 +33,7 @@ export default function HomeImg() {
           <p className={styles.subtitle}>{subtitle}</p>
         </hgroup>
 
-        {isNotMobile && <p className={styles.description}>{description}</p>}
+        {isNotMobile && <p className="default">{description}</p>}
       </div>
     </div>
   );

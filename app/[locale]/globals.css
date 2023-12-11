@@ -141,6 +141,7 @@ h2 {
 h1 {
   font-size: 2.25rem;
   font-weight: 500;
+  margin-bottom: 2rem;
 }
 
 h2 {
@@ -151,6 +152,11 @@ h2 {
 a {
   font-family: var(--font-outfit);
   color: var(--accent-01);
+}
+
+p.default {
+  font-size: 1.125rem;
+  line-height: 1.5rem;
 }
 
 /* 📌 @media */
