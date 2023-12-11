@@ -127,7 +127,8 @@ aside {
   width: 100%;
 }
 
-.aside_section {
+.aside_section,
+.home_section {
   width: 100%;
 }
 
@@ -185,7 +186,7 @@ a {
     padding: 0 var(--layout-padding-mobile);
   }
 
-  .aside_section {
+  aside {
     padding-left: 2rem;
   }
 }
