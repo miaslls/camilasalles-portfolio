@@ -25,6 +25,10 @@
   box-shadow: -4px 0px 0px 0px var(--fg-transparent);
 }
 
+.container.dark {
+  box-shadow: unset;
+}
+
 .wrapper {
   height: calc(100% - 8.75rem);
   display: flex;
@@ -68,7 +72,7 @@
   height: auto;
 }
 
-.dark_img {
+.menu_img.dark {
   filter: saturate(0.9) opacity(0.9);
 }
 

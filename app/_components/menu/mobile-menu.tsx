@@ -71,7 +71,10 @@ export default function MobileMenu() {
   return (
     isMobile && (
       <Overlay isOpen={isMenuOpen} close={closeMenu}>
-        <div className={styles.container} onClick={handleClick}>
+        <div
+          className={`${styles.container} ${isDarkTheme ? styles.dark : ''}`}
+          onClick={handleClick}
+        >
           <div className={styles.wrapper}>
             <div className={styles.header}>
               <button className={styles.close_btn} onClick={handleClick}>
@@ -95,7 +98,7 @@ export default function MobileMenu() {
               <div className={styles.img_container}>
                 <Image
                   className={`${styles.menu_img} ${
-                    isDarkTheme ? styles.dark_img : ''
+                    isDarkTheme ? styles.dark : ''
                   }`}
                   src={menuImg}
                   alt=""
