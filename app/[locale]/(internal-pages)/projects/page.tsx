@@ -1,10 +1,12 @@
 import styles from './page.module.css';
 
-import Image from 'next/image';
+// import Image from 'next/image';
 import { setStaticParamsLocale } from 'next-international/server';
 import { getScopedI18n } from '@/locales/server';
+import { generateRandomString } from '@lib/utils';
 import type { Metadata } from 'next';
 
+import ProjectCard from '@components/project/project-card';
 import AsideImg from '@components/aside-img';
 import FeaturedProjects from './featured-projects';
 
@@ -28,6 +30,24 @@ export default async function ProjectsPage({
   setStaticParamsLocale(locale);
   const t = await getScopedI18n('projects');
 
+  const projects = [
+    {
+      title: 'MiaTask',
+      img: miataskImg,
+      tags: ['React', 'Next.js', 'TypeScript'],
+    },
+    {
+      title: 'Labareda drinks & BBQ',
+      img: labaredaImg,
+      tags: ['React', 'NestJS', 'TypeScript'],
+    },
+    {
+      title: 'MiaPlay',
+      img: miaplayImg,
+      tags: ['React', 'NestJS', 'TypeScript'],
+    },
+  ];
+
   return (
     <div className="page_container">
       <main className="page_content">
@@ -45,48 +65,12 @@ export default async function ProjectsPage({
           <h2 className="hidden">{t('main.all_projects')}</h2>
 
           <div className={styles.project_grid}>
-            <article className={styles.project_container}>
-              <div className="wrapper">
-                <h3 className={styles.project_title}>MiaTask</h3>
-                <Image className={styles.project_img} src={miataskImg} alt="" />
-              </div>
-
-              <ul className={styles.tag_list}>
-                <li className={styles.tag}>React</li>
-                <li className={styles.tag}>Next.js</li>
-                <li className={styles.tag}>TypeScript</li>
-              </ul>
-            </article>
-
-            <article className={styles.project_container}>
-              <div className="wrapper">
-                <h3 className={styles.project_title}>Labareda drinks & BBQ</h3>
-                <Image
-                  className={styles.project_img}
-                  src={labaredaImg}
-                  alt=""
-                />
-              </div>
-
-              <ul className={styles.tag_list}>
-                <li className={styles.tag}>React</li>
-                <li className={styles.tag}>NestJS</li>
-                <li className={styles.tag}>TypeScript</li>
-              </ul>
-            </article>
-
-            <article className={styles.project_container}>
-              <div className="wrapper">
-                <h3 className={styles.project_title}>MiaPlay</h3>
-                <Image className={styles.project_img} src={miaplayImg} alt="" />
-              </div>
-
-              <ul className={styles.tag_list}>
-                <li className={styles.tag}>React</li>
-                <li className={styles.tag}>NestJS</li>
-                <li className={styles.tag}>TypeScript</li>
-              </ul>
-            </article>
+            {projects.map((project) => (
+              <ProjectCard
+                {...project}
+                key={`${project.title}-${generateRandomString(8)}`}
+              />
+            ))}
           </div>
         </section>
       </main>

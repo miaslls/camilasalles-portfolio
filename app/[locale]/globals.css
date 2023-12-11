@@ -16,7 +16,7 @@
   --accent-default: #112e3e;
 
   --layout-padding-desktop: 10%;
-  --layout-padding-mobile: 2.5%;
+  --layout-padding-mobile: 5%;
   --layout-padding-tablet: 5%;
 }
 
@@ -119,11 +119,11 @@ body {
 }
 
 main {
-  width: 65%;
+  width: 67.5%;
 }
 
 aside {
-  width: 30%;
+  width: 27.5%;
   display: flex;
   flex-direction: column;
   gap: 2rem;
@@ -179,6 +179,20 @@ a {
 p.default {
   font-size: 1.125rem;
   line-height: 1.5rem;
+}
+
+.tag {
+  width: fit-content;
+  height: 1.75rem;
+  padding: 0 0.75rem;
+  display: inline-flex;
+  align-items: center;
+  background: var(--accent-01);
+  border-radius: 0.9rem;
+  font-family: var(--font-work_sans);
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: var(--bg-color);
 }
 
 .hidden {
