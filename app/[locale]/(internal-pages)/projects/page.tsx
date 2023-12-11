@@ -22,7 +22,7 @@ export default async function ProjectsPage({
   const t = await getScopedI18n('projects');
 
   return (
-    <div className="page_container">
+    <div className="page_content">
       <main>
         <h1>{t('title')}</h1>
 

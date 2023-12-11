@@ -106,7 +106,7 @@ body {
   border: 1px dotted #999999;
 } */
 
-.page_container {
+.page_content {
   width: 100%;
   display: flex;
   gap: 5%;
@@ -163,7 +163,7 @@ a {
 /* ⚠️ mobile && tablet */
 
 @media (max-width: 1120px) {
-  .page_container {
+  .page_content {
     flex-direction: column;
     gap: 3rem;
   }

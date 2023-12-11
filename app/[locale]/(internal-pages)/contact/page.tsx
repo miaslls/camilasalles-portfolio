@@ -22,7 +22,7 @@ export default async function ContactPage({
   const t = await getScopedI18n('contact');
 
   return (
-    <div className="page_container">
+    <div className="page_content">
       <main>
         <h1>{t('title')}</h1>
 
