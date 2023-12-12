@@ -1,7 +1,7 @@
 .img_container {
   width: 16rem;
   height: 18rem;
-  align-self: center;
+  align-self: flex-start;
 }
 
 .img {
