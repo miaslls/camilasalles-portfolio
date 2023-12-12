@@ -20,6 +20,8 @@ export type ProjectLinksProps = {
   github_single_url?: string;
   github_front_url?: string;
   github_back_url?: string;
+  infoState: { isVisible: boolean; relatedDemoUrl: string };
+  handleInfo(relatedDemoUrl: string): void;
 };
 
 export default function ProjectLinks({
@@ -27,19 +29,27 @@ export default function ProjectLinks({
   github_single_url,
   github_front_url,
   github_back_url,
+  infoState,
+  handleInfo,
 }: ProjectLinksProps) {
   const { theme } = useTheme();
   const isDarkTheme = theme === 'dark';
+
+  const infoIsVisible =
+    infoState.isVisible && infoState.relatedDemoUrl === live_demo_url;
 
   return (
     <nav>
       <ul className={styles.link_list}>
         {github_back_url && (
           <li className={styles.list_item}>
+            {infoIsVisible && <div className={styles.info}>{'back'}</div>}
+
             <Link
               href={github_back_url}
               target="_blank"
               className={styles.link}
+              rel="noopener noreferrer"
             >
               <Image
                 className={styles.link_icon}
@@ -52,10 +62,13 @@ export default function ProjectLinks({
 
         {github_front_url && (
           <li className={styles.list_item}>
+            {infoIsVisible && <div className={styles.info}>{'front'}</div>}
+
             <Link
               href={github_front_url}
               target="_blank"
               className={styles.link}
+              rel="noopener noreferrer"
             >
               <Image
                 className={styles.link_icon}
@@ -68,10 +81,13 @@ export default function ProjectLinks({
 
         {github_single_url && (
           <li className={styles.list_item}>
+            {infoIsVisible && <div className={styles.info}>{'github'}</div>}
+
             <Link
               href={github_single_url}
               target="_blank"
               className={styles.link}
+              rel="noopener noreferrer"
             >
               <Image
                 className={styles.link_icon}
@@ -83,6 +99,8 @@ export default function ProjectLinks({
         )}
 
         <li className={styles.list_item}>
+          {infoIsVisible && <div className={styles.info}>{'demo'}</div>}
+
           <Link href={live_demo_url} target="_blank" className={styles.link}>
             <Image
               className={styles.link_icon}
@@ -93,7 +111,10 @@ export default function ProjectLinks({
         </li>
 
         <li className={styles.list_item}>
-          <button className={styles.info_btn}>
+          <button
+            className={styles.info_btn}
+            onClick={() => handleInfo(live_demo_url)}
+          >
             <Image
               className={styles.info_icon}
               src={isDarkTheme ? infoIcon_light : infoIcon_dark}

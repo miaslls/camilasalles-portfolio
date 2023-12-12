@@ -3,6 +3,7 @@
 import styles from './project-card.module.css';
 
 import Image, { StaticImageData } from 'next/image';
+import { useState } from 'react';
 import { generateRandomString } from '@lib/utils';
 
 import ProjectLinks from './project-links';
@@ -25,11 +26,34 @@ export default function ProjectCard({
   tags,
   links,
 }: ProjectCardProps) {
+  const initialInfoState = {
+    isVisible: false,
+    relatedDemoUrl: '',
+  };
+
+  const [infoState, setInfoState] = useState(initialInfoState);
+
+  function handleInfo(relatedDemoUrl: string) {
+    if (relatedDemoUrl !== infoState.relatedDemoUrl) {
+      setInfoState({
+        isVisible: true,
+        relatedDemoUrl,
+      });
+    } else {
+      setInfoState(initialInfoState);
+    }
+  }
+
   return (
     <article className={styles.container}>
       <header className={styles.header}>
         <h3 className={styles.title}>{title}</h3>
-        <ProjectLinks {...links} />
+
+        <ProjectLinks
+          {...links}
+          infoState={infoState}
+          handleInfo={handleInfo}
+        />
       </header>
 
       <Image className={styles.img} src={img} placeholder="blur" alt="" />
