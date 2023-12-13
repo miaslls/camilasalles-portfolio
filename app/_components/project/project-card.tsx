@@ -4,7 +4,6 @@ import styles from './project-card.module.css';
 
 import Image, { StaticImageData } from 'next/image';
 import { useState } from 'react';
-import { generateRandomString } from '@lib/utils';
 
 import ProjectLinks from './project-links';
 
@@ -60,7 +59,7 @@ export default function ProjectCard({
 
       <ul className={styles.tag_list}>
         {tags.map((tag) => (
-          <li key={`${tag}-${generateRandomString(4)}`}>
+          <li key={`${title}-${tag}`}>
             <p className="tag">{tag}</p>
           </li>
         ))}

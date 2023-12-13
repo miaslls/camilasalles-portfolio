@@ -3,7 +3,6 @@ import styles from './page.module.css';
 // import Image from 'next/image';
 import { setStaticParamsLocale } from 'next-international/server';
 import { getScopedI18n } from '@/locales/server';
-import { generateRandomString } from '@lib/utils';
 import type { Metadata } from 'next';
 
 import ProjectCard from '@components/project/project-card';
@@ -78,10 +77,7 @@ export default async function ProjectsPage({
 
           <div className={styles.project_grid}>
             {projects.map((project) => (
-              <ProjectCard
-                {...project}
-                key={`${project.title}-${generateRandomString(8)}`}
-              />
+              <ProjectCard {...project} key={project.title} />
             ))}
           </div>
         </section>
