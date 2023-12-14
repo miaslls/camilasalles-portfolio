@@ -2,29 +2,13 @@
 
 import styles from './project-card.module.css';
 
-import Image, { StaticImageData } from 'next/image';
+import Image from 'next/image';
 import { useState } from 'react';
+import type { Project } from '@data/projects';
 
 import ProjectLinks from './project-links';
 
-export type ProjectCardProps = {
-  title: string;
-  img: StaticImageData;
-  tags: string[];
-  links: {
-    live_demo_url: string;
-    github_single_url?: string;
-    github_front_url?: string;
-    github_back_url?: string;
-  };
-};
-
-export default function ProjectCard({
-  title,
-  img,
-  tags,
-  links,
-}: ProjectCardProps) {
+export default function ProjectCard({ title, img, tags, links }: Project) {
   const initialInfoState = {
     isVisible: false,
     relatedDemoUrl: '',
@@ -55,7 +39,8 @@ export default function ProjectCard({
         />
       </header>
 
-      <Image className={styles.img} src={img} placeholder="blur" alt="" />
+      {/* <Image className={styles.img} src={img} placeholder="blur" alt="" /> ⚠️ return after removing gifs */}
+      <Image className={styles.img} src={img} alt="" />
 
       <ul className={styles.tag_list}>
         {tags.map((tag) => (
