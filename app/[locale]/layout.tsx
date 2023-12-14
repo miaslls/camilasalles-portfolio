@@ -3,7 +3,7 @@ import './globals.css';
 import type { Metadata, Viewport } from 'next';
 
 import dynamic from 'next/dynamic';
-import { Work_Sans, Outfit, Playpen_Sans } from 'next/font/google';
+import { Work_Sans, Outfit } from 'next/font/google';
 
 import { getStaticParams } from '@/locales/server';
 import { I18nProviderClient } from '@/locales/client';
@@ -83,12 +83,6 @@ const outfit = Outfit({
   display: 'swap',
 });
 
-const playpen_sans = Playpen_Sans({
-  subsets: ['latin'],
-  variable: '--font-playpen_sans',
-  display: 'swap',
-});
-
 export function generateStaticParams() {
   return getStaticParams();
 }
@@ -103,7 +97,7 @@ export default function RootLayout({
   return (
     <html
       lang={params.locale}
-      className={`${work_sans.variable} ${outfit.variable} ${playpen_sans.variable}`}
+      className={`${work_sans.variable} ${outfit.variable}`}
     >
       <head>
         <script dangerouslySetInnerHTML={{ __html: getTheme }} />

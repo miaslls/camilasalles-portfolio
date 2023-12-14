@@ -11,25 +11,17 @@
   align-items: center;
 }
 
-.link_icon,
-.info_icon {
+.link_icon {
   width: 1.25rem;
   height: 1.25rem;
 }
 
 .info {
-  font-family: var(--font-playpen_sans);
   font-weight: light;
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   color: var(--fg-color);
-  transform: rotate(-45deg);
+  transform: rotate(-30deg);
   position: absolute;
-  top: -1.5rem;
+  top: -1rem;
   right: 0rem;
-}
-
-.link_icon,
-.info_icon {
-  width: 1.25rem;
-  height: 1.25rem;
 }
