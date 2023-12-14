@@ -4,23 +4,31 @@ import styles from './project-card.module.css';
 
 import Image from 'next/image';
 import { useState } from 'react';
-import type { Project } from '@data/projects';
 
 import ProjectLinks from './project-links';
+import type { Project } from '@data/projects';
 
-export default function ProjectCard({ title, img, tags, links }: Project) {
-  const initialInfoState = {
-    isVisible: false,
-    relatedDemoUrl: '',
-  };
+const initialInfoState = {
+  isVisible: false,
+  relatedSlug: '',
+};
 
+export type InfoState = typeof initialInfoState;
+
+export default function ProjectCard({
+  title,
+  slug,
+  img,
+  tags,
+  links,
+}: Project) {
   const [infoState, setInfoState] = useState(initialInfoState);
 
-  function handleInfo(relatedDemoUrl: string) {
-    if (relatedDemoUrl !== infoState.relatedDemoUrl) {
+  function handleInfo(slug: string) {
+    if (slug !== infoState.relatedSlug) {
       setInfoState({
         isVisible: true,
-        relatedDemoUrl,
+        relatedSlug: slug,
       });
     } else {
       setInfoState(initialInfoState);
@@ -39,12 +47,14 @@ export default function ProjectCard({ title, img, tags, links }: Project) {
         />
       </header>
 
-      {/* <Image className={styles.img} src={img} placeholder="blur" alt="" /> ⚠️ return after removing gifs */}
+      {/* 🐞 restore after removing gifs 🔻 */}
+      {/* <Image className={styles.img} src={img} placeholder="blur" alt="" />  */}
+
       <Image className={styles.img} src={img} alt="" />
 
       <ul className={styles.tag_list}>
         {tags.map((tag) => (
-          <li key={`${title}-${tag}`}>
+          <li key={`${slug}-${tag}`}>
             <p className="tag">{tag}</p>
           </li>
         ))}

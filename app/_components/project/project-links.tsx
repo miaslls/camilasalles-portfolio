@@ -4,6 +4,9 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { useTheme } from '@providers/theme-provider';
 
+import type { ProjectLinks } from '@data/projects';
+import type { InfoState } from './project-card';
+
 import codeIcon_light from '@icons/light-accent-01/code-s-slash-line.svg';
 import codeIcon_dark from '@icons/dark-accent-01/code-s-slash-line.svg';
 import terminalIcon_light from '@icons/light-accent-01/terminal-line.svg';
@@ -15,13 +18,9 @@ import playIcon_dark from '@icons/dark-accent-01/play-fill.svg';
 import infoIcon_light from '@icons/light/information-line.svg';
 import infoIcon_dark from '@icons/dark/information-line.svg';
 
-export type ProjectLinksProps = {
-  live_demo_url: string;
-  github_single_url?: string;
-  github_front_url?: string;
-  github_back_url?: string;
-  infoState: { isVisible: boolean; relatedDemoUrl: string };
-  handleInfo(relatedDemoUrl: string): void;
+export type ProjectLinksProps = ProjectLinks & {
+  infoState: InfoState;
+  handleInfo(slug: string): void;
 };
 
 export default function ProjectLinks({
@@ -36,7 +35,7 @@ export default function ProjectLinks({
   const isDarkTheme = theme === 'dark';
 
   const infoIsVisible =
-    infoState.isVisible && infoState.relatedDemoUrl === live_demo_url;
+    infoState.isVisible && infoState.relatedSlug === live_demo_url;
 
   return (
     <nav>

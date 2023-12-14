@@ -1,4 +1,5 @@
 import { StaticImageData } from 'next/image';
+import slugify from 'slugify';
 
 import miataskImg from '@images/projects/miatask.jpg';
 import labaredaImg from '@images/projects/labareda.png';
@@ -12,6 +13,7 @@ import paralifeImg from '@images/projects/paralife.gif';
 
 export type Project = {
   title: string;
+  slug: string;
   img: StaticImageData;
   bg_img: StaticImageData;
   tags: string[];
@@ -23,6 +25,8 @@ export type Project = {
   };
   isFeatured?: boolean;
 };
+
+export type ProjectLinks = Project['links'];
 
 export const projects: Project[] = [
   {
@@ -111,7 +115,7 @@ export const projects: Project[] = [
     },
   },
   {
-    title: 'քǟʀǟʟɨʄɛ',
+    title: 'Paralife',
     img: paralifeImg,
     bg_img: paralifeImg,
     tags: ['Node.js'],
@@ -120,7 +124,10 @@ export const projects: Project[] = [
       github_single_url: 'https://github.com/miaslls/Paralife#readme',
     },
   },
-];
+].map((project) => ({
+  ...project,
+  slug: slugify(project.title, { lower: true }),
+}));
 
 export const featuredProjects = projects.filter(
   (project) => project.isFeatured

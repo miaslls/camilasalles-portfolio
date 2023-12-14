@@ -44,7 +44,7 @@ export default async function ProjectsPage({
 
           <div className={styles.project_grid}>
             {projects.map((project) => (
-              <ProjectCard {...project} key={project.title} />
+              <ProjectCard {...project} key={project.slug} />
             ))}
           </div>
         </section>
