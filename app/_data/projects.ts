@@ -15,7 +15,7 @@ export type Project = {
   title: string;
   slug: string;
   img: StaticImageData;
-  bg_img: StaticImageData;
+  bg_url: string;
   tags: string[];
   links: {
     live_demo_url: string;
@@ -32,7 +32,7 @@ export const projects: Project[] = [
   {
     title: 'MiaTask',
     img: miataskImg,
-    bg_img: miataskImg,
+    bg_url: '/images/projects/miatask.jpg',
     tags: ['React', 'Next.js', 'TypeScript'],
     links: {
       live_demo_url: 'https://miatask.vercel.app/',
@@ -42,7 +42,7 @@ export const projects: Project[] = [
   {
     title: 'Labareda drinks & BBQ',
     img: labaredaImg,
-    bg_img: labaredaImg,
+    bg_url: '/images/projects/labareda.png',
     tags: ['React', 'NestJS', 'TypeScript'],
     links: {
       live_demo_url: 'https://www.drinksnbbq.com.br/',
@@ -52,7 +52,7 @@ export const projects: Project[] = [
   {
     title: 'MiaPlay',
     img: miaplayImg,
-    bg_img: miaplayImg,
+    bg_url: '/images/projects/miaplay.jpg',
     tags: ['React', 'NestJS', 'TypeScript'],
     links: {
       live_demo_url: 'https://miaplay.vercel.app/',
@@ -63,7 +63,7 @@ export const projects: Project[] = [
   {
     title: 'MiaLog',
     img: mialogImg,
-    bg_img: mialogImg,
+    bg_url: '/images/projects/mialog.jpg',
     tags: ['HTML', 'CSS'],
     links: {
       live_demo_url: 'https://miaslls.github.io/MiaLog/',
@@ -74,7 +74,7 @@ export const projects: Project[] = [
   {
     title: 'MiaMood 2.0',
     img: miamoodImg,
-    bg_img: miamoodImg,
+    bg_url: '/images/projects/miamood.jpg',
     tags: ['React', 'Node.js', 'Express'],
     links: {
       live_demo_url: 'https://miamood-02.vercel.app/',
@@ -86,7 +86,7 @@ export const projects: Project[] = [
   {
     title: 'MiaMood - Mood Tracker',
     img: miamood_mtImg,
-    bg_img: miamood_mtImg,
+    bg_url: '/images/projects/miamood-mt.png',
     tags: ['Node.js', 'Express', 'EJS'],
     links: {
       live_demo_url: 'https://miamood-02.vercel.app/',
@@ -97,7 +97,7 @@ export const projects: Project[] = [
   {
     title: 'BlueDex',
     img: bluedexImg,
-    bg_img: bluedexImg,
+    bg_url: '/images/projects/bluedex.gif',
     tags: ['Node.js', 'Express', 'EJS'],
     links: {
       live_demo_url: 'https://bluedex.fly.dev/',
@@ -107,7 +107,7 @@ export const projects: Project[] = [
   {
     title: 'BlueSims',
     img: bluesimsImg,
-    bg_img: bluesimsImg,
+    bg_url: '/images/projects/bluesims.jpg',
     tags: ['HTML', 'CSS', 'JavaScript'],
     links: {
       live_demo_url: 'https://miaslls.github.io/BLUEsims/',
@@ -117,7 +117,7 @@ export const projects: Project[] = [
   {
     title: 'Paralife',
     img: paralifeImg,
-    bg_img: paralifeImg,
+    bg_url: '/images/projects/paralife.gif',
     tags: ['Node.js'],
     links: {
       live_demo_url: 'https://replit.com/@miaslls/Paralife-Demo?v=1',

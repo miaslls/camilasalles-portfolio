@@ -1,24 +1,51 @@
 import styles from './mini-project-card.module.css';
 
-import Link from 'next/link';
-import Image, { StaticImageData } from 'next/image';
+import { useState } from 'react';
 
-export type MiniProjectCardProps = {
-  img: StaticImageData;
-  url: string;
-};
+import ProjectLinks from './project-links';
+import type { Project } from '@data/projects';
 
-// FIXME: ⚠️
+export default function MiniProjectCard({
+  title,
+  slug,
+  bg_url,
+  tags,
+  links,
+}: Project) {
+  const initialMiniInfoState = {
+    isVisible: false,
+    relatedSlug: '',
+  };
 
-export default function MiniProjectCard({ img, url }: MiniProjectCardProps) {
+  const [miniInfoState, setMiniInfoState] = useState(initialMiniInfoState);
+
+  function handleMiniInfo(slug: string) {
+    if (slug !== miniInfoState.relatedSlug) {
+      setMiniInfoState({
+        isVisible: true,
+        relatedSlug: slug,
+      });
+    } else {
+      setMiniInfoState(initialMiniInfoState);
+    }
+  }
+
   return (
-    <Link
-      href={url}
-      target="_blank"
-      className={styles.link}
-      rel="noopener noreferrer"
+    <article
+      className={styles.container}
+      style={{
+        backgroundImage: `linear-gradient(to left, var(--bg-color) 40%, transparent), url(${bg_url})`,
+      }}
     >
-      <Image className={styles.img} src={img} placeholder="blur" alt="" />
-    </Link>
+      <ProjectLinks
+        {...links}
+        infoState={miniInfoState}
+        handleInfo={handleMiniInfo}
+      />
+
+      <h3 className={styles.title}>{title}</h3>
+
+      <p className={styles.tags}>{tags.join(', ')}</p>
+    </article>
   );
 }

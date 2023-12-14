@@ -7,11 +7,10 @@ import { useTheme } from '@providers/theme-provider';
 
 import SectionTitle from '@components/section-title';
 import MiniProjectCard from '@components/project/mini-project-card';
+import { featuredProjects } from '@data/projects';
 
 import starIcon_light from '@icons/light/star-line.svg';
 import starIcon_dark from '@icons/dark/star-line.svg';
-import mialogImg from '@images/projects/mialog.jpg';
-import miamoodImg from '@images/projects/miamood.jpg';
 
 export default function FeaturedProjects() {
   const t = useScopedI18n('projects.aside');
@@ -26,17 +25,13 @@ export default function FeaturedProjects() {
         icon={isDarkTheme ? starIcon_light : starIcon_dark}
       />
 
-      <div className={styles.project_list}>
-        <MiniProjectCard
-          img={mialogImg}
-          url={'https://github.com/miaslls/MiaLog#readme'}
-        />
-
-        <MiniProjectCard
-          img={miamoodImg}
-          url={'https://github.com/miaslls/MiaMood#readme'}
-        />
-      </div>
+      <ul className={styles.project_list}>
+        {featuredProjects.map((project) => (
+          <li key={`${project.slug}-featured`}>
+            <MiniProjectCard {...project} />
+          </li>
+        ))}
+      </ul>
     </section>
   );
 }
