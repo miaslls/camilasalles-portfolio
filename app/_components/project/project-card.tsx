@@ -12,6 +12,7 @@ export default function ProjectCard({
   img,
   tags,
   links,
+  blur_data_url,
 }: Project) {
   return (
     <article className={styles.container}>
@@ -20,10 +21,13 @@ export default function ProjectCard({
         <ProjectLinks {...links} />
       </header>
 
-      {/* 🐞 restore after removing gifs 🔻 */}
-      {/* <Image className={styles.img} src={img} placeholder="blur" alt="" />  */}
-
-      <Image className={styles.img} src={img} alt="" />
+      <Image
+        className={styles.img}
+        src={img}
+        placeholder="blur"
+        blurDataURL={blur_data_url}
+        alt=""
+      />
 
       <ul className={styles.tag_list}>
         {tags.map((tag) => (
