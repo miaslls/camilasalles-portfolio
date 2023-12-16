@@ -21,7 +21,9 @@ export default {
 
   about: {
     title: 'About',
-    main: {},
+    main: {
+      development: 'development',
+    },
 
     aside: {
       latest_projects: 'latest projects',
