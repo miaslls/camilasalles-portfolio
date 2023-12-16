@@ -6,6 +6,8 @@ import Image from 'next/image';
 import ProjectLinks from './project-links';
 import type { Project } from '@data/projects';
 
+import TagList from '@components/tag-list';
+
 export default function ProjectCard({
   title,
   slug,
@@ -29,13 +31,7 @@ export default function ProjectCard({
         alt=""
       />
 
-      <ul className={styles.tag_list}>
-        {tags.map((tag) => (
-          <li key={`${slug}-${tag}`}>
-            <p className="tag">{tag}</p>
-          </li>
-        ))}
-      </ul>
+      <TagList tags={tags} identifier={`project-${slug}`} />
     </article>
   );
 }

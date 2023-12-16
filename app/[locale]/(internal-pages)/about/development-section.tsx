@@ -5,6 +5,7 @@ import styles from './development-section.module.css';
 import { useScopedI18n } from '@/locales/client';
 import { useTheme } from '@providers/theme-provider';
 import SectionTitle from '@components/section-title';
+import TagList from '@components/tag-list';
 
 import codeIcon_light from '@icons/light/code-s-slash-line.svg';
 import codeIcon_dark from '@icons/dark/code-s-slash-line.svg';
@@ -43,13 +44,7 @@ export default function DevelopmentSection() {
         </p>
       </div>
 
-      <ul className={styles.tag_list}>
-        {tags.map((tag) => (
-          <li key={`dev-tag-${tag}`}>
-            <p className="tag">{tag}</p>
-          </li>
-        ))}
-      </ul>
+      <TagList tags={tags} identifier="development" />
     </section>
   );
 }
