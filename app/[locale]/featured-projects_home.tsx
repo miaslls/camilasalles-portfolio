@@ -26,7 +26,7 @@ export default function FeaturedProjects_Home() {
 
       <div className={styles.project_grid}>
         {featuredProjects.map((project) => (
-          <ProjectCard {...project} key={`featured-${project.slug}`} />
+          <ProjectCard {...project} key={`home-featured-${project.slug}`} />
         ))}
       </div>
     </section>
