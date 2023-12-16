@@ -1,4 +1,8 @@
 export default {
+  unscoped: {
+    view_all: 'ver todos',
+  },
+
   home: {
     title: 'Home',
     featured_projects: 'projetos em destaque',

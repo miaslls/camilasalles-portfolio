@@ -148,3 +148,5 @@ export const projects: Project[] = [
 export const featuredProjects = projects.filter(
   (project) => project.isFeatured
 );
+
+export const latestProjects = projects.slice(4);

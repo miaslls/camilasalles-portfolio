@@ -1,0 +1,33 @@
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+.wrapper {
+  position: relative;
+}
+
+.view_link {
+  display: flex;
+  align-items: flex-end;
+  gap: 0.25rem;
+  position: absolute;
+  bottom: 0.5rem;
+  left: -0.25rem;
+  margin: 0.5rem;
+}
+
+.view_link > .icon {
+  width: 1rem;
+  height: 1rem;
+}
+
+.view_link > .text {
+  font-size: 1rem;
+}
+
+.project_list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
