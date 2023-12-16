@@ -22,7 +22,7 @@
 .img {
   width: 100%;
   height: auto;
-  /* filter: saturate(0.75); */
+  filter: saturate(0.75);
 }
 
 .tag_list {

@@ -13,7 +13,7 @@ export default function MiniProjectCard({
     <article
       className={styles.container}
       style={{
-        backgroundImage: `linear-gradient(to left, var(--bg-color) 40%, transparent), url(${bg_url})`,
+        backgroundImage: `linear-gradient(to left,var(--bg-color) 10%, var(--bg-90) 25%, var(--bg-75) 50%, var(--bg-50) 75%, transparent), url(${bg_url})`,
       }}
     >
       <ProjectLinks {...links} />

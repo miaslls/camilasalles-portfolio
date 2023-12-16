@@ -3,6 +3,9 @@
 
   --bg-color: #fff3e7;
   --fg-color: #09141e;
+  --bg-90: rgba(255, 243, 231, 0.9);
+  --bg-75: rgba(255, 243, 231, 0.75);
+  --bg-50: rgba(255, 243, 231, 0.5);
   --fg-transparent: rgba(9, 20, 30, 0.25);
 
   --accent-01: #3e5664;
@@ -25,6 +28,9 @@
 
   --bg-color: #09141e;
   --fg-color: #fff3e7;
+  --bg-90: rgba(9, 20, 30, 0.9);
+  --bg-75: rgba(9, 20, 30, 0.75);
+  --bg-50: rgba(9, 20, 30, 0.5);
   --fg-transparent: rgba(255, 243, 231, 0.25);
 
   --accent-01: #76a6bc;
