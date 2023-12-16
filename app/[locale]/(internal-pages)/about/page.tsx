@@ -4,6 +4,7 @@ import type { Metadata } from 'next';
 
 import AsideImg from '@components/aside-img';
 import DevelopmentSection from './development-section';
+import DesignSection from './design-section';
 import LatestProjects from './latest-projects';
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -43,6 +44,7 @@ export default async function AboutPage({
         </header>
 
         <DevelopmentSection />
+        <DesignSection />
       </main>
 
       <aside>

@@ -156,6 +156,11 @@ aside {
   width: 100%;
 }
 
+.about_section > ul {
+  position: relative;
+  bottom: 1rem;
+}
+
 h1,
 h2,
 h3 {
@@ -164,7 +169,7 @@ h3 {
 }
 
 h1 {
-  font-size: 2.25rem;
+  font-size: 2.5rem;
   font-weight: 500;
   margin-bottom: 2rem;
 }

@@ -5,24 +5,24 @@ import { useTheme } from '@providers/theme-provider';
 import SectionTitle from '@components/section-title';
 import TagList from '@components/tag-list';
 
-import codeIcon_light from '@icons/light/code-s-slash-line.svg';
-import codeIcon_dark from '@icons/dark/code-s-slash-line.svg';
+import designIcon_light from '@icons/light/pencil-ruler-2-line.svg';
+import designIcon_dark from '@icons/dark/pencil-ruler-2-line.svg';
 
-export default function DevelopmentSection() {
-  const t = useScopedI18n('about.main.development');
+export default function DesignSection() {
+  const t = useScopedI18n('about.main.design');
   const { theme } = useTheme();
   const isDarkTheme = theme === 'dark';
 
-  const tags = ['React', 'Next.js', 'NestJS', 'TypeScript'];
+  const tags = ['Figma', 'Photoshop', 'Illustrator'];
 
   return (
     <section className="about_section">
       <SectionTitle
         title={t('title')}
-        icon={isDarkTheme ? codeIcon_light : codeIcon_dark}
+        icon={isDarkTheme ? designIcon_light : designIcon_dark}
       />
 
-      <TagList tags={tags} identifier="development" />
+      <TagList tags={tags} identifier="design" />
 
       <p className="default">{t('text')}</p>
     </section>
