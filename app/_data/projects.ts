@@ -2,7 +2,8 @@ import { StaticImageData } from 'next/image';
 import slugify from 'slugify';
 
 import miataskImg from '@images/projects/miatask.jpg';
-import labaredaImg from '@images/projects/labareda.png';
+import labaredaImg from '@images/projects/labareda.jpg';
+import portfolio_01Img from '@images/projects/portfolio-01.jpg';
 import miaplayImg from '@images/projects/miaplay.jpg';
 import mialogImg from '@images/projects/mialog.jpg';
 import miamood_02Img from '@images/projects/miamood-02.jpg';
@@ -12,7 +13,6 @@ import bluesimsImg from '@images/projects/bluesims.jpg';
 import paralifeImg from '@images/projects/paralife.gif';
 
 export type Project = {
-  number: number;
   title: string;
   slug: string;
   img: StaticImageData;
@@ -31,46 +31,40 @@ export type Project = {
 export type ProjectLinks = Project['links'];
 
 export const projects: Project[] = [
-  // # 10 - PORTFOLIO 2.0
-
   {
-    number: 9,
     title: 'MiaTask',
     img: miataskImg,
-    bg_url: '/images/projects/miatask.jpg',
+    bg_url: '/images/projects/miatask_bg.jpg',
     tags: ['React', 'Next.js', 'TypeScript'],
     links: {
       live_demo_url: 'https://miatask.vercel.app/',
       github_single_url: 'https://github.com/miaslls/MiaTask#readme',
     },
+    isFeatured: true,
   },
   {
-    number: 8,
     title: 'Labareda',
     img: labaredaImg,
-    bg_url: '/images/projects/labareda.png',
+    bg_url: '/images/projects/labareda_bg.jpg',
     tags: ['React', 'NestJS', 'TypeScript'],
     links: {
       live_demo_url: 'https://www.drinksnbbq.com.br/',
     },
+    isFeatured: true,
   },
-
-  // #7 - PORTFOLIO
-
   {
-    number: 6,
     title: 'MiaPlay',
     img: miaplayImg,
-    bg_url: '/images/projects/miaplay.jpg',
+    bg_url: '/images/projects/miaplay_bg.jpg',
     tags: ['React', 'NestJS', 'TypeScript'],
     links: {
       live_demo_url: 'https://miaplay.vercel.app/',
       github_front_url: 'https://github.com/miaslls/MiaPlay#readme',
       github_back_url: 'https://github.com/miaslls/MiaPlay-server#readme',
     },
+    isFeatured: true,
   },
   {
-    number: 5,
     title: 'MiaLog',
     img: mialogImg,
     bg_url: '/images/projects/mialog.jpg',
@@ -79,12 +73,9 @@ export const projects: Project[] = [
       live_demo_url: 'https://miaslls.github.io/MiaLog/',
       github_single_url: 'https://github.com/miaslls/MiaLog#readme',
     },
+    isFeatured: true,
   },
-
-  // TODO: continue replacing project media 🔼
-
   {
-    number: 4,
     title: 'MiaMood 2.0',
     img: miamood_02Img,
     bg_url: '/images/projects/miamood-02.jpg',
@@ -97,7 +88,17 @@ export const projects: Project[] = [
     isFeatured: true,
   },
   {
-    number: 3,
+    title: 'Portfolio 1.0',
+    img: portfolio_01Img,
+    bg_url: '/images/projects/portfolio-01_bg.jpg',
+    tags: ['HTML', 'CSS', 'JavaScript'],
+    links: {
+      live_demo_url: 'https://www.camilasalles.dev/',
+      github_single_url: 'https://github.com/miaslls/PORTFOLIO#readme',
+    },
+    isFeatured: true,
+  },
+  {
     title: 'MiaMood',
     img: miamood_01Img,
     bg_url: '/images/projects/miamood-01.jpg',
@@ -110,7 +111,6 @@ export const projects: Project[] = [
     isFeatured: true,
   },
   {
-    number: 2,
     title: 'BlueDex',
     img: bluedexImg,
     bg_url: '/images/projects/bluedex_bg.png',
@@ -122,7 +122,6 @@ export const projects: Project[] = [
     isFeatured: true,
   },
   {
-    number: 1,
     title: 'BlueSims',
     img: bluesimsImg,
     bg_url: '/images/projects/bluesims_bg.jpg',
@@ -134,7 +133,6 @@ export const projects: Project[] = [
     isFeatured: true,
   },
   {
-    number: 0,
     title: 'Paralife',
     img: paralifeImg,
     bg_url: '/images/projects/paralife_bg.png',
