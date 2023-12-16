@@ -73,12 +73,11 @@ export const projects: Project[] = [
       live_demo_url: 'https://mialog.camilasalles.dev/',
       github_single_url: 'https://github.com/miaslls/MiaLog#readme',
     },
-    isFeatured: true,
   },
   {
     title: 'MiaMood 2.0',
     img: miamood_02Img,
-    bg_url: '/images/projects/miamood-02.jpg',
+    bg_url: '/images/projects/miamood-02_bg.jpg',
     tags: ['React', 'Node.js', 'Express'],
     links: {
       live_demo_url: 'https://miamood-02.camilasalles.dev/',
@@ -101,14 +100,13 @@ export const projects: Project[] = [
   {
     title: 'MiaMood',
     img: miamood_01Img,
-    bg_url: '/images/projects/miamood-01.jpg',
+    bg_url: '/images/projects/miamood-01_bg.jpg',
     tags: ['Node.js', 'Express', 'EJS'],
     links: {
       live_demo_url: 'miamood-01.camilasalles.dev',
       github_single_url:
         'https://github.com/miaslls/MiaMood-MoodTracker#readme',
     },
-    isFeatured: true,
   },
   {
     title: 'BlueDex',
@@ -119,7 +117,6 @@ export const projects: Project[] = [
       live_demo_url: 'https://bluedex.camilasalles.dev/',
       github_single_url: 'https://github.com/miaslls/BLUEdex#readme',
     },
-    isFeatured: true,
   },
   {
     title: 'BlueSims',
@@ -130,7 +127,6 @@ export const projects: Project[] = [
       live_demo_url: 'https://bluesims.camilasalles.dev/',
       github_single_url: 'https://github.com/miaslls/BLUEsims#readme',
     },
-    isFeatured: true,
   },
   {
     title: 'Paralife',
@@ -141,7 +137,6 @@ export const projects: Project[] = [
       live_demo_url: 'https://replit.com/@miaslls/Paralife-Demo?v=1',
       github_single_url: 'https://github.com/miaslls/Paralife#readme',
     },
-    isFeatured: true,
     blur_data_url:
       'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mOUUTb+DwACSAFz8vYdngAAAABJRU5ErkJggg==',
   },
