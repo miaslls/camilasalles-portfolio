@@ -24,8 +24,9 @@ export type Project = {
     github_front_url?: string;
     github_back_url?: string;
   };
-  isFeatured?: boolean;
   blur_data_url?: string;
+  isFeatured?: boolean;
+  featuredOrder?: number;
 };
 
 export type ProjectLinks = Project['links'];
@@ -73,6 +74,7 @@ export const projects: Project[] = [
       live_demo_url: 'https://mialog.camilasalles.dev/',
       github_single_url: 'https://github.com/miaslls/MiaLog#readme',
     },
+    isFeatured: true,
   },
   {
     title: 'MiaMood 2.0',
@@ -85,6 +87,7 @@ export const projects: Project[] = [
       github_back_url: 'https://github.com/miaslls/MiaMood-server#readme',
     },
     isFeatured: true,
+    featuredOrder: 1,
   },
   {
     title: 'Portfolio 1.0',
@@ -95,7 +98,6 @@ export const projects: Project[] = [
       live_demo_url: 'https://portfolio-01.camilasalles.dev/',
       github_single_url: 'https://github.com/miaslls/PORTFOLIO#readme',
     },
-    isFeatured: true,
   },
   {
     title: 'MiaMood',
@@ -107,6 +109,8 @@ export const projects: Project[] = [
       github_single_url:
         'https://github.com/miaslls/MiaMood-MoodTracker#readme',
     },
+    isFeatured: true,
+    featuredOrder: 1,
   },
   {
     title: 'BlueDex',
@@ -145,8 +149,8 @@ export const projects: Project[] = [
   slug: slugify(project.title, { lower: true }),
 }));
 
-export const featuredProjects = projects.filter(
-  (project) => project.isFeatured
-);
+export const featuredProjects = projects
+  .filter((project) => project.isFeatured)
+  .sort((a, b) => (a.featuredOrder || 0) - (b.featuredOrder || 0));
 
 export const latestProjects = projects.slice(4);
