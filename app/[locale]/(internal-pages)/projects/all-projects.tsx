@@ -27,7 +27,7 @@ export default function AllProjects() {
 
       <ul className={styles.project_list}>
         {projects.map((project) => (
-          <li key={`${project.slug}-featured`}>
+          <li key={`project-${project.slug}`}>
             <MiniProjectCard {...project} />
           </li>
         ))}
