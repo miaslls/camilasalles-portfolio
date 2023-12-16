@@ -37,7 +37,7 @@ export const projects: Project[] = [
     bg_url: '/images/projects/miatask_bg.jpg',
     tags: ['React', 'Next.js', 'TypeScript'],
     links: {
-      live_demo_url: 'https://miatask.vercel.app/',
+      live_demo_url: 'https://miatask.camilasalles.dev/',
       github_single_url: 'https://github.com/miaslls/MiaTask#readme',
     },
     isFeatured: true,
@@ -58,7 +58,7 @@ export const projects: Project[] = [
     bg_url: '/images/projects/miaplay_bg.jpg',
     tags: ['React', 'NestJS', 'TypeScript'],
     links: {
-      live_demo_url: 'https://miaplay.vercel.app/',
+      live_demo_url: 'https://miaplay.camilasalles.dev/',
       github_front_url: 'https://github.com/miaslls/MiaPlay#readme',
       github_back_url: 'https://github.com/miaslls/MiaPlay-server#readme',
     },
@@ -70,7 +70,7 @@ export const projects: Project[] = [
     bg_url: '/images/projects/mialog.jpg',
     tags: ['HTML', 'CSS'],
     links: {
-      live_demo_url: 'https://miaslls.github.io/MiaLog/',
+      live_demo_url: 'https://mialog.camilasalles.dev/',
       github_single_url: 'https://github.com/miaslls/MiaLog#readme',
     },
     isFeatured: true,
@@ -81,7 +81,7 @@ export const projects: Project[] = [
     bg_url: '/images/projects/miamood-02.jpg',
     tags: ['React', 'Node.js', 'Express'],
     links: {
-      live_demo_url: 'https://miamood-02.vercel.app/',
+      live_demo_url: 'https://miamood-02.camilasalles.dev/',
       github_front_url: 'https://github.com/miaslls/MiaMood#readme',
       github_back_url: 'https://github.com/miaslls/MiaMood-server#readme',
     },
@@ -93,7 +93,7 @@ export const projects: Project[] = [
     bg_url: '/images/projects/portfolio-01_bg.jpg',
     tags: ['HTML', 'CSS', 'JavaScript'],
     links: {
-      live_demo_url: 'https://www.camilasalles.dev/',
+      live_demo_url: 'https://portfolio-01.camilasalles.dev/',
       github_single_url: 'https://github.com/miaslls/PORTFOLIO#readme',
     },
     isFeatured: true,
@@ -104,7 +104,7 @@ export const projects: Project[] = [
     bg_url: '/images/projects/miamood-01.jpg',
     tags: ['Node.js', 'Express', 'EJS'],
     links: {
-      live_demo_url: 'https://miamood-02.vercel.app/',
+      live_demo_url: 'miamood-01.camilasalles.dev',
       github_single_url:
         'https://github.com/miaslls/MiaMood-MoodTracker#readme',
     },
@@ -116,7 +116,7 @@ export const projects: Project[] = [
     bg_url: '/images/projects/bluedex_bg.png',
     tags: ['Node.js', 'Express', 'EJS'],
     links: {
-      live_demo_url: 'https://bluedex.fly.dev/',
+      live_demo_url: 'https://bluedex.camilasalles.dev/',
       github_single_url: 'https://github.com/miaslls/BLUEdex#readme',
     },
     isFeatured: true,
@@ -127,7 +127,7 @@ export const projects: Project[] = [
     bg_url: '/images/projects/bluesims_bg.jpg',
     tags: ['HTML', 'CSS', 'JavaScript'],
     links: {
-      live_demo_url: 'https://miaslls.github.io/BLUEsims/',
+      live_demo_url: 'https://bluesims.camilasalles.dev/',
       github_single_url: 'https://github.com/miaslls/BLUEsims#readme',
     },
     isFeatured: true,
