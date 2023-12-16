@@ -7,11 +7,11 @@ export default {
   projects: {
     title: 'Projects',
     main: {
-      all_projects: 'all projects',
+      featured_projects: 'featured',
     },
 
     aside: {
-      featured_projects: 'featured projects',
+      all_projects: 'all projects',
     },
   },
 

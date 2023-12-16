@@ -8,11 +8,11 @@ export default {
     title: 'Projetos',
 
     main: {
-      all_projects: 'todos os projetos',
+      featured_projects: 'em destaque',
     },
 
     aside: {
-      featured_projects: 'projetos em destaque',
+      all_projects: 'todos os projetos',
     },
   },
 

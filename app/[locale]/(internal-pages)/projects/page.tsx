@@ -1,14 +1,10 @@
-import styles from './page.module.css';
-
 import { setStaticParamsLocale } from 'next-international/server';
 import { getScopedI18n } from '@/locales/server';
 import type { Metadata } from 'next';
 
-import ProjectCard from '@components/project/project-card';
 import AsideImg from '@components/aside-img';
+import AllProjects from './all-projects';
 import FeaturedProjects from './featured-projects';
-
-import { projects } from '@data/projects';
 
 export async function generateMetadata(): Promise<Metadata> {
   const t = await getScopedI18n('projects');
@@ -39,22 +35,14 @@ export default async function ProjectsPage({
           </p>
         </header>
 
-        <section className={styles.projects}>
-          <h2 className="hidden">{t('main.all_projects')}</h2>
-
-          <div className={styles.project_grid}>
-            {projects.map((project) => (
-              <ProjectCard {...project} key={`project-${project.slug}`} />
-            ))}
-          </div>
-        </section>
+        <FeaturedProjects />
       </main>
 
       <aside>
         <AsideImg />
 
         <div className="aside_content">
-          <FeaturedProjects />
+          <AllProjects />
         </div>
       </aside>
     </div>

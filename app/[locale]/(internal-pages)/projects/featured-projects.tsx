@@ -6,32 +6,29 @@ import { useScopedI18n } from '@/locales/client';
 import { useTheme } from '@providers/theme-provider';
 
 import SectionTitle from '@components/section-title';
-import MiniProjectCard from '@components/project/mini-project-card';
+import ProjectCard from '@components/project/project-card';
 import { featuredProjects } from '@data/projects';
 
 import starIcon_light from '@icons/light/star-line.svg';
 import starIcon_dark from '@icons/dark/star-line.svg';
 
 export default function FeaturedProjects() {
-  const t = useScopedI18n('projects.aside');
-
+  const t = useScopedI18n('projects.main');
   const { theme } = useTheme();
   const isDarkTheme = theme === 'dark';
 
   return (
-    <section className="aside_section">
+    <section className={styles.projects}>
       <SectionTitle
         title={t('featured_projects')}
         icon={isDarkTheme ? starIcon_light : starIcon_dark}
       />
 
-      <ul className={styles.project_list}>
+      <div className={styles.project_grid}>
         {featuredProjects.map((project) => (
-          <li key={`${project.slug}-featured`}>
-            <MiniProjectCard {...project} />
-          </li>
+          <ProjectCard {...project} key={`featured-${project.slug}`} />
         ))}
-      </ul>
+      </div>
     </section>
   );
 }
