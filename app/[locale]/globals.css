@@ -156,9 +156,10 @@ aside {
   width: 100%;
 }
 
-.about_section > ul {
-  position: relative;
-  bottom: 1rem;
+.about_section {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
 
 h1,

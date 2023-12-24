@@ -17,12 +17,14 @@ export default function DevelopmentSection() {
 
   return (
     <section className="about_section">
-      <SectionTitle
-        title={t('title')}
-        icon={isDarkTheme ? codeIcon_light : codeIcon_dark}
-      />
+      <div className="wrapper">
+        <SectionTitle
+          title={t('title')}
+          icon={isDarkTheme ? codeIcon_light : codeIcon_dark}
+        />
 
-      <TagList tags={tags} identifier="development" />
+        <TagList tags={tags} identifier="development" />
+      </div>
 
       <p className="default">{t('text')}</p>
     </section>

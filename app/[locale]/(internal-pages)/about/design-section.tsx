@@ -17,12 +17,14 @@ export default function DesignSection() {
 
   return (
     <section className="about_section">
-      <SectionTitle
-        title={t('title')}
-        icon={isDarkTheme ? designIcon_light : designIcon_dark}
-      />
+      <div className="wrapper">
+        <SectionTitle
+          title={t('title')}
+          icon={isDarkTheme ? designIcon_light : designIcon_dark}
+        />
 
-      <TagList tags={tags} identifier="design" />
+        <TagList tags={tags} identifier="design" />
+      </div>
 
       <p className="default">{t('text')}</p>
     </section>
