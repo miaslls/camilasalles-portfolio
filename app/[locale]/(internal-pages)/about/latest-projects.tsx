@@ -1,7 +1,5 @@
 'use client';
 
-import styles from './latest-projects.module.css';
-
 import { useScopedI18n } from '@/locales/client';
 import { useTheme } from '@providers/theme-provider';
 
@@ -28,7 +26,7 @@ export default function LatestProjects() {
 
       <ViewAllLink />
 
-      <ul className={styles.project_list}>
+      <ul className="project_list">
         {latestProjects.map((project) => (
           <li key={`${project.slug}-latest`}>
             <MiniProjectCard {...project} />

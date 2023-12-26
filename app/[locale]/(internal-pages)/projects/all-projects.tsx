@@ -1,7 +1,5 @@
 'use client';
 
-import styles from './all-projects.module.css';
-
 import { useScopedI18n } from '@/locales/client';
 import { useTheme } from '@providers/theme-provider';
 
@@ -25,7 +23,7 @@ export default function AllProjects() {
         icon={isDarkTheme ? computerIcon_light : computerIcon_dark}
       />
 
-      <ul className={styles.project_list}>
+      <ul className="project_list">
         {projects.map((project) => (
           <li key={`project-${project.slug}`}>
             <MiniProjectCard {...project} />

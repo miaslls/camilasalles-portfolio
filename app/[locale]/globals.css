@@ -162,6 +162,12 @@ aside {
   gap: 1rem;
 }
 
+.aside_section .project_list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
 h1,
 h2,
 h3 {
