@@ -19,7 +19,7 @@ export default function AllProjects() {
   const isDarkTheme = theme === 'dark';
 
   return (
-    <section className="aside_section">
+    <section className="aside_section" id="all_projects">
       <SectionTitle
         title={t('all_projects')}
         icon={isDarkTheme ? computerIcon_light : computerIcon_dark}
