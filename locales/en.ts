@@ -39,7 +39,15 @@ export default {
 
   contact: {
     title: 'Contact',
-    main: {},
+    main: {
+      links: {
+        mail: 'send email',
+        copy: 'copy to clipboard',
+        profile: 'visit profile',
+        repos: 'visit repositories',
+        inbox: 'send inbox',
+      },
+    },
 
     aside: {
       message: 'message me',

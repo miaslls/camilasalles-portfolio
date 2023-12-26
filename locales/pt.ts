@@ -40,7 +40,15 @@ export default {
 
   contact: {
     title: 'Contato',
-    main: {},
+    main: {
+      links: {
+        mail: 'enviar email',
+        copy: 'copiar endereço',
+        profile: 'ver perfil',
+        repos: 'ver repositórios',
+        inbox: 'mensagem inbox',
+      },
+    },
 
     aside: {
       message: 'mensagem',
