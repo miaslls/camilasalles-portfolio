@@ -7,7 +7,7 @@ import { Work_Sans, Outfit } from 'next/font/google';
 
 import { getStaticParams } from '@/locales/server';
 import { I18nProviderClient } from '@/locales/client';
-import { getTheme } from '@lib/getTheme';
+import { getTheme } from '@lib/theme';
 
 import Header from '@components/header/header';
 import Footer from '@components/footer/footer';
