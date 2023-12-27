@@ -41,7 +41,10 @@ export default {
     title: 'Contact',
     main: {
       links: {
-        mail: 'send email',
+        email: {
+          label: 'send email',
+          body: 'Sent%20from%20https%3A%2F%2Fcamilasalles.dev',
+        },
         copy: 'copy to clipboard',
         profile: 'visit profile',
         repos: 'visit repositories',

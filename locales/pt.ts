@@ -42,7 +42,10 @@ export default {
     title: 'Contato',
     main: {
       links: {
-        mail: 'enviar email',
+        email: {
+          label: 'enviar email',
+          body: 'Enviado%20de%20https%3A%2F%2Fcamilasalles.dev',
+        },
         copy: 'copiar endereço',
         profile: 'ver perfil',
         repos: 'ver repositórios',

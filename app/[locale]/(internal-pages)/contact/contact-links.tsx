@@ -2,11 +2,13 @@
 
 import styles from './contact-links.module.css';
 
-import Link from 'next/link';
 import Image from 'next/image';
-import { useScopedI18n } from '@/locales/client';
 import { useTheme } from '@providers/theme-provider';
+import { useScopedI18n } from '@/locales/client';
+import { copyToClipboard } from '@lib/clipboard';
+
 import SectionTitle from '@components/section-title';
+import ExternalContactLink from './external-contact-link';
 
 import mailIcon_light from '@icons/light/mail-open-line.svg';
 import mailIcon_dark from '@icons/dark/mail-open-line.svg';
@@ -14,56 +16,90 @@ import linkedinIcon_light from '@icons/light/linkedin-box-fill.svg';
 import linkedinIcon_dark from '@icons/dark/linkedin-box-fill.svg';
 import githubIcon_light from '@icons/light/github-fill.svg';
 import githubIcon_dark from '@icons/dark/github-fill.svg';
+
 import copyIcon_light from '@icons/light-accent-01/file-copy-line.svg';
 import copyIcon_dark from '@icons/dark-accent-01/file-copy-line.svg';
-import externalLinkIcon_light from '@icons/light-accent-01/arrow-right-up-line.svg';
-import externalLinkIcon_dark from '@icons/dark-accent-01/arrow-right-up-line.svg';
 
 export default function ContactLinks() {
   const t = useScopedI18n('contact.main.links');
   const { theme } = useTheme();
   const isDarkTheme = theme === 'dark';
 
+  const emailAddress = 'dev@camilasalles.dev';
+  const linkedinHandle = 'in/salles-camila';
+  const linkedinProfileUrl = 'https://www.linkedin.com/in/salles-camila/';
+  const githubHandle = '/miaslls';
+  const githubProfileUrl = 'https://github.com/miaslls';
+  const githubReposUrl = 'https://github.com/miaslls?tab=repositories';
+
+  const emailInfo = {
+    title: emailAddress,
+    icon: isDarkTheme ? mailIcon_light : mailIcon_dark,
+    links: [
+      {
+        href: `mailto:${emailAddress}?body=%0D%0A%0D%0A${t('email.body')}`,
+        text: t('email.label'),
+      },
+    ],
+    copy_button: {
+      copy: () => {
+        copyToClipboard(emailAddress);
+      },
+      text: t('copy'),
+      icon: isDarkTheme ? copyIcon_dark : copyIcon_light,
+    },
+  };
+
+  const linkedinInfo = {
+    title: linkedinHandle,
+    icon: isDarkTheme ? linkedinIcon_light : linkedinIcon_dark,
+    links: [
+      {
+        href: linkedinProfileUrl,
+        text: t('profile'),
+      },
+    ],
+  };
+
+  const githubInfo = {
+    title: githubHandle,
+    icon: isDarkTheme ? githubIcon_light : githubIcon_dark,
+    links: [
+      {
+        href: githubProfileUrl,
+        text: t('profile'),
+      },
+      {
+        href: githubReposUrl,
+        text: t('repos'),
+      },
+    ],
+  };
+
   return (
     <section className={styles.container}>
       <article>
-        <SectionTitle
-          title="dev@camilasalles.dev"
-          icon={isDarkTheme ? mailIcon_light : mailIcon_dark}
-        />
+        <SectionTitle title={emailInfo.title} icon={emailInfo.icon} />
 
         <ul className={styles.link_list}>
-          <li>
-            <Link
-              className={styles.link}
-              href="mailto:dev@camilasalles.dev" // 🐞 TODO:
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <span className={styles.text}>{t('mail')}</span>
+          {emailInfo.links.map((link, index) => (
+            <li key={`email-link-${index}`}>
+              <ExternalContactLink {...link} isDarkTheme={isDarkTheme} />
+            </li>
+          ))}
 
-              <Image
-                className={styles.icon}
-                src={
-                  isDarkTheme ? externalLinkIcon_dark : externalLinkIcon_light
-                }
-                alt=""
-              />
-            </Link>
-          </li>
+          {/* 🪲 EXTRA + FIXME: mobile copy to clipboard 📋 */}
 
           <li>
             <button
               className={`button_link ${styles.link}`}
-              onClick={() => {
-                /* 🐞 TODO: */
-              }}
+              onClick={emailInfo.copy_button.copy}
             >
-              <span className={styles.text}>{t('copy')}</span>
+              <span className={styles.text}>{emailInfo.copy_button.text}</span>
 
               <Image
                 className={styles.icon}
-                src={isDarkTheme ? copyIcon_dark : copyIcon_light}
+                src={emailInfo.copy_button.icon}
                 alt=""
               />
             </button>
@@ -72,77 +108,26 @@ export default function ContactLinks() {
       </article>
 
       <article>
-        <SectionTitle
-          title="in/salles-camila"
-          icon={isDarkTheme ? linkedinIcon_light : linkedinIcon_dark}
-        />
+        <SectionTitle title={linkedinInfo.title} icon={linkedinInfo.icon} />
 
         <ul className={styles.link_list}>
-          <li>
-            <Link
-              className={styles.link}
-              href="https://www.linkedin.com/in/salles-camila/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <span className={styles.text}>{t('profile')}</span>
-
-              <Image
-                className={styles.icon}
-                src={
-                  isDarkTheme ? externalLinkIcon_dark : externalLinkIcon_light
-                }
-                alt=""
-              />
-            </Link>
-          </li>
+          {linkedinInfo.links.map((link, index) => (
+            <li key={`linkedin-link-${index}`}>
+              <ExternalContactLink {...link} isDarkTheme={isDarkTheme} />
+            </li>
+          ))}
         </ul>
       </article>
 
       <article>
-        <SectionTitle
-          title="/miaslls"
-          icon={isDarkTheme ? githubIcon_light : githubIcon_dark}
-        />
+        <SectionTitle title={githubInfo.title} icon={githubInfo.icon} />
 
         <ul className={styles.link_list}>
-          <li>
-            <Link
-              className={styles.link}
-              href="https://github.com/miaslls"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <span className={styles.text}>{t('profile')}</span>
-
-              <Image
-                className={styles.icon}
-                src={
-                  isDarkTheme ? externalLinkIcon_dark : externalLinkIcon_light
-                }
-                alt=""
-              />
-            </Link>
-          </li>
-
-          <li>
-            <Link
-              className={styles.link}
-              href="https://github.com/miaslls?tab=repositories"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <span className={styles.text}>{t('repos')}</span>
-
-              <Image
-                className={styles.icon}
-                src={
-                  isDarkTheme ? externalLinkIcon_dark : externalLinkIcon_light
-                }
-                alt=""
-              />
-            </Link>
-          </li>
+          {githubInfo.links.map((link, index) => (
+            <li key={`github-link-${index}`}>
+              <ExternalContactLink {...link} isDarkTheme={isDarkTheme} />
+            </li>
+          ))}
         </ul>
       </article>
     </section>
