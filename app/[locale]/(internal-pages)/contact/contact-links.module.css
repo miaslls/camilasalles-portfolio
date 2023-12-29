@@ -6,7 +6,6 @@
 }
 
 .link_list {
-  padding-left: 2.25rem;
   display: flex;
   flex-wrap: wrap;
   position: relative;
