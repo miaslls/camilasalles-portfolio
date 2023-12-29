@@ -4,7 +4,7 @@ import type { Metadata } from 'next';
 
 import AsideImg from '@components/aside-img';
 import ContactLinks from './contact-links';
-import MessageMe from './message-me';
+import MessageMe from './message-form';
 
 export async function generateMetadata(): Promise<Metadata> {
   const t = await getScopedI18n('contact');

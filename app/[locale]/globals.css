@@ -59,13 +59,13 @@ html * {
 
 button,
 input,
+textarea,
 ul,
 a {
   border: none;
   border-radius: 0;
   padding: 0;
   margin: 0;
-  user-select: none;
   text-decoration: none;
   appearance: none;
   list-style: none;
@@ -80,6 +80,7 @@ a {
 a,
 button {
   cursor: pointer;
+  user-select: none;
 }
 
 html {
