@@ -14,9 +14,3 @@
     grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
   }
 }
-
-@media (min-width: 701px) and (max-width: 1120px) {
-  .project_grid {
-    grid-template-columns: repeat(auto-fill, minmax(47.5%, 1fr));
-  }
-}
