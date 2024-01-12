@@ -15,7 +15,7 @@ import sendIcon_light from '@icons/light-accent-01/checkbox-circle-line.svg';
 import sendIcon_dark from '@icons/dark-accent-01/checkbox-circle-line.svg';
 
 export default function MessageMe() {
-  const t = useScopedI18n('contact.aside'); // 🪲 TODO:
+  const t = useScopedI18n('contact.aside');
 
   const { theme } = useTheme();
   const isDarkTheme = theme === 'dark';
@@ -34,20 +34,27 @@ export default function MessageMe() {
           className={styles.form_field}
           type="text"
           name="name"
-          placeholder="name"
+          placeholder={t('form.name')}
         />
 
         <input
           className={styles.form_field}
           type="email"
           name="email"
-          placeholder="email"
+          placeholder={t('form.email')}
+        />
+
+        <input
+          className={styles.form_field}
+          type="tel"
+          name="text"
+          placeholder={t('form.phone')}
         />
 
         <textarea
           className={`${styles.form_field} ${styles.message_field}`}
           name="message"
-          placeholder="message *"
+          placeholder={`${t('form.message')} *`}
           required
         ></textarea>
 

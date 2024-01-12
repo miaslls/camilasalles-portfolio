@@ -55,6 +55,12 @@ export default {
 
     aside: {
       message: 'mensagem',
+      form: {
+        name: 'nome',
+        email: 'email',
+        phone: 'telefone',
+        message: 'mensagem',
+      },
     },
   },
 } as const;
