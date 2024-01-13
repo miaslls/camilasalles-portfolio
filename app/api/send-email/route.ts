@@ -1,7 +1,8 @@
 'use server';
 
-import { NextResponse } from 'next/server';
 import nodemailer from 'nodemailer';
+import { NextResponse } from 'next/server';
+import { EmailData } from './types';
 
 const transporter = nodemailer.createTransport({
   service: 'gmail',
@@ -13,7 +14,7 @@ const transporter = nodemailer.createTransport({
 });
 
 export async function POST(req: Request) {
-  const body = await req.json();
+  const body: EmailData = await req.json();
 
   const mailOptions = {
     from: `Camila Salles <${process.env.EMAIL_FROM}>`,
@@ -24,13 +25,14 @@ export async function POST(req: Request) {
     html: body.htmlMessage,
   };
 
-  await transporter
-    .sendMail(mailOptions)
-    .then(() => {
-      return NextResponse.json({ status: 200 });
-    })
-    .catch((error) => {
-      console.error(error);
-      return NextResponse.json({ status: 500 });
+  try {
+    await transporter.sendMail(mailOptions).catch((error) => {
+      throw new Error(error);
     });
+
+    return NextResponse.json({ status: 200 });
+  } catch (error) {
+    console.error(error);
+    return NextResponse.json({ status: 500 });
+  }
 }
