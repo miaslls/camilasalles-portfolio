@@ -84,6 +84,19 @@ const outfit = Outfit({
   display: 'swap',
 });
 
+const customToastOptions = {
+  style: {
+    background: 'var(--accent-02)',
+    color: 'var(--bg-color)',
+    paddingLeft: '1rem',
+    borderRadius: '1.5rem',
+  },
+  iconTheme: {
+    primary: 'var(--bg-color)',
+    secondary: 'var(--accent-02)',
+  },
+};
+
 export function generateStaticParams() {
   return getStaticParams();
 }
@@ -109,12 +122,17 @@ export default function RootLayout({
           <ThemeProvider>
             <MenuProvider>
               <I18nProviderClient locale={params.locale}>
-                <Toaster position="bottom-right" />
                 <div className="layout_container">
                   <Header />
                   <MobileMenu />
+
                   <div className="child_container">{children}</div>
+
                   <Footer />
+                  <Toaster
+                    position="bottom-center"
+                    toastOptions={customToastOptions}
+                  />
                 </div>
               </I18nProviderClient>
             </MenuProvider>
