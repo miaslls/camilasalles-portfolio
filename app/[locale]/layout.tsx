@@ -4,6 +4,7 @@ import type { Metadata, Viewport } from 'next';
 
 import dynamic from 'next/dynamic';
 import { Work_Sans, Outfit } from 'next/font/google';
+import { Toaster } from 'react-hot-toast';
 
 import { getStaticParams } from '@/locales/server';
 import { I18nProviderClient } from '@/locales/client';
@@ -108,6 +109,7 @@ export default function RootLayout({
           <ThemeProvider>
             <MenuProvider>
               <I18nProviderClient locale={params.locale}>
+                <Toaster position="bottom-right" />
                 <div className="layout_container">
                   <Header />
                   <MobileMenu />

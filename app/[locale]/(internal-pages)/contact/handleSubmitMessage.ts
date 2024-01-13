@@ -1,3 +1,5 @@
+import toast from 'react-hot-toast';
+
 type EmailData = {
   textMessage: string;
   htmlMessage: string;
@@ -43,14 +45,16 @@ export async function handleSubmitMessage(formData: FormData) {
   if (message) htmlMessageParts.push(`<p><b>message:</b> ${message}</p>`);
   const htmlMessage = htmlMessageParts.join('');
 
-  const { success } = await sendEmail({
-    textMessage,
-    htmlMessage,
-  });
+  toast('this is a toast'); // 🐞
 
-  if (!success) {
-    window.alert('Message not sent!'); // 🐞
-  }
+  //   const { success } = await sendEmail({
+  //     textMessage,
+  //     htmlMessage,
+  //   });
+  //
+  //   if (!success) {
+  //     window.alert('Message not sent!'); // 🐞
+  //   }
 
   // TODO: toast success & error
 }
