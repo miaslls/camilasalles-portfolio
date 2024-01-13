@@ -13,6 +13,7 @@ import clearIcon_light from '@icons/light-accent-01/close-line.svg';
 import clearIcon_dark from '@icons/dark-accent-01/close-line.svg';
 import sendIcon_light from '@icons/light-accent-01/checkbox-circle-line.svg';
 import sendIcon_dark from '@icons/dark-accent-01/checkbox-circle-line.svg';
+import { handleSubmitMessage } from './handleSubmitMessage';
 
 export default function MessageMe() {
   const t = useScopedI18n('contact.aside');
@@ -29,7 +30,7 @@ export default function MessageMe() {
 
       <p className={styles.required_notice}>* required field</p>
 
-      <form className={styles.form_container}>
+      <form className={styles.form_container} action={handleSubmitMessage}>
         <input
           className={styles.form_field}
           type="text"
@@ -46,8 +47,8 @@ export default function MessageMe() {
 
         <input
           className={styles.form_field}
-          type="tel"
-          name="text"
+          type="text"
+          name="phone"
           placeholder={t('form.phone')}
         />
 
