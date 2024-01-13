@@ -35,7 +35,6 @@ export default function MessageForm({
     <form
       className={styles.form_container}
       onSubmit={(e) => handleSubmitMessage(e, formState, clearForm, t)}
-      autoComplete="off"
     >
       <input
         className={styles.form_field}

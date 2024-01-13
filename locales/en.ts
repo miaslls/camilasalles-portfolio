@@ -64,7 +64,7 @@ export default {
         submit_state: {
           loading: 'loading...',
           success: 'message sent!',
-          error: 'something unexpected happened; try again',
+          error: 'something happened; try again',
         },
       },
     },

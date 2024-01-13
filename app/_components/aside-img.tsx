@@ -14,6 +14,7 @@ import phoneImg from '@images/phone.svg';
 
 export default function AsideImg() {
   const isNotMobile = useDevice() !== 'mobile';
+  const isDesktop = useDevice() === 'desktop';
 
   const { theme } = useTheme();
   const isDarkTheme = theme === 'dark';
@@ -32,10 +33,10 @@ export default function AsideImg() {
   return isNotMobile ? (
     <div className={styles.img_container}>
       <Image
-        className={`${styles.img} ${isDarkTheme ? styles.dark_img : ''}`}
+        className={`${styles.img} ${isDarkTheme && styles.dark_img}`}
         src={asideImg}
-        fetchPriority="high"
         alt=""
+        priority={isDesktop}
       />
     </div>
   ) : null;

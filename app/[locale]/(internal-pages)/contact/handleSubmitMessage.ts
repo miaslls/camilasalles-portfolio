@@ -36,6 +36,9 @@ export async function handleSubmitMessage(
     return;
   }
 
+  const toastId = toast.loading('loading');
+  clearForm();
+
   const textMessageParts = [];
   if (name) {
     textMessageParts.push(`name: ${name};`);
@@ -68,8 +71,6 @@ export async function handleSubmitMessage(
   htmlMessageParts.push(`<p><b>message:</b> ${message}</p>`);
   const htmlMessage = htmlMessageParts.join('');
 
-  const toastId = toast.loading('loading');
-
   const { success } = await sendEmail({
     textMessage,
     htmlMessage,
@@ -77,8 +78,8 @@ export async function handleSubmitMessage(
 
   if (!success) {
     toast.error(translate('submit_state.error'), { id: toastId });
+    return;
   }
 
-  clearForm();
   toast.success(translate('submit_state.success'), { id: toastId });
 }

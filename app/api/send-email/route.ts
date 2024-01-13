@@ -1,5 +1,3 @@
-'use server';
-
 import nodemailer from 'nodemailer';
 import { NextResponse } from 'next/server';
 import { EmailData } from './types';
@@ -12,6 +10,8 @@ const transporter = nodemailer.createTransport({
     pass: process.env.GMAIL_PASSWORD,
   },
 });
+
+// FIXME: error handling 🔻
 
 export async function POST(req: Request) {
   const body: EmailData = await req.json();
