@@ -1,82 +1,94 @@
-'use client';
-
 import styles from './message-form.module.css';
 
 import Image from 'next/image';
-import { useScopedI18n } from '@/locales/client';
+import { ChangeEvent } from 'react';
 import { useTheme } from '@providers/theme-provider';
-import SectionTitle from '@components/section-title';
+import { useScopedI18n } from '@/locales/client';
+import { handleSubmitMessage } from './handleSubmitMessage';
+import type { FormState } from './useMessageForm';
 
-import mailIcon_light from '@icons/light/mail-send-line.svg';
-import mailIcon_dark from '@icons/dark/mail-send-line.svg';
 import clearIcon_light from '@icons/light-accent-01/close-line.svg';
 import clearIcon_dark from '@icons/dark-accent-01/close-line.svg';
 import sendIcon_light from '@icons/light-accent-01/checkbox-circle-line.svg';
 import sendIcon_dark from '@icons/dark-accent-01/checkbox-circle-line.svg';
-import { handleSubmitMessage } from './handleSubmitMessage';
 
-export default function MessageMe() {
-  const t = useScopedI18n('contact.aside');
+type MessageFormProps = {
+  formState: FormState;
+  clearForm: () => void;
+  handleChange: (
+    e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
+    name: string
+  ) => void;
+};
+
+export default function MessageForm({
+  formState,
+  clearForm,
+  handleChange,
+}: MessageFormProps) {
+  const t = useScopedI18n('contact.aside.form');
 
   const { theme } = useTheme();
   const isDarkTheme = theme === 'dark';
 
   return (
-    <section className="aside_section">
-      <SectionTitle
-        title={t('message')}
-        icon={isDarkTheme ? mailIcon_light : mailIcon_dark}
+    <form
+      className={styles.form_container}
+      onSubmit={(e) => handleSubmitMessage(e, formState, clearForm, t)}
+      autoComplete="off"
+    >
+      <input
+        className={styles.form_field}
+        type="text"
+        name="name"
+        placeholder={t('name')}
+        value={formState.name || ''}
+        onChange={(e) => handleChange(e, 'name')}
       />
 
-      <p className={styles.required_notice}>* required field</p>
+      <input
+        className={styles.form_field}
+        type="email"
+        name="email"
+        placeholder={t('email')}
+        value={formState.email || ''}
+        onChange={(e) => handleChange(e, 'email')}
+      />
 
-      <form className={styles.form_container} action={handleSubmitMessage}>
-        <input
-          className={styles.form_field}
-          type="text"
-          name="name"
-          placeholder={t('form.name')}
-        />
+      <input
+        className={styles.form_field}
+        type="text"
+        name="phone"
+        placeholder={t('phone')}
+        value={formState.phone || ''}
+        onChange={(e) => handleChange(e, 'phone')}
+      />
 
-        <input
-          className={styles.form_field}
-          type="email"
-          name="email"
-          placeholder={t('form.email')}
-        />
+      <textarea
+        className={`${styles.form_field} ${styles.message_field}`}
+        name="message"
+        placeholder={`${t('message')} *`}
+        value={formState.message || ''}
+        onChange={(e) => handleChange(e, 'message')}
+      ></textarea>
 
-        <input
-          className={styles.form_field}
-          type="text"
-          name="phone"
-          placeholder={t('form.phone')}
-        />
+      <div className={styles.btn_container}>
+        <button className={styles.form_btn} type="button" onClick={clearForm}>
+          <Image
+            className={styles.btn_icon}
+            src={isDarkTheme ? clearIcon_dark : clearIcon_light}
+            alt=""
+          />
+        </button>
 
-        <textarea
-          className={`${styles.form_field} ${styles.message_field}`}
-          name="message"
-          placeholder={`${t('form.message')} *`}
-          required
-        ></textarea>
-
-        <div className={styles.btn_container}>
-          <button className={styles.form_btn} type="reset">
-            <Image
-              className={styles.btn_icon}
-              src={isDarkTheme ? clearIcon_dark : clearIcon_light}
-              alt=""
-            />
-          </button>
-
-          <button className={styles.form_btn} type="submit">
-            <Image
-              className={styles.btn_icon}
-              src={isDarkTheme ? sendIcon_dark : sendIcon_light}
-              alt=""
-            />
-          </button>
-        </div>
-      </form>
-    </section>
+        <button className={styles.form_btn} type="submit">
+          <Image
+            className={styles.btn_icon}
+            src={isDarkTheme ? sendIcon_dark : sendIcon_light}
+            alt=""
+          />
+        </button>
+      </div>
+    </form>
   );
 }

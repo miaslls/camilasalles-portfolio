@@ -1,9 +1,7 @@
 import toast from 'react-hot-toast';
-
-type EmailData = {
-  textMessage: string;
-  htmlMessage: string;
-};
+import { FormEvent } from 'react';
+import { FormState } from './useMessageForm';
+import { EmailData } from '@api/send-email/types';
 
 async function sendEmail(data: EmailData) {
   try {
@@ -25,36 +23,62 @@ async function sendEmail(data: EmailData) {
   }
 }
 
-export async function handleSubmitMessage(formData: FormData) {
-  const name = formData.get('name');
-  const email = formData.get('email');
-  const phone = formData.get('phone');
-  const message = formData.get('message');
+export async function handleSubmitMessage(
+  e: FormEvent<HTMLFormElement>,
+  { name, email, phone, message }: FormState,
+  clearForm: CallableFunction,
+  translate: CallableFunction
+) {
+  e.preventDefault();
+
+  if (!message) {
+    toast.error(translate('message_required'));
+    return;
+  }
 
   const textMessageParts = [];
-  if (name) textMessageParts.push(`name: ${name};`);
-  if (email) textMessageParts.push(`email: ${email};`);
-  if (phone) textMessageParts.push(`phone: ${phone};`);
-  if (message) textMessageParts.push(`message: ${message};`);
+  if (name) {
+    textMessageParts.push(`name: ${name};`);
+  }
+
+  if (email) {
+    textMessageParts.push(`email: ${email};`);
+  }
+
+  if (phone) {
+    textMessageParts.push(`phone: ${phone};`);
+  }
+
+  textMessageParts.push(`message: ${message};`);
   const textMessage = textMessageParts.join(' ');
 
   const htmlMessageParts = [];
-  if (name) htmlMessageParts.push(`<p><b>name:</b> ${name}</p>`);
-  if (email) htmlMessageParts.push(`<p><b>email:</b> ${email}</p>`);
-  if (phone) htmlMessageParts.push(`<p><b>phone:</b> ${phone}</p>`);
-  if (message) htmlMessageParts.push(`<p><b>message:</b> ${message}</p>`);
+  if (name) {
+    htmlMessageParts.push(`<p><b>name:</b> ${name}</p>`);
+  }
+
+  if (email) {
+    htmlMessageParts.push(`<p><b>email:</b> ${email}</p>`);
+  }
+
+  if (phone) {
+    htmlMessageParts.push(`<p><b>phone:</b> ${phone}</p>`);
+  }
+
+  htmlMessageParts.push(`<p><b>message:</b> ${message}</p>`);
   const htmlMessage = htmlMessageParts.join('');
 
-  toast('this is a toast'); // 🐞
+  const toastId = toast.loading('loading');
 
-  //   const { success } = await sendEmail({
-  //     textMessage,
-  //     htmlMessage,
-  //   });
-  //
-  //   if (!success) {
-  //     window.alert('Message not sent!'); // 🐞
-  //   }
+  const { success } = await sendEmail({
+    textMessage,
+    htmlMessage,
+  });
 
-  // TODO: toast success & error
+  if (!success) {
+    toast.error(translate('submit_state.error'), { id: toastId });
+  }
+
+  clearForm();
+  toast.success(translate('submit_state.success'), { id: toastId });
 }
