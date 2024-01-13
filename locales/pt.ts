@@ -56,10 +56,17 @@ export default {
     aside: {
       message: 'mensagem',
       form: {
+        required: 'campo obrigatório',
+        message_required: 'a mensagem é obrigatória!',
         name: 'nome',
         email: 'email',
         phone: 'telefone',
         message: 'mensagem',
+        submit_state: {
+          loading: 'carregando...',
+          success: 'mensagem enviada!',
+          error: 'algo inesperado aconteceu; tente novamente',
+        },
       },
     },
   },

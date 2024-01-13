@@ -55,10 +55,17 @@ export default {
     aside: {
       message: 'message me',
       form: {
+        required: 'required field',
+        message_required: 'message is required!',
         name: 'name',
         email: 'email',
         phone: 'phone no.',
         message: 'message',
+        submit_state: {
+          loading: 'loading...',
+          success: 'message sent!',
+          error: 'something unexpected happened; try again',
+        },
       },
     },
   },
