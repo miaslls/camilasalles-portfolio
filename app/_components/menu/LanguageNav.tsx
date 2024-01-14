@@ -1,3 +1,5 @@
+'use client';
+
 import styles from './LanguageNav.module.css';
 import { usePathname } from 'next/navigation';
 
@@ -21,6 +23,8 @@ export default function LanguageNav() {
               className={`${styles.link} ${
                 currentLocale === locale ? styles.active : ''
               }`}
+              data-tooltip-id="header"
+              data-tooltip-content={`view in ${locale}`}
             >
               {locale}
             </a>
