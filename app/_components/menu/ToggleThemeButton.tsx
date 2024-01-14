@@ -1,9 +1,9 @@
 'use client';
 
-import styles from './toggle-theme-button.module.css';
+import styles from './ToggleThemeButton.module.css';
 
 import Image from 'next/image';
-import { useTheme } from '@providers/theme-provider';
+import { useTheme } from '@providers/ThemeContextProvider';
 
 import sunIcon_light from '@icons/light/sun-fill.svg';
 import moonIcon_light from '@icons/light/moon-fill.svg';

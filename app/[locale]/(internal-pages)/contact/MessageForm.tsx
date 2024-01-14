@@ -1,8 +1,8 @@
-import styles from './message-form.module.css';
+import styles from './MessageForm.module.css';
 
 import Image from 'next/image';
 import { ChangeEvent } from 'react';
-import { useTheme } from '@providers/theme-provider';
+import { useTheme } from '@providers/ThemeContextProvider';
 import { useScopedI18n } from '@/locales/client';
 import { handleSubmitMessage } from './handleSubmitMessage';
 import type { FormState } from './useMessageForm';

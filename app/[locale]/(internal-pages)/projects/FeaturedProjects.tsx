@@ -1,14 +1,14 @@
 'use client';
 
-import styles from './featured-projects.module.css';
+import styles from './FeaturedProjects.module.css';
 
 import { useScopedI18n } from '@/locales/client';
-import { useTheme } from '@providers/theme-provider';
-import { useDevice } from '@providers/device-provider';
+import { useTheme } from '@providers/ThemeContextProvider';
+import { useDevice } from '@providers/DeviceContextProvider';
 
-import SectionTitle from '@components/section-title';
-import ViewAllLink from '@components/project/view-all-link';
-import ProjectCard from '@components/project/project-card';
+import SectionTitle from '@components/SectionTitle';
+import ViewAllLink from '@components/project/ViewAllLink';
+import ProjectCard from '@components/project/ProjectCard';
 import { featuredProjects } from '@data/projects';
 
 import starIcon_light from '@icons/light/star-line.svg';

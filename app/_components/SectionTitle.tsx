@@ -1,4 +1,4 @@
-import styles from './section-title.module.css';
+import styles from './SectionTitle.module.css';
 import Image from 'next/image';
 
 export type SectionTitleProps = {

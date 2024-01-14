@@ -10,19 +10,22 @@ import { getStaticParams } from '@/locales/server';
 import { I18nProviderClient } from '@/locales/client';
 import { getTheme } from '@lib/theme';
 
-import Header from '@components/header/header';
-import Footer from '@components/footer/footer';
-import MobileMenu from '@/app/_components/menu/mobile-menu';
+import Header from '@components/header/Header';
+import Footer from '@components/footer/Footer';
+import MobileMenu from '@components/menu/MobileMenu';
 
-const DeviceProvider = dynamic(() => import('@providers/device-provider'), {
+const DeviceProvider = dynamic(
+  () => import('@providers/DeviceContextProvider'),
+  {
+    ssr: false,
+  }
+);
+
+const ThemeProvider = dynamic(() => import('@providers/ThemeContextProvider'), {
   ssr: false,
 });
 
-const ThemeProvider = dynamic(() => import('@providers/theme-provider'), {
-  ssr: false,
-});
-
-const MenuProvider = dynamic(() => import('@/app/_providers/menu-provider'), {
+const MenuProvider = dynamic(() => import('@providers/MenuContextProvider'), {
   ssr: false,
 });
 

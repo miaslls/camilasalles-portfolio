@@ -2,10 +2,10 @@ import { setStaticParamsLocale } from 'next-international/server';
 import { getScopedI18n } from '@/locales/server';
 import type { Metadata } from 'next';
 
-import AsideImg from '@components/aside-img';
-import DevelopmentSection from './development-section';
-import DesignSection from './design-section';
-import LatestProjects from './latest-projects';
+import AsideImg from '@components/AsideImg';
+import DevelopmentSection from './DevelopmentSection';
+import DesignSection from './DesignSection';
+import LatestProjects from './LatestProjects';
 
 export async function generateMetadata(): Promise<Metadata> {
   const t = await getScopedI18n('about');

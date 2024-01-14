@@ -1,4 +1,4 @@
-import styles from './contact-links.module.css';
+import styles from './ContactLinks.module.css';
 
 import Link from 'next/link';
 import Image from 'next/image';

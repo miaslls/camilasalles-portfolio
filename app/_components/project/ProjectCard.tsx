@@ -1,12 +1,12 @@
 'use client';
 
-import styles from './project-card.module.css';
+import styles from './ProjectCard.module.css';
 
 import Image from 'next/image';
-import ProjectLinks from './project-links';
+import ProjectLinks from './ProjectLinks';
 import type { Project } from '@data/projects';
 
-import TagList from '@components/tag-list';
+import TagList from '@components/TagList';
 
 export default function ProjectCard({
   title,

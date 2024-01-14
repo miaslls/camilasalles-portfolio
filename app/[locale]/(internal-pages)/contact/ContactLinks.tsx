@@ -1,14 +1,14 @@
 'use client';
 
-import styles from './contact-links.module.css';
+import styles from './ContactLinks.module.css';
 
 import Image from 'next/image';
-import { useTheme } from '@providers/theme-provider';
+import { useTheme } from '@providers/ThemeContextProvider';
 import { useScopedI18n } from '@/locales/client';
 import { copyToClipboard } from '@lib/clipboard';
 
-import SectionTitle from '@components/section-title';
-import ExternalContactLink from './external-contact-link';
+import SectionTitle from '@components/SectionTitle';
+import ExternalContactLink from './ExternalContactLink';
 
 import mailIcon_light from '@icons/light/mail-open-line.svg';
 import mailIcon_dark from '@icons/dark/mail-open-line.svg';

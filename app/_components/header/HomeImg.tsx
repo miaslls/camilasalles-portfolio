@@ -1,8 +1,8 @@
-import styles from './home-img.module.css';
+import styles from './HomeImg.module.css';
 
 import Image from 'next/image';
-import { useTheme } from '@providers/theme-provider';
-import { useDevice } from '@providers/device-provider';
+import { useTheme } from '@providers/ThemeContextProvider';
+import { useDevice } from '@providers/DeviceContextProvider';
 
 import img_light from '@images/home-light.svg';
 import img_dark from '@images/home-dark.svg';

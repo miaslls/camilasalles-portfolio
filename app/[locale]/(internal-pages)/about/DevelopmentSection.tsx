@@ -1,9 +1,9 @@
 'use client';
 
 import { useScopedI18n } from '@/locales/client';
-import { useTheme } from '@providers/theme-provider';
-import SectionTitle from '@components/section-title';
-import TagList from '@components/tag-list';
+import { useTheme } from '@providers/ThemeContextProvider';
+import SectionTitle from '@components/SectionTitle';
+import TagList from '@components/TagList';
 
 import codeIcon_light from '@icons/light/code-s-slash-line.svg';
 import codeIcon_dark from '@icons/dark/code-s-slash-line.svg';

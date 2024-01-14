@@ -1,4 +1,4 @@
-import styles from './main-menu.module.css';
+import styles from './MainMenu.module.css';
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';

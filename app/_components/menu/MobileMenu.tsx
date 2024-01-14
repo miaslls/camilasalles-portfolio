@@ -1,16 +1,16 @@
 'use client';
 
-import styles from './mobile-menu.module.css';
+import styles from './MobileMenu.module.css';
 
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
-import { useDevice } from '@providers/device-provider';
-import { useMenu } from '@providers/menu-provider';
-import { useTheme } from '@providers/theme-provider';
+import { useDevice } from '@providers/DeviceContextProvider';
+import { useMenu } from '@providers/MenuContextProvider';
+import { useTheme } from '@providers/ThemeContextProvider';
 
-import MainMenu from './main-menu';
-import LanguageNav from './language-nav';
-import ToggleThemeButton from './toggle-theme-button';
+import MainMenu from './MainMenu';
+import LanguageNav from './LanguageNav';
+import ToggleThemeButton from './ToggleThemeButton';
 
 import closeIcon_light from '@icons/light/close-line.svg';
 import closeIcon_dark from '@icons/dark/close-line.svg';

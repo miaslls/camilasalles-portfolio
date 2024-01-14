@@ -1,11 +1,11 @@
 'use client';
 
 import { useScopedI18n } from '@/locales/client';
-import { useTheme } from '@providers/theme-provider';
+import { useTheme } from '@providers/ThemeContextProvider';
 
-import SectionTitle from '@components/section-title';
-import ViewAllLink from '@components/project/view-all-link';
-import MiniProjectCard from '@components/project/mini-project-card';
+import SectionTitle from '@components/SectionTitle';
+import ViewAllLink from '@components/project/ViewAllLink';
+import MiniProjectCard from '@components/project/MiniProjectCard';
 import { latestProjects } from '@data/projects';
 
 import megaphoneIcon_light from '@icons/light/megaphone-line.svg';

@@ -1,4 +1,4 @@
-import styles from './tag-list.module.css';
+import styles from './TagList.module.css';
 
 export type TagListProps = {
   tags: string[];

@@ -1,6 +1,6 @@
-import styles from './mini-project-card.module.css';
+import styles from './MiniProjectCard.module.css';
 
-import ProjectLinks from './project-links';
+import ProjectLinks from './ProjectLinks';
 import type { Project } from '@data/projects';
 
 export default function MiniProjectCard({

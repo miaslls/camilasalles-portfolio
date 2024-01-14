@@ -1,9 +1,9 @@
 'use client';
 
 import { useScopedI18n } from '@/locales/client';
-import { useTheme } from '@providers/theme-provider';
-import SectionTitle from '@components/section-title';
-import TagList from '@components/tag-list';
+import { useTheme } from '@providers/ThemeContextProvider';
+import SectionTitle from '@components/SectionTitle';
+import TagList from '@components/TagList';
 
 import designIcon_light from '@icons/light/pencil-ruler-2-line.svg';
 import designIcon_dark from '@icons/dark/pencil-ruler-2-line.svg';

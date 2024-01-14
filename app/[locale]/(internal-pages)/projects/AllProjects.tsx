@@ -1,10 +1,10 @@
 'use client';
 
 import { useScopedI18n } from '@/locales/client';
-import { useTheme } from '@providers/theme-provider';
+import { useTheme } from '@providers/ThemeContextProvider';
 
-import SectionTitle from '@components/section-title';
-import MiniProjectCard from '@components/project/mini-project-card';
+import SectionTitle from '@components/SectionTitle';
+import MiniProjectCard from '@components/project/MiniProjectCard';
 import { projects } from '@data/projects';
 
 import computerIcon_light from '@icons/light/computer-line.svg';

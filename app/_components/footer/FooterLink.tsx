@@ -1,11 +1,11 @@
 'use client';
 
-import styles from './footer-link.module.css';
+import styles from './FooterLink.module.css';
 
 import Link from 'next/link';
 import Image from 'next/image';
-import { useTheme } from '@providers/theme-provider';
-import { useDevice } from '@providers/device-provider';
+import { useTheme } from '@providers/ThemeContextProvider';
+import { useDevice } from '@providers/DeviceContextProvider';
 
 import externalLinkIcon_light from '@icons/light-accent-01/arrow-right-up-line.svg';
 import externalLinkIcon_dark from '@icons/dark-accent-01/arrow-right-up-line.svg';

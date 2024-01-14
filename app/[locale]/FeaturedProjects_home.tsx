@@ -1,12 +1,12 @@
 'use client';
 
-import styles from './featured-projects_home.module.css';
+import styles from './FeaturedProjects_home.module.css';
 
 import { useScopedI18n } from '@/locales/client';
-import { useTheme } from '@providers/theme-provider';
+import { useTheme } from '@providers/ThemeContextProvider';
 
-import SectionTitle from '@components/section-title';
-import ProjectCard from '@components/project/project-card';
+import SectionTitle from '@components/SectionTitle';
+import ProjectCard from '@components/project/ProjectCard';
 import { featuredProjects } from '@data/projects';
 
 import starIcon_light from '@icons/light/star-line.svg';

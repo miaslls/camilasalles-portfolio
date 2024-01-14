@@ -1,10 +1,10 @@
 'use client';
 
-import styles from './project-links.module.css';
+import styles from './ProjectLinks.module.css';
 
 import Link from 'next/link';
 import Image from 'next/image';
-import { useTheme } from '@providers/theme-provider';
+import { useTheme } from '@providers/ThemeContextProvider';
 import type { ProjectLinks } from '@data/projects';
 
 import githubIcon_light from '@icons/light-accent-01/github-fill.svg';

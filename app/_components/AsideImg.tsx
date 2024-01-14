@@ -1,11 +1,11 @@
 'use client';
 
-import styles from './aside-img.module.css';
+import styles from './AsideImg.module.css';
 
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
-import { useDevice } from '@providers/device-provider';
-import { useTheme } from '@providers/theme-provider';
+import { useDevice } from '@providers/DeviceContextProvider';
+import { useTheme } from '@providers/ThemeContextProvider';
 
 import girlieImg from '@images/girlie.svg';
 import pcImg_light from '@images/pc-light.svg';

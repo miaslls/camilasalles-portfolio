@@ -1,17 +1,17 @@
-import styles from './top-bar.module.css';
+import styles from './TopBar.module.css';
 
 import Image from 'next/image';
 import dynamic from 'next/dynamic';
 import { usePathname } from 'next/navigation';
-import { useDevice } from '@providers/device-provider';
-import { useMenu } from '@providers/menu-provider';
+import { useDevice } from '@providers/DeviceContextProvider';
+import { useMenu } from '@providers/MenuContextProvider';
 
 import menuIcon from '@icons/light/menu-line.svg';
 
-const LanguageNav = dynamic(() => import('@components/menu/language-nav'));
+const LanguageNav = dynamic(() => import('@components/menu/LanguageNav'));
 
 const ToggleThemeButton = dynamic(
-  () => import('@components/menu/toggle-theme-button'),
+  () => import('@components/menu/ToggleThemeButton'),
   { ssr: false }
 );
 

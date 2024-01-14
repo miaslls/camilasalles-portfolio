@@ -2,8 +2,8 @@ import { setStaticParamsLocale } from 'next-international/server';
 import { getScopedI18n } from '@/locales/server';
 import type { Metadata } from 'next';
 
-import AsideImg from '@components/aside-img';
-import ContactLinks from './contact-links';
+import AsideImg from '@components/AsideImg';
+import ContactLinks from './ContactLinks';
 import MessageSection from './MessageSection';
 
 export async function generateMetadata(): Promise<Metadata> {

@@ -2,11 +2,11 @@
 
 import styles from './MessageSection.module.css';
 
-import { useTheme } from '@providers/theme-provider';
+import { useTheme } from '@providers/ThemeContextProvider';
 import { useScopedI18n } from '@/locales/client';
 import { useMessageForm } from './useMessageForm';
-import SectionTitle from '@components/section-title';
-import MessageForm from './message-form';
+import SectionTitle from '@components/SectionTitle';
+import MessageForm from './MessageForm';
 
 import mailIcon_light from '@icons/light/mail-send-line.svg';
 import mailIcon_dark from '@icons/dark/mail-send-line.svg';
