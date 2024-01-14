@@ -203,6 +203,16 @@ p.default {
   line-height: 1.75rem;
 }
 
+.custom.tooltip {
+  background: var(--accent-02);
+  color: var(--bg-color);
+  border-radius: 1.5rem;
+}
+
+#header.custom.tooltip {
+  border-radius: 1.5rem 1.25rem 1.25rem 1.5rem;
+}
+
 /* 📌 @media */
 
 @media (hover: hover) and (pointer: fine) {

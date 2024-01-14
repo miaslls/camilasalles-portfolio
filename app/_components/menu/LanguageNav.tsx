@@ -2,8 +2,11 @@
 
 import styles from './LanguageNav.module.css';
 import { usePathname } from 'next/navigation';
+import { useScopedI18n } from '@/locales/client';
 
 export default function LanguageNav() {
+  const t = useScopedI18n('tooltip.header');
+
   const localizedPath = usePathname();
 
   const rawPath = localizedPath.length > 3 ? localizedPath.slice(3) : '/';
@@ -11,22 +14,27 @@ export default function LanguageNav() {
   const currentLocale =
     localizedPath.length >= 3 ? localizedPath.slice(1, 3) : '';
 
-  const availableLocales = ['en', 'pt'];
+  const availableLocales = [
+    { abbr: 'en', lang: 'English' },
+    { abbr: 'pt', lang: 'Português' },
+  ];
 
   return (
     <nav>
       <ul className={styles.list}>
         {availableLocales.map((locale) => (
-          <li key={locale}>
+          <li key={`locale-${locale.abbr}`}>
             <a
-              href={`/${locale}${rawPath}`}
+              href={`/${locale.abbr}${rawPath}`}
               className={`${styles.link} ${
-                currentLocale === locale ? styles.active : ''
+                currentLocale === locale.abbr ? styles.active : ''
               }`}
               data-tooltip-id="header"
-              data-tooltip-content={`view in ${locale}`}
+              data-tooltip-content={`${t('language')} ${locale.lang}${
+                currentLocale === locale.abbr ? t('current') : ''
+              }`}
             >
-              {locale}
+              {locale.abbr}
             </a>
           </li>
         ))}

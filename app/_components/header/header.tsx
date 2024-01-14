@@ -26,7 +26,13 @@ export default function Header() {
 
       {isNotMobile && <MainMenu />}
 
-      <Tooltip id="header" className="tooltip" place="bottom-end" />
+      <Tooltip
+        id="header"
+        className="custom tooltip"
+        place="left"
+        opacity={1}
+        offset={12}
+      />
     </header>
   );
 }

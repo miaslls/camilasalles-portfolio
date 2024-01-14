@@ -3,6 +3,14 @@ export default {
     view_all: 'ver todos',
   },
 
+  tooltip: {
+    header: {
+      language: 'idioma:',
+      current: ' (atual)',
+      theme: 'alternar tema claro/escuro',
+    },
+  },
+
   home: {
     title: 'Home',
     featured_projects: 'projetos em destaque',

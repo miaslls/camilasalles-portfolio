@@ -3,6 +3,14 @@ export default {
     view_all: 'view all',
   },
 
+  tooltip: {
+    header: {
+      language: 'view in',
+      current: ' (current)',
+      theme: 'toggle light/dark mode',
+    },
+  },
+
   home: {
     title: 'Home',
     featured_projects: 'featured projects',
