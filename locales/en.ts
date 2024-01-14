@@ -46,6 +46,8 @@ export default {
           body: 'Sent%20from%20https%3A%2F%2Fcamilasalles.dev',
         },
         copy: 'copy to clipboard',
+        copied: 'copied to clipboard!',
+        error: 'error',
         profile: 'visit profile',
         repos: 'visit repositories',
         inbox: 'send inbox',

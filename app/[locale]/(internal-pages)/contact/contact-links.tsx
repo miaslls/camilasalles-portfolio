@@ -43,7 +43,7 @@ export default function ContactLinks() {
     ],
     copy_button: {
       copy: () => {
-        copyToClipboard(emailAddress);
+        copyToClipboard(emailAddress, t);
       },
       text: t('copy'),
       icon: isDarkTheme ? copyIcon_dark : copyIcon_light,
