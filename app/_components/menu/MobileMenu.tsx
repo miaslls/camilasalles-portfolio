@@ -95,15 +95,13 @@ export default function MobileMenu() {
             <div className={styles.menu}>
               <MainMenu closeMenu={closeMenu} />
 
-              <div className={styles.img_container}>
-                <Image
-                  className={`${styles.menu_img} ${
-                    isDarkTheme ? styles.dark : ''
-                  }`}
-                  src={menuImg}
-                  alt=""
-                />
-              </div>
+              <Image
+                className={`${styles.menu_img} ${
+                  isDarkTheme ? styles.dark : ''
+                }`}
+                src={menuImg}
+                alt=""
+              />
             </div>
           </div>
 

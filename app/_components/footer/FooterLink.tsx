@@ -35,9 +35,7 @@ export default function FooterLink({
       target={isExternal ? '_blank' : undefined}
       rel={isExternal ? 'noopener noreferrer' : undefined}
     >
-      <div className={styles.icon_container}>
-        <Image className={styles.link_icon} src={icon} alt="" />
-      </div>
+      <Image className={styles.link_icon} src={icon} alt="" />
 
       {device !== 'mobile' && (
         <>
