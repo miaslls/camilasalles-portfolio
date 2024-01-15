@@ -5,7 +5,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     {
       url: 'https://camilasalles.dev',
       lastModified: new Date(),
-      changeFrequency: 'monthly',
+      changeFrequency: 'weekly',
       priority: 1,
     },
     {
@@ -23,7 +23,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     {
       url: 'https://camilasalles.dev/contact',
       lastModified: new Date(),
-      changeFrequency: 'never',
+      changeFrequency: 'monthly',
       priority: 0.8,
     },
   ];
