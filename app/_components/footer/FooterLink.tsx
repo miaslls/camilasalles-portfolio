@@ -12,7 +12,7 @@ import externalLinkIcon_dark from '@icons/dark-accent-01/arrow-right-up-line.svg
 
 export type FooterLinkProps = {
   url: string;
-  icon: any; // Use any to avoid conflicts with @svgr/webpack plugin or babel-plugin-inline-react-svg plugin.
+  icon: any; // 🪲 Use any to avoid conflicts with @svgr/webpack plugin or babel-plugin-inline-react-svg plugin.
   tooltip: string;
   text: string;
   isExternal: boolean;

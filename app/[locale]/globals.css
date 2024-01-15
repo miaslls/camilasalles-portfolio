@@ -51,10 +51,6 @@ html * {
   border: 0;
 
   transition: background 200ms;
-
-  /* 🐞 */
-
-  /* border: 1px dotted #999999; */
 }
 
 button,
@@ -114,12 +110,6 @@ body {
   margin: 3.5rem 0;
   padding: 0 var(--layout-padding-desktop);
 }
-
-/* 🐞 */
-
-/* .child_container * {
-  border: 1px dotted #999999;
-} */
 
 .page_container {
   width: 100%;
@@ -228,7 +218,7 @@ p.default {
   }
 }
 
-/* ⚠️ mobile && tablet */
+/* 📌 mobile && tablet */
 
 @media (max-width: 1120px) {
   .page_container {
@@ -245,7 +235,7 @@ p.default {
   }
 }
 
-/* ⚠️ mobile */
+/* 📌 mobile */
 
 @media (max-width: 700px) {
   .child_container {
@@ -258,7 +248,7 @@ p.default {
   }
 }
 
-/* ⚠️ tablet */
+/* 📌 tablet */
 
 @media (min-width: 701px) and (max-width: 1120px) {
   .child_container {

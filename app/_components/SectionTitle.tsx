@@ -3,7 +3,7 @@ import Image from 'next/image';
 
 export type SectionTitleProps = {
   title: string;
-  icon: any; // ⚠️
+  icon: any; // 🪲
 };
 
 export default function SectionTitle({ title, icon }: SectionTitleProps) {

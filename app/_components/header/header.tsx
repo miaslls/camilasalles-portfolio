@@ -10,7 +10,6 @@ import { Tooltip } from 'react-tooltip';
 import TopBar from './TopBar';
 import HomeImg from './HomeImg';
 
-// const HomeImg = dynamic(() => import('./HomeImg'));
 const MainMenu = dynamic(() => import('@/app/_components/menu/MainMenu'));
 
 export default function Header() {

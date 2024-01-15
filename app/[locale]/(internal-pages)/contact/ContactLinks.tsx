@@ -88,8 +88,6 @@ export default function ContactLinks() {
             </li>
           ))}
 
-          {/* 🪲 EXTRA + FIXME: mobile copy to clipboard 📋 */}
-
           <li>
             <button
               className={`button_link ${styles.link}`}

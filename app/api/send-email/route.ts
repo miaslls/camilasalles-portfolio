@@ -11,7 +11,7 @@ const transporter = nodemailer.createTransport({
   },
 });
 
-// FIXME: error handling 🔻
+// FIXME: 🐞 error handling 🔻
 
 export async function POST(req: Request) {
   const body: EmailData = await req.json();
