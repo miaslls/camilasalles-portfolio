@@ -9,6 +9,22 @@ export default {
       current: ' (atual)',
       theme: 'alternar tema claro/escuro',
     },
+
+    footer: {
+      maps: 'ver no Google Maps',
+      linkedin: 'ver perfil no LinkedIn',
+      github: 'ver perfil no GitHub',
+    },
+
+    project: {
+      demo: 'demo live',
+      repo: 'repositório',
+    },
+
+    form: {
+      submit: 'enviar',
+      clear: 'limpar',
+    },
   },
 
   home: {

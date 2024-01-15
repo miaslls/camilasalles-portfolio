@@ -2,6 +2,7 @@ import styles from './MessageForm.module.css';
 
 import Image from 'next/image';
 import { ChangeEvent } from 'react';
+import { Tooltip } from 'react-tooltip';
 import { useTheme } from '@providers/ThemeContextProvider';
 import { useScopedI18n } from '@/locales/client';
 import { handleSubmitMessage } from './handleSubmitMessage';
@@ -27,6 +28,7 @@ export default function MessageForm({
   handleChange,
 }: MessageFormProps) {
   const t = useScopedI18n('contact.aside.form');
+  const toolT = useScopedI18n('tooltip.form');
 
   const { theme } = useTheme();
   const isDarkTheme = theme === 'dark';
@@ -72,7 +74,13 @@ export default function MessageForm({
       ></textarea>
 
       <div className={styles.btn_container}>
-        <button className={styles.form_btn} type="button" onClick={clearForm}>
+        <button
+          className={styles.form_btn}
+          type="button"
+          onClick={clearForm}
+          data-tooltip-id="form"
+          data-tooltip-content={toolT('clear')}
+        >
           <Image
             className={styles.btn_icon}
             src={isDarkTheme ? clearIcon_dark : clearIcon_light}
@@ -80,7 +88,12 @@ export default function MessageForm({
           />
         </button>
 
-        <button className={styles.form_btn} type="submit">
+        <button
+          className={styles.form_btn}
+          type="submit"
+          data-tooltip-id="form"
+          data-tooltip-content={toolT('submit')}
+        >
           <Image
             className={styles.btn_icon}
             src={isDarkTheme ? sendIcon_dark : sendIcon_light}
@@ -88,6 +101,14 @@ export default function MessageForm({
           />
         </button>
       </div>
+
+      <Tooltip
+        id="form"
+        className="custom tooltip"
+        place="top"
+        opacity={1}
+        offset={8}
+      />
     </form>
   );
 }

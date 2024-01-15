@@ -9,6 +9,22 @@ export default {
       current: ' (current)',
       theme: 'toggle light/dark mode',
     },
+
+    footer: {
+      maps: 'view in Google Maps',
+      linkedin: 'view LinkedIn profile',
+      github: 'view GitHub profile',
+    },
+
+    project: {
+      demo: 'live demo',
+      repo: 'repository',
+    },
+
+    form: {
+      submit: 'submit',
+      clear: 'clear',
+    },
   },
 
   home: {

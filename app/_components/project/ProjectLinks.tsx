@@ -4,6 +4,8 @@ import styles from './ProjectLinks.module.css';
 
 import Link from 'next/link';
 import Image from 'next/image';
+import { Tooltip } from 'react-tooltip';
+import { useI18n } from '@/locales/client';
 import { useTheme } from '@providers/ThemeContextProvider';
 import type { ProjectLinks } from '@data/projects';
 
@@ -18,6 +20,8 @@ export default function ProjectLinks({
   github_front_url,
   github_back_url,
 }: ProjectLinks) {
+  const t = useI18n();
+
   const { theme } = useTheme();
   const isDarkTheme = theme === 'dark';
 
@@ -33,6 +37,8 @@ export default function ProjectLinks({
               target="_blank"
               className={styles.link}
               rel="noopener noreferrer"
+              data-tooltip-id="project_link"
+              data-tooltip-content={t('tooltip.project.repo')}
             >
               <Image
                 className={styles.link_icon}
@@ -52,6 +58,8 @@ export default function ProjectLinks({
               target="_blank"
               className={styles.link}
               rel="noopener noreferrer"
+              data-tooltip-id="project_link"
+              data-tooltip-content={t('tooltip.project.repo')}
             >
               <Image
                 className={styles.link_icon}
@@ -69,6 +77,8 @@ export default function ProjectLinks({
               target="_blank"
               className={styles.link}
               rel="noopener noreferrer"
+              data-tooltip-id="project_link"
+              data-tooltip-content={t('tooltip.project.repo')}
             >
               <Image
                 className={styles.link_icon}
@@ -80,7 +90,13 @@ export default function ProjectLinks({
         )}
 
         <li className={styles.list_item}>
-          <Link href={live_demo_url} target="_blank" className={styles.link}>
+          <Link
+            href={live_demo_url}
+            target="_blank"
+            className={styles.link}
+            data-tooltip-id="project_link"
+            data-tooltip-content={t('tooltip.project.demo')}
+          >
             <Image
               className={styles.link_icon}
               src={isDarkTheme ? playIcon_dark : playIcon_light}
@@ -89,6 +105,14 @@ export default function ProjectLinks({
           </Link>
         </li>
       </ul>
+
+      <Tooltip
+        id="project_link"
+        className="custom tooltip"
+        place="left"
+        opacity={1}
+        offset={12}
+      />
     </nav>
   );
 }

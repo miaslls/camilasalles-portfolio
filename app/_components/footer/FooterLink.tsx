@@ -13,6 +13,7 @@ import externalLinkIcon_dark from '@icons/dark-accent-01/arrow-right-up-line.svg
 export type FooterLinkProps = {
   url: string;
   icon: any; // Use any to avoid conflicts with @svgr/webpack plugin or babel-plugin-inline-react-svg plugin.
+  tooltip: string;
   text: string;
   isExternal: boolean;
 };
@@ -21,6 +22,7 @@ export default function FooterLink({
   url,
   icon,
   text,
+  tooltip,
   isExternal,
 }: FooterLinkProps) {
   const { theme } = useTheme();
@@ -34,6 +36,8 @@ export default function FooterLink({
       href={url}
       target={isExternal ? '_blank' : undefined}
       rel={isExternal ? 'noopener noreferrer' : undefined}
+      data-tooltip-id="footer"
+      data-tooltip-content={tooltip}
     >
       <Image className={styles.link_icon} src={icon} alt="" />
 
