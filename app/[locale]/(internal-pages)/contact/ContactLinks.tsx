@@ -16,16 +16,16 @@ import linkedinIcon_light from '@icons/light/linkedin-box-fill.svg';
 import linkedinIcon_dark from '@icons/dark/linkedin-box-fill.svg';
 import githubIcon_light from '@icons/light/github-fill.svg';
 import githubIcon_dark from '@icons/dark/github-fill.svg';
-
 import copyIcon_light from '@icons/light-accent-01/file-copy-line.svg';
 import copyIcon_dark from '@icons/dark-accent-01/file-copy-line.svg';
 
 export default function ContactLinks() {
   const t = useScopedI18n('contact.main.links');
+
   const { theme } = useTheme();
   const isDarkTheme = theme === 'dark';
 
-  const emailAddress = 'dev@camilasalles.dev';
+  const emailAddress = t('email.address');
   const linkedinHandle = 'in/salles-camila';
   const linkedinProfileUrl = 'https://www.linkedin.com/in/salles-camila/';
   const githubHandle = '/miaslls';

@@ -66,6 +66,7 @@ export default {
     main: {
       links: {
         email: {
+          address: 'me@camilasalles.dev',
           label: 'send email',
           body: 'Sent%20from%20https%3A%2F%2Fcamilasalles.dev',
         },
