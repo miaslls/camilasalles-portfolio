@@ -20,9 +20,9 @@ export default function HomeImg() {
     <div className={styles.container}>
       <div className={styles.img_container}>
         <Image
-          fetchPriority="high"
           className={styles.img}
           src={theme === 'dark' ? img_dark : img_light}
+          priority
           alt=""
         />
       </div>
