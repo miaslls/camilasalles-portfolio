@@ -41,7 +41,7 @@ export default function MenuProvider({
     return () => {
       applyBodyOverflow(false);
     };
-  }, [isMenuOpen]);
+  }, [isMenuOpen, setIsMenuOpen]);
 
   const handleToggleMenu = () => {
     setIsMenuOpen((current) => !current);
