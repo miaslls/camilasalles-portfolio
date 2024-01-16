@@ -194,14 +194,10 @@ p.default {
 }
 
 .custom.tooltip {
-  background: var(--accent-01);
-  color: var(--bg-color);
+  background: var(--accent-02);
+  color: var(--light-color);
   border-radius: 1.5rem;
   font-size: 0.9rem;
-}
-
-#header.custom.tooltip {
-  background: var(--accent-02);
 }
 
 #header.custom.tooltip,
