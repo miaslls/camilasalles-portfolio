@@ -38,7 +38,6 @@ export default function ContactInfo() {
       href: `mailto:${emailAddress}?body=%0D%0A%0D%0A${t(
         'email.body'
       )}%20https%3A%2F%2Fcamilasalles.dev`,
-      tooltip: toolT('send_mail'),
     },
     copy_button: {
       copy: () => {
@@ -54,7 +53,6 @@ export default function ContactInfo() {
     icon: isDarkTheme ? linkedinIcon_light : linkedinIcon_dark,
     profile: {
       href: linkedinProfileUrl,
-      tooltip: toolT('profile', { service: 'LinkedIn' }),
     },
   };
 
@@ -63,7 +61,6 @@ export default function ContactInfo() {
     icon: isDarkTheme ? githubIcon_light : githubIcon_dark,
     profile: {
       href: githubProfileUrl,
-      tooltip: toolT('profile', { service: 'GitHub' }),
     },
   };
 
@@ -75,8 +72,6 @@ export default function ContactInfo() {
           href={emailInfo.send_mail.href}
           target="_blank"
           rel="noopener noreferrer"
-          data-tooltip-id="form"
-          data-tooltip-content={emailInfo.send_mail.tooltip}
         >
           <Image className={styles.icon} src={emailInfo.icon} alt="" />
           <span>{emailInfo.text}</span>
@@ -85,7 +80,7 @@ export default function ContactInfo() {
         <button
           className={styles.copy}
           onClick={emailInfo.copy_button.copy}
-          data-tooltip-id="form"
+          data-tooltip-id="contacts"
           data-tooltip-content={emailInfo.copy_button.tooltip}
         >
           <Image
@@ -102,8 +97,6 @@ export default function ContactInfo() {
           href={linkedinInfo.profile.href}
           target="_blank"
           rel="noopener noreferrer"
-          data-tooltip-id="form"
-          data-tooltip-content={linkedinInfo.profile.tooltip}
         >
           <Image className={styles.icon} src={linkedinInfo.icon} alt="" />
           <span>{linkedinInfo.text}</span>
@@ -116,8 +109,6 @@ export default function ContactInfo() {
           href={githubInfo.profile.href}
           target="_blank"
           rel="noopener noreferrer"
-          data-tooltip-id="form"
-          data-tooltip-content={githubInfo.profile.tooltip}
         >
           <Image className={styles.icon} src={githubInfo.icon} alt="" />
           <span>{githubInfo.text}</span>

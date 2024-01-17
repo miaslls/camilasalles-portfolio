@@ -23,9 +23,7 @@ export default {
     },
 
     contact: {
-      send_mail: 'enviar email',
       copy: 'copiar endereço',
-      profile: 'ver perfil no {service}',
     },
 
     form: {
