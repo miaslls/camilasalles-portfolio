@@ -9,9 +9,3 @@
   width: 1.5rem;
   height: 1.5rem;
 }
-
-.title {
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}

@@ -1,6 +1,7 @@
 export default {
   unscoped: {
     view_all: 'ver todos',
+    dev_and_design: 'desenvolvimento & design',
   },
 
   tooltip: {
@@ -19,6 +20,12 @@ export default {
     project: {
       demo: 'demo live',
       repo: 'repositório',
+    },
+
+    contact: {
+      send_mail: 'enviar email',
+      copy: 'copiar endereço',
+      profile: 'ver perfil no {service}',
     },
 
     form: {
@@ -68,15 +75,12 @@ export default {
       links: {
         email: {
           address: 'eu@camilasalles.dev',
-          label: 'enviar email',
-          body: 'Enviado%20de%20https%3A%2F%2Fcamilasalles.dev',
+          body: 'Enviado%20de',
+          toast: {
+            copied: 'copiado!',
+            error: 'erro',
+          },
         },
-        copy: 'copiar endereço',
-        copied: 'copiado!',
-        error: 'erro',
-        profile: 'ver perfil',
-        repos: 'ver repositórios',
-        inbox: 'mensagem inbox',
       },
     },
 

@@ -27,7 +27,7 @@ export default async function AboutPage({
     <div className="page_container">
       <main className="page_content">
         <header className="content_header">
-          <h1>{t('title')}</h1>
+          <h1 className="clippable">{t('title')}</h1>
 
           <p className="default">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ligula

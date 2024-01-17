@@ -10,7 +10,7 @@ export default function SectionTitle({ title, icon }: SectionTitleProps) {
   return (
     <div className={styles.title_container}>
       <Image className={styles.icon} src={icon} alt="" />
-      <h2 className={styles.title}>{title}</h2>
+      <h2 className="clippable">{title}</h2>
     </div>
   );
 }

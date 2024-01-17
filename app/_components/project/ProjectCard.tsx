@@ -19,7 +19,7 @@ export default function ProjectCard({
   return (
     <article className={styles.container}>
       <header className={styles.header}>
-        <h3 className={styles.title}>{title}</h3>
+        <h3 className={`${styles.title} clippable`}>{title}</h3>
         <ProjectLinks {...links} />
       </header>
 
