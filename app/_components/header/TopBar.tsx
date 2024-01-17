@@ -24,7 +24,7 @@ export default function TopBar() {
   return (
     <div className={`${styles.container} ${isHomePage ? styles.home : ''}`}>
       {!isHomePage && (
-        <p className={styles.title}>
+        <p className={`${styles.title} clippable`}>
           <span>Camila Salles</span> &nbsp; development & design
         </p>
       )}

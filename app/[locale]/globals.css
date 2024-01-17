@@ -205,6 +205,12 @@ p.default {
   border-radius: 1.5rem 1.25rem 1.25rem 1.5rem;
 }
 
+.clippable {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 /* 📌 @media */
 
 @media (hover: hover) and (pointer: fine) {
