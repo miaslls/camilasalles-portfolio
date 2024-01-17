@@ -3,7 +3,7 @@ import { getScopedI18n } from '@/locales/server';
 import type { Metadata } from 'next';
 
 import AsideImg from '@components/AsideImg';
-import ContactLinks from './ContactLinks';
+import ContactInfo from './ContactInfo';
 import MessageSection from './MessageSection';
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -36,7 +36,7 @@ export default async function ContactPage({
           </p>
         </header>
 
-        <ContactLinks />
+        <ContactInfo />
       </main>
 
       <aside>

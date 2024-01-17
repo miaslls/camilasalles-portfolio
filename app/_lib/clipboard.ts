@@ -11,9 +11,9 @@ export async function copyToClipboard(
 
   try {
     await navigator.clipboard.writeText(text);
-    toast.success(translate('copied'));
+    toast.success(translate('email.toast.copied'));
   } catch (error) {
     console.log(error);
-    toast.error(`${translate('error')}: ${error}`);
+    toast.error(`${translate('email.toast.error')}: ${error}`);
   }
 }
