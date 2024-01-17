@@ -3,6 +3,7 @@ import styles from './TopBar.module.css';
 import Image from 'next/image';
 import dynamic from 'next/dynamic';
 import { usePathname } from 'next/navigation';
+import { useScopedI18n } from '@/locales/client';
 import { useDevice } from '@providers/DeviceContextProvider';
 import { useMenu } from '@providers/MenuContextProvider';
 
@@ -16,6 +17,8 @@ const ToggleThemeButton = dynamic(
 );
 
 export default function TopBar() {
+  const t = useScopedI18n('unscoped');
+
   const isHomePage = usePathname().length === 3;
   const isMobile = useDevice() === 'mobile';
 
@@ -25,7 +28,7 @@ export default function TopBar() {
     <div className={`${styles.container} ${isHomePage ? styles.home : ''}`}>
       {!isHomePage && (
         <p className={`${styles.title} clippable`}>
-          <span>Camila Salles</span> &nbsp; development & design
+          <span>Camila Salles</span> &nbsp; {t('dev_and_design')}
         </p>
       )}
 

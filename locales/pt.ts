@@ -1,6 +1,7 @@
 export default {
   unscoped: {
     view_all: 'ver todos',
+    dev_and_design: 'desenvolvimento & design',
   },
 
   tooltip: {
