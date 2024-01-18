@@ -41,6 +41,7 @@ export default {
     title: 'Projects',
     main: {
       featured_projects: 'featured',
+      view_demo: 'view live demo',
     },
 
     aside: {

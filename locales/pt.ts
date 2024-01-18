@@ -39,9 +39,9 @@ export default {
 
   projects: {
     title: 'Projetos',
-
     main: {
       featured_projects: 'em destaque',
+      view_demo: 'ver demo live',
     },
 
     aside: {
