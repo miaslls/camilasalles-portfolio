@@ -6,7 +6,7 @@ export default {
 
   tooltip: {
     header: {
-      language: 'idioma:',
+      language: 'veja em',
       current: ' (atual)',
       theme: 'alternar tema claro/escuro',
     },
