@@ -6,7 +6,6 @@ import { Tooltip } from 'react-tooltip';
 import { useTheme } from '@providers/ThemeContextProvider';
 import { useDevice } from '@providers/DeviceContextProvider';
 import { useScopedI18n } from '@/locales/client';
-
 import FooterLink from './FooterLink';
 
 import githubIcon_light from '@icons/light-accent-01/github-fill.svg';

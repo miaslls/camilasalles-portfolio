@@ -2,11 +2,10 @@
 
 import { useScopedI18n } from '@/locales/client';
 import { useTheme } from '@providers/ThemeContextProvider';
-
+import { latestProjects } from '@data/projects';
 import SectionTitle from '@components/SectionTitle';
 import ViewAllLink from '@components/project/ViewAllLink';
 import MiniProjectCard from '@components/project/MiniProjectCard';
-import { latestProjects } from '@data/projects';
 
 import megaphoneIcon_light from '@icons/light/megaphone-line.svg';
 import megaphoneIcon_dark from '@icons/dark/megaphone-line.svg';

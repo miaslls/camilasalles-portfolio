@@ -2,10 +2,9 @@
 
 import { useScopedI18n } from '@/locales/client';
 import { useTheme } from '@providers/ThemeContextProvider';
-
+import { projects } from '@data/projects';
 import SectionTitle from '@components/SectionTitle';
 import MiniProjectCard from '@components/project/MiniProjectCard';
-import { projects } from '@data/projects';
 
 import computerIcon_light from '@icons/light/computer-line.svg';
 import computerIcon_dark from '@icons/dark/computer-line.svg';

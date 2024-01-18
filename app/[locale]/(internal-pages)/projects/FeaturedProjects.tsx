@@ -5,11 +5,10 @@ import styles from './FeaturedProjects.module.css';
 import { useScopedI18n } from '@/locales/client';
 import { useTheme } from '@providers/ThemeContextProvider';
 import { useDevice } from '@providers/DeviceContextProvider';
-
+import { featuredProjects } from '@data/projects';
 import SectionTitle from '@components/SectionTitle';
 import ViewAllLink from '@components/project/ViewAllLink';
 import ProjectCard from '@components/project/ProjectCard';
-import { featuredProjects } from '@data/projects';
 
 import starIcon_light from '@icons/light/star-line.svg';
 import starIcon_dark from '@icons/dark/star-line.svg';

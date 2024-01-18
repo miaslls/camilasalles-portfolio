@@ -1,8 +1,7 @@
 import './globals.css';
 
-import type { Metadata, Viewport } from 'next';
-
 import dynamic from 'next/dynamic';
+import type { Metadata, Viewport } from 'next';
 import { Toaster } from 'react-hot-toast';
 import { Work_Sans, Outfit } from 'next/font/google';
 import { getStaticParams } from '@/locales/server';
@@ -13,12 +12,9 @@ import Header from '@components/header/Header';
 import Footer from '@components/footer/Footer';
 import MobileMenu from '@components/menu/MobileMenu';
 
-const DeviceProvider = dynamic(
-  () => import('@providers/DeviceContextProvider'),
-  {
-    ssr: false,
-  }
-);
+const DeviceProvider = dynamic(() => import('@providers/DeviceContextProvider'), {
+  ssr: false,
+});
 
 const ThemeProvider = dynamic(() => import('@providers/ThemeContextProvider'), {
   ssr: false,
