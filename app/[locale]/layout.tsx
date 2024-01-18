@@ -89,12 +89,12 @@ const outfit = Outfit({
 const customToastOptions = {
   style: {
     background: 'var(--accent-02)',
-    color: 'var(--bg-color)',
+    color: 'var(--light-color)',
     paddingLeft: '1rem',
     borderRadius: '1.5rem',
   },
   iconTheme: {
-    primary: 'var(--bg-color)',
+    primary: 'var(--light-color)',
     secondary: 'var(--accent-02)',
   },
 };

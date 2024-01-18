@@ -6,7 +6,7 @@ export default {
 
   tooltip: {
     header: {
-      language: 'idioma:',
+      language: 'veja em',
       current: ' (atual)',
       theme: 'alternar tema claro/escuro',
     },
@@ -23,9 +23,7 @@ export default {
     },
 
     contact: {
-      send_mail: 'enviar email',
       copy: 'copiar endereço',
-      profile: 'ver perfil no {service}',
     },
 
     form: {
@@ -41,9 +39,9 @@ export default {
 
   projects: {
     title: 'Projetos',
-
     main: {
       featured_projects: 'em destaque',
+      view_demo: 'ver demo live',
     },
 
     aside: {

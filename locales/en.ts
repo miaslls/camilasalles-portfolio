@@ -23,9 +23,7 @@ export default {
     },
 
     contact: {
-      send_mail: 'send mail',
       copy: 'copy to clipboard',
-      profile: 'visit {service} profile',
     },
 
     form: {
@@ -43,6 +41,7 @@ export default {
     title: 'Projects',
     main: {
       featured_projects: 'featured',
+      view_demo: 'view live demo',
     },
 
     aside: {

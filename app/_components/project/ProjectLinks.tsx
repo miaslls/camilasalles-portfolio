@@ -5,8 +5,8 @@ import styles from './ProjectLinks.module.css';
 import Link from 'next/link';
 import Image from 'next/image';
 import { Tooltip } from 'react-tooltip';
-import { useI18n } from '@/locales/client';
 import { useTheme } from '@providers/ThemeContextProvider';
+import { useScopedI18n } from '@/locales/client';
 import type { ProjectLinks } from '@data/projects';
 
 import githubIcon_light from '@icons/light-accent-01/github-fill.svg';
@@ -20,7 +20,7 @@ export default function ProjectLinks({
   github_front_url,
   github_back_url,
 }: ProjectLinks) {
-  const t = useI18n();
+  const t = useScopedI18n('tooltip.project');
 
   const { theme } = useTheme();
   const isDarkTheme = theme === 'dark';
@@ -38,7 +38,7 @@ export default function ProjectLinks({
               className={styles.link}
               rel="noopener noreferrer"
               data-tooltip-id="project_link"
-              data-tooltip-content={t('tooltip.project.repo')}
+              data-tooltip-content={t('repo')}
             >
               <Image
                 className={styles.link_icon}
@@ -59,7 +59,7 @@ export default function ProjectLinks({
               className={styles.link}
               rel="noopener noreferrer"
               data-tooltip-id="project_link"
-              data-tooltip-content={t('tooltip.project.repo')}
+              data-tooltip-content={t('repo')}
             >
               <Image
                 className={styles.link_icon}
@@ -78,7 +78,7 @@ export default function ProjectLinks({
               className={styles.link}
               rel="noopener noreferrer"
               data-tooltip-id="project_link"
-              data-tooltip-content={t('tooltip.project.repo')}
+              data-tooltip-content={t('repo')}
             >
               <Image
                 className={styles.link_icon}
@@ -94,8 +94,9 @@ export default function ProjectLinks({
             href={live_demo_url}
             target="_blank"
             className={styles.link}
+            rel="noopener noreferrer"
             data-tooltip-id="project_link"
-            data-tooltip-content={t('tooltip.project.demo')}
+            data-tooltip-content={t('demo')}
           >
             <Image
               className={styles.link_icon}
