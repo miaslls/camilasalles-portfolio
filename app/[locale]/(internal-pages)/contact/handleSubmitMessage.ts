@@ -1,7 +1,7 @@
 import toast from 'react-hot-toast';
 import { FormEvent } from 'react';
 import { FormState } from './useMessageForm';
-import { EmailData } from '@api/send-email/types';
+import type { EmailData } from '@api/send-email/types';
 
 async function sendEmail(data: EmailData) {
   try {

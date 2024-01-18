@@ -4,10 +4,9 @@ import styles from './FeaturedProjects_home.module.css';
 
 import { useScopedI18n } from '@/locales/client';
 import { useTheme } from '@providers/ThemeContextProvider';
-
+import { featuredProjects } from '@data/projects';
 import SectionTitle from '@components/SectionTitle';
 import ProjectCard from '@components/project/ProjectCard';
-import { featuredProjects } from '@data/projects';
 
 import starIcon_light from '@icons/light/star-line.svg';
 import starIcon_dark from '@icons/dark/star-line.svg';

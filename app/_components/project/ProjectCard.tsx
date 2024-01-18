@@ -4,11 +4,10 @@ import styles from './ProjectCard.module.css';
 
 import Link from 'next/link';
 import Image from 'next/image';
-import ProjectLinks from './ProjectLinks';
 import { useScopedI18n } from '@/locales/client';
-import type { Project } from '@data/projects';
-
+import ProjectLinks from './ProjectLinks';
 import TagList from '@components/TagList';
+import type { Project } from '@data/projects';
 
 export default function ProjectCard({
   title,
