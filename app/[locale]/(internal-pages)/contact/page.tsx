@@ -8,10 +8,20 @@ import MessageSection from './MessageSection';
 
 export async function generateMetadata(): Promise<Metadata> {
   const t = await getScopedI18n('contact');
+  const unscopedT = await getScopedI18n('unscoped');
 
-  return {
-    title: t('title').toUpperCase(),
-  };
+  let title = '';
+
+  try {
+    title = `${t('title').toUpperCase()} | Camila Salles • ${unscopedT(
+      'dev_and_design'
+    )}`;
+  } catch (error) {
+    console.error('Error fetching translations:', error);
+    title = 'Camila Salles • development & design';
+  }
+
+  return { title };
 }
 
 export default async function ContactPage({

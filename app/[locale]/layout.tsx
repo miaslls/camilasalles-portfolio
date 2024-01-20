@@ -12,9 +12,12 @@ import Header from '@components/header/Header';
 import Footer from '@components/footer/Footer';
 import MobileMenu from '@components/menu/MobileMenu';
 
-const DeviceProvider = dynamic(() => import('@providers/DeviceContextProvider'), {
-  ssr: false,
-});
+const DeviceProvider = dynamic(
+  () => import('@providers/DeviceContextProvider'),
+  {
+    ssr: false,
+  }
+);
 
 const ThemeProvider = dynamic(() => import('@providers/ThemeContextProvider'), {
   ssr: false,
@@ -33,10 +36,7 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  title: {
-    template: `%s | Camila Salles`,
-    default: 'Camila Salles',
-  },
+  title: 'Camila Salles • development & design',
   description:
     "Camila Salles' professional portfolio showcasing front-end development and web design skills. Specializing in React, Next.js, and TypeScript; Figma, and Adobe Suite.",
   keywords: [
