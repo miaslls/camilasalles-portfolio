@@ -38,12 +38,7 @@ export default async function ContactPage({
         <header className="content_header">
           <h1 className="clippable">{t('title')}</h1>
 
-          <p className="default">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean et
-            nisl ligula. Aenean vehicula pharetra commodo. Sed sed ultrices
-            justo, dignissim pharetra tellus. Nulla fermentum ornare neque vitae
-            auctor. Nam mi mi, eleifend vitae tempor nec.
-          </p>
+          <p className="default">{t('main.text')}</p>
         </header>
 
         <ContactInfo />
