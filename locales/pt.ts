@@ -52,13 +52,20 @@ export default {
   about: {
     title: 'Sobre',
     main: {
+      intro: {
+        text: 'Sou Camila Salles, desenvolvedora full-stack e designer de UI/UX com sólida experiência em educação e tecnologia. Após 15 anos aprimorando habilidades analíticas em sala de aula, fiz a transição para o mundo do código, encontrando uma forma apaixonada de expressar minha criatividade. Hoje, amplio meus conhecimentos em React, NestJS e TypeScript para construir aplicações web robustas e escaláveis, enquanto utilizo Figma, Photoshop e Illustrator para criar interfaces de usuário intuitivas e engajadoras.',
+      },
       development: {
         title: 'desenvolvimento',
-        text: 'Curabitur condimentum elementum venenatis. Mauris iaculis magna viverra, molestie turpis non, volutpat lorem. Nulla rhoncus diam sem. Nam justo eros, cursus id urna vel, sagittis gravida sapien. Pellentesque urna justo, auctor ultrices ullamcorper vel, rutrum sed dolor. Fusce volutpat urna nisl, vitae lobortis urna dapibus eget. Ut congue metus ac odio semper, in semper felis dignissim. Sed in diam non dolor vestibulum rhoncus quis at mauris.',
+        text: 'Abordo o desenvolvimento de software com meticulosa atenção aos detalhes e comprometimento com código limpo e eficiente. Meu recente trabalho na Labareda Drinks & BBQ me permitiu projetar, construir e implementar toda a plataforma do menu online, demonstrando minha capacidade de gerenciar projetos da concepção à conclusão. Espere sistemas de alto desempenho, bem mantidos e que atendem às suas necessidades de forma consistente.',
       },
       design: {
         title: 'design',
-        text: 'Phasellus ac magna enim. Maecenas aliquam diam nec dui varius, sit amet blandit nisi congue. Donec maximus nulla dignissim, placerat erat quis, sollicitudin purus. Vivamus diam libero, scelerisque ut varius et, fermentum vel tellus. Suspendisse pellentesque tristique purus, ut tempus risus vestibulum a. Nulla facilisi. Sed elementum lacus orci, ut posuere orci tempor non. Nullam sed turpis et massa euismod porta eu vel eros. Nullam vehicula non lacus in viverra. Mauris aliquam quam a finibus vulputate. In libero erat, placerat sed volutpat a, efficitur in tellus. Mauris in neque augue.',
+        text: 'Minha filosofia de design gira em torno da usabilidade e clareza visual. Priorizo a funcionalidade e a experiência do usuário, garantindo que cada elemento tenha um propósito e se comunique eficazmente com seu público. De posts em redes sociais a interfaces de sites, crio designs que ressoam com a identidade da sua marca e se integram perfeitamente à sua estratégia digital geral. Espere resultados profissionais e refinados que elevam sua presença online.',
+      },
+      collaboration: {
+        title: 'collaboration',
+        text: 'Procuro colaboradores com ideias semelhantes que valorizam tanto a excelência técnica quanto a sutileza do design. Se você está procurando um parceiro que possa preencher a lacuna entre código e estética, estou aqui para dar vida à sua visão. Espere comunicação aberta, espírito colaborativo e dedicação para superar expectativas.',
       },
     },
 
@@ -70,6 +77,7 @@ export default {
   contact: {
     title: 'Contato',
     main: {
+      text: 'Sempre estou aberta a novos desafios e parcerias. Se tiver um projeto em mente, entre em contato!',
       links: {
         email: {
           address: 'eu@camilasalles.dev',
