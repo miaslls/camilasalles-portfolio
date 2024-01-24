@@ -5,6 +5,7 @@ import type { Metadata } from 'next';
 import AsideImg from '@components/AsideImg';
 import DevelopmentSection from './DevelopmentSection';
 import DesignSection from './DesignSection';
+import CollaborationSection from './CollaborationSection';
 import LatestProjects from './LatestProjects';
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -39,22 +40,12 @@ export default async function AboutPage({
         <header className="content_header">
           <h1 className="clippable">{t('title')}</h1>
 
-          <p className="default">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ligula
-            tellus, gravida ut consequat quis, luctus nec neque. Fusce imperdiet
-            consectetur neque, sit amet imperdiet augue venenatis id. Proin et
-            eros leo. Morbi fermentum luctus ex, sit amet euismod est porta at.
-            Duis dictum hendrerit sagittis. Nam eget luctus turpis. Etiam
-            consequat ante ut sem volutpat blandit. Praesent in lacus convallis,
-            tempor tellus in, interdum lacus. Vivamus feugiat justo in vehicula
-            pharetra. Pellentesque lacus metus, bibendum eu viverra at, varius
-            vitae massa. Fusce id dapibus augue. Maecenas id risus laoreet,
-            vestibulum ante ut, ultricies dui.
-          </p>
+          <p className="default">{t('main.intro.text')}</p>
         </header>
 
         <DevelopmentSection />
         <DesignSection />
+        <CollaborationSection />
       </main>
 
       <aside>
