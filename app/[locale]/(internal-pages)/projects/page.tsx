@@ -38,11 +38,11 @@ export default async function ProjectsPage({
         <header className="content_header">
           <h1 className="clippable">{t('title')}</h1>
 
-          <p className="default">
+          {/* <p className="default">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ligula
             tellus, gravida ut consequat quis, luctus nec neque. Fusce imperdiet
             consectetur neque, sit amet imperdiet augue venenatis id.
-          </p>
+          </p> */}
         </header>
 
         <FeaturedProjects />
