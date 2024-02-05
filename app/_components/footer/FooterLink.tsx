@@ -3,16 +3,12 @@
 import styles from './FooterLink.module.css';
 
 import Link from 'next/link';
-import Image from 'next/image';
-import { useTheme } from '@providers/ThemeContextProvider';
 import { useDevice } from '@providers/DeviceContextProvider';
-
-import externalLinkIcon_light from '@icons/light-accent-01/arrow-right-up-line.svg';
-import externalLinkIcon_dark from '@icons/dark-accent-01/arrow-right-up-line.svg';
+import ExternalLinkIcon from '../icons/ArrowRightUpIcon';
 
 export type FooterLinkProps = {
   url: string;
-  icon: any; // 🪲 Use any to avoid conflicts with @svgr/webpack plugin or babel-plugin-inline-react-svg plugin.
+  icon: JSX.Element;
   tooltip: string;
   text: string;
   isExternal: boolean;
@@ -25,9 +21,6 @@ export default function FooterLink({
   tooltip,
   isExternal,
 }: FooterLinkProps) {
-  const { theme } = useTheme();
-  const isDarkTheme = theme === 'dark';
-
   const device = useDevice();
 
   return (
@@ -39,7 +32,7 @@ export default function FooterLink({
       data-tooltip-id="footer"
       data-tooltip-content={tooltip}
     >
-      <Image className={styles.link_icon} src={icon} alt="" />
+      <div className={styles.link_icon}>{icon}</div>
 
       {device !== 'mobile' && (
         <>
@@ -47,13 +40,9 @@ export default function FooterLink({
 
           {device === 'desktop' && isExternal && (
             <div className={styles.icon_container}>
-              <Image
-                className={styles.link_icon}
-                src={
-                  isDarkTheme ? externalLinkIcon_dark : externalLinkIcon_light
-                }
-                alt=""
-              />
+              <div className={styles.link_icon}>
+                <ExternalLinkIcon />
+              </div>
             </div>
           )}
         </>

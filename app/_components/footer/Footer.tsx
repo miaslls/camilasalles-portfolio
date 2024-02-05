@@ -3,45 +3,37 @@
 import styles from './Footer.module.css';
 
 import { Tooltip } from 'react-tooltip';
-import { useTheme } from '@providers/ThemeContextProvider';
 import { useDevice } from '@providers/DeviceContextProvider';
 import { useScopedI18n } from '@/locales/client';
 import FooterLink from './FooterLink';
-
-import githubIcon_light from '@icons/light-accent-01/github-fill.svg';
-import linkedinIcon_light from '@icons/light-accent-01/linkedin-box-fill.svg';
-import locationIcon_light from '@icons/light-accent-01/map-pin-line.svg';
-import githubIcon_dark from '@icons/dark-accent-01/github-fill.svg';
-import linkedinIcon_dark from '@icons/dark-accent-01/linkedin-box-fill.svg';
-import locationIcon_dark from '@icons/dark-accent-01/map-pin-line.svg';
+import GithubIcon from '../icons/GithubIcon';
+import LinkedinIcon from '../icons/LinkedinBoxIcon';
+import LocationIcon from '../icons/MapPinIcon';
 
 export default function Footer() {
   const t = useScopedI18n('tooltip.footer');
   const unscopedT = useScopedI18n('unscoped');
-
-  const { theme } = useTheme();
-  const isDarkTheme = theme === 'dark';
 
   const device = useDevice();
 
   const links = [
     {
       url: 'https://maps.app.goo.gl/vzsyxqckDcDaemHz8',
-      icon: isDarkTheme ? locationIcon_dark : locationIcon_light,
+      icon: <LocationIcon />,
       text: device === 'desktop' ? 'São Paulo, SP' : 'maps',
       tooltip: t('maps'),
       isExternal: true,
     },
     {
       url: 'https://linkedin.com/in/salles-camila',
-      icon: isDarkTheme ? linkedinIcon_dark : linkedinIcon_light,
+      icon: <LinkedinIcon />,
       text: device === 'desktop' ? 'in/salles-camila' : 'linkedin',
       tooltip: t('linkedin'),
       isExternal: true,
     },
     {
       url: 'https://github.com/miaslls',
-      icon: isDarkTheme ? githubIcon_dark : githubIcon_light,
+      icon: <GithubIcon />,
       text: device === 'desktop' ? '/miaslls' : 'github',
       tooltip: t('github'),
       isExternal: true,
