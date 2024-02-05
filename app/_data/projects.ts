@@ -153,4 +153,4 @@ export const featuredProjects = projects
   .filter((project) => project.isFeatured)
   .sort((a, b) => (a.featuredOrder || 0) - (b.featuredOrder || 0));
 
-export const latestProjects = projects.slice(4);
+export const latestProjects = projects.slice(0, 5);
