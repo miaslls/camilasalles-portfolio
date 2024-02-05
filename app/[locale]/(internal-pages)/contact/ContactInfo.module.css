@@ -26,10 +26,16 @@
   width: 1.5rem;
   height: 1.5rem;
   user-select: none;
+  color: var(--fg-color);
 }
 
 .link:hover {
   text-decoration: unset;
+}
+
+button .icon {
+  width: 1.25rem;
+  height: 1.25rem;
 }
 
 button.copy {
@@ -38,9 +44,5 @@ button.copy {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-}
-
-button .icon {
-  width: 1.25rem;
-  height: 1.25rem;
+  color: var(--accent-01);
 }

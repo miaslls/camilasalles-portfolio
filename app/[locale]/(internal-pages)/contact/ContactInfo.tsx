@@ -3,27 +3,18 @@
 import styles from './ContactInfo.module.css';
 
 import Link from 'next/link';
-import Image from 'next/image';
 import { Tooltip } from 'react-tooltip';
-import { useTheme } from '@providers/ThemeContextProvider';
 import { useScopedI18n } from '@/locales/client';
 import { copyToClipboard } from '@lib/clipboard';
 
-import mailIcon_light from '@icons/light/mail-open-line.svg';
-import mailIcon_dark from '@icons/dark/mail-open-line.svg';
-import linkedinIcon_light from '@icons/light/linkedin-box-fill.svg';
-import linkedinIcon_dark from '@icons/dark/linkedin-box-fill.svg';
-import githubIcon_light from '@icons/light/github-fill.svg';
-import githubIcon_dark from '@icons/dark/github-fill.svg';
-import copyIcon_light from '@icons/light-accent-01/file-copy-line.svg';
-import copyIcon_dark from '@icons/dark-accent-01/file-copy-line.svg';
+import MailIcon from '@icons/MailOpenIcon';
+import LinkedinIcon from '@icons/LinkedinBoxIcon';
+import GithubIcon from '@icons/GithubIcon';
+import CopyIcon from '@icons/FileCopyIcon';
 
 export default function ContactInfo() {
   const t = useScopedI18n('contact.main.links');
   const toolT = useScopedI18n('tooltip.contact');
-
-  const { theme } = useTheme();
-  const isDarkTheme = theme === 'dark';
 
   const emailAddress = t('email.address');
   const linkedinHandle = 'in/salles-camila';
@@ -33,7 +24,7 @@ export default function ContactInfo() {
 
   const emailInfo = {
     text: emailAddress,
-    icon: isDarkTheme ? mailIcon_light : mailIcon_dark,
+    icon: <MailIcon />,
     send_mail: {
       href: `mailto:${emailAddress}?body=%0D%0A%0D%0A${t(
         'email.body'
@@ -43,14 +34,14 @@ export default function ContactInfo() {
       copy: () => {
         copyToClipboard(emailAddress, t);
       },
-      icon: isDarkTheme ? copyIcon_dark : copyIcon_light,
+      icon: <CopyIcon />,
       tooltip: toolT('copy'),
     },
   };
 
   const linkedinInfo = {
     text: linkedinHandle,
-    icon: isDarkTheme ? linkedinIcon_light : linkedinIcon_dark,
+    icon: <LinkedinIcon />,
     profile: {
       href: linkedinProfileUrl,
     },
@@ -58,7 +49,7 @@ export default function ContactInfo() {
 
   const githubInfo = {
     text: githubHandle,
-    icon: isDarkTheme ? githubIcon_light : githubIcon_dark,
+    icon: <GithubIcon />,
     profile: {
       href: githubProfileUrl,
     },
@@ -73,7 +64,7 @@ export default function ContactInfo() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <Image className={styles.icon} src={emailInfo.icon} alt="" />
+          <div className={styles.icon}>{emailInfo.icon}</div>
           <span>{emailInfo.text}</span>
         </Link>
 
@@ -83,11 +74,7 @@ export default function ContactInfo() {
           data-tooltip-id="contacts"
           data-tooltip-content={emailInfo.copy_button.tooltip}
         >
-          <Image
-            className={styles.icon}
-            src={emailInfo.copy_button.icon}
-            alt=""
-          />
+          <div className={styles.icon}>{emailInfo.copy_button.icon}</div>
         </button>
       </article>
 
@@ -98,7 +85,7 @@ export default function ContactInfo() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <Image className={styles.icon} src={linkedinInfo.icon} alt="" />
+          <div className={styles.icon}>{linkedinInfo.icon}</div>
           <span>{linkedinInfo.text}</span>
         </Link>
       </article>
@@ -110,7 +97,7 @@ export default function ContactInfo() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <Image className={styles.icon} src={githubInfo.icon} alt="" />
+          <div className={styles.icon}>{githubInfo.icon}</div>
           <span>{githubInfo.text}</span>
         </Link>
       </article>

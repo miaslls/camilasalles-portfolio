@@ -1,28 +1,19 @@
 'use client';
 
 import { useScopedI18n } from '@/locales/client';
-import { useTheme } from '@providers/ThemeContextProvider';
 import SectionTitle from '@components/SectionTitle';
 import TagList from '@components/TagList';
-
-import codeIcon_light from '@icons/light/code-s-slash-line.svg';
-import codeIcon_dark from '@icons/dark/code-s-slash-line.svg';
+import CodeIcon from '@icons/CodeSSlashIcon';
 
 export default function DevelopmentSection() {
   const t = useScopedI18n('about.main.development');
-  const { theme } = useTheme();
-  const isDarkTheme = theme === 'dark';
 
   const tags = ['React', 'Next.js', 'NestJS', 'TypeScript'];
 
   return (
     <section className="about_section">
       <div className="wrapper">
-        <SectionTitle
-          title={t('title')}
-          icon={isDarkTheme ? codeIcon_light : codeIcon_dark}
-        />
-
+        <SectionTitle title={t('title')} icon={<CodeIcon />} />
         <TagList tags={tags} identifier="development" />
       </div>
 

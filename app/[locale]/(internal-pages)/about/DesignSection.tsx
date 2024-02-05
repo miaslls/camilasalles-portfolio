@@ -1,28 +1,19 @@
 'use client';
 
 import { useScopedI18n } from '@/locales/client';
-import { useTheme } from '@providers/ThemeContextProvider';
 import SectionTitle from '@components/SectionTitle';
 import TagList from '@components/TagList';
-
-import designIcon_light from '@icons/light/pencil-ruler-2-line.svg';
-import designIcon_dark from '@icons/dark/pencil-ruler-2-line.svg';
+import DesignIcon from '@icons/PencilRulerIcon';
 
 export default function DesignSection() {
   const t = useScopedI18n('about.main.design');
-  const { theme } = useTheme();
-  const isDarkTheme = theme === 'dark';
 
   const tags = ['Figma', 'Photoshop', 'Illustrator'];
 
   return (
     <section className="about_section">
       <div className="wrapper">
-        <SectionTitle
-          title={t('title')}
-          icon={isDarkTheme ? designIcon_light : designIcon_dark}
-        />
-
+        <SectionTitle title={t('title')} icon={<DesignIcon />} />
         <TagList tags={tags} identifier="design" />
       </div>
 

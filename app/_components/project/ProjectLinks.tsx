@@ -3,16 +3,12 @@
 import styles from './ProjectLinks.module.css';
 
 import Link from 'next/link';
-import Image from 'next/image';
 import { Tooltip } from 'react-tooltip';
-import { useTheme } from '@providers/ThemeContextProvider';
 import { useScopedI18n } from '@/locales/client';
 import type { ProjectLinks } from '@data/projects';
 
-import githubIcon_light from '@icons/light-accent-01/github-fill.svg';
-import githubIcon_dark from '@icons/dark-accent-01/github-fill.svg';
-import playIcon_light from '@icons/light-accent-01/play-fill.svg';
-import playIcon_dark from '@icons/dark-accent-01/play-fill.svg';
+import GithubIcon from '@icons/GithubIcon';
+import PlayIcon from '@icons/PlayIcon';
 
 export default function ProjectLinks({
   live_demo_url,
@@ -21,9 +17,6 @@ export default function ProjectLinks({
   github_back_url,
 }: ProjectLinks) {
   const t = useScopedI18n('tooltip.project');
-
-  const { theme } = useTheme();
-  const isDarkTheme = theme === 'dark';
 
   return (
     <nav>
@@ -40,11 +33,9 @@ export default function ProjectLinks({
               data-tooltip-id="project_link"
               data-tooltip-content={t('repo')}
             >
-              <Image
-                className={styles.link_icon}
-                src={isDarkTheme ? githubIcon_dark : githubIcon_light}
-                alt=""
-              />
+              <div className={styles.link_icon}>
+                <GithubIcon />
+              </div>
             </Link>
           </li>
         )}
@@ -61,11 +52,9 @@ export default function ProjectLinks({
               data-tooltip-id="project_link"
               data-tooltip-content={t('repo')}
             >
-              <Image
-                className={styles.link_icon}
-                src={isDarkTheme ? githubIcon_dark : githubIcon_light}
-                alt=""
-              />
+              <div className={styles.link_icon}>
+                <GithubIcon />
+              </div>
             </Link>
           </li>
         )}
@@ -80,11 +69,9 @@ export default function ProjectLinks({
               data-tooltip-id="project_link"
               data-tooltip-content={t('repo')}
             >
-              <Image
-                className={styles.link_icon}
-                src={isDarkTheme ? githubIcon_dark : githubIcon_light}
-                alt=""
-              />
+              <div className={styles.link_icon}>
+                <GithubIcon />
+              </div>
             </Link>
           </li>
         )}
@@ -98,11 +85,9 @@ export default function ProjectLinks({
             data-tooltip-id="project_link"
             data-tooltip-content={t('demo')}
           >
-            <Image
-              className={styles.link_icon}
-              src={isDarkTheme ? playIcon_dark : playIcon_light}
-              alt=""
-            />
+            <div className={styles.link_icon}>
+              <PlayIcon />
+            </div>
           </Link>
         </li>
       </ul>

@@ -1,27 +1,18 @@
 'use client';
 
 import { useScopedI18n } from '@/locales/client';
-import { useTheme } from '@providers/ThemeContextProvider';
 import { latestProjects } from '@data/projects';
 import SectionTitle from '@components/SectionTitle';
 import ViewAllLink from '@components/project/ViewAllLink';
 import MiniProjectCard from '@components/project/MiniProjectCard';
-
-import megaphoneIcon_light from '@icons/light/megaphone-line.svg';
-import megaphoneIcon_dark from '@icons/dark/megaphone-line.svg';
+import MegaphoneIcon from '@icons/MegaphoneIcon';
 
 export default function LatestProjects() {
   const t = useScopedI18n('about.aside');
 
-  const { theme } = useTheme();
-  const isDarkTheme = theme === 'dark';
-
   return (
     <section className="aside_section">
-      <SectionTitle
-        title={t('latest_projects')}
-        icon={isDarkTheme ? megaphoneIcon_light : megaphoneIcon_dark}
-      />
+      <SectionTitle title={t('latest_projects')} icon={<MegaphoneIcon />} />
 
       <ViewAllLink />
 

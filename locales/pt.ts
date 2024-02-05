@@ -64,7 +64,7 @@ export default {
         text: 'Minha filosofia de design gira em torno da usabilidade e clareza visual. Priorizo a funcionalidade e a experiência do usuário, garantindo que cada elemento tenha um propósito e se comunique eficazmente com seu público. De posts em redes sociais a interfaces de sites, crio designs que ressoam com a identidade da sua marca e se integram perfeitamente à sua estratégia digital geral. Espere resultados profissionais e refinados que elevam sua presença online.',
       },
       collaboration: {
-        title: 'collaboration',
+        title: 'colaboração',
         text: 'Procuro colaboradores com ideias semelhantes que valorizam tanto a excelência técnica quanto a sutileza do design. Se você está procurando um parceiro que possa preencher a lacuna entre código e estética, estou aqui para dar vida à sua visão. Espere comunicação aberta, espírito colaborativo e dedicação para superar expectativas.',
       },
     },

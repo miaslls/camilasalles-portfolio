@@ -1,13 +1,12 @@
 import styles from './TopBar.module.css';
 
-import Image from 'next/image';
 import dynamic from 'next/dynamic';
 import { usePathname } from 'next/navigation';
 import { useScopedI18n } from '@/locales/client';
 import { useDevice } from '@providers/DeviceContextProvider';
 import { useMenu } from '@providers/MenuContextProvider';
 
-import menuIcon from '@icons/light/menu-line.svg';
+import MenuIcon from '@icons/MenuIcon';
 
 const LanguageNav = dynamic(() => import('@components/menu/LanguageNav'));
 
@@ -34,7 +33,9 @@ export default function TopBar() {
 
       {isMobile ? (
         <button className={styles.mobile_menu_btn} onClick={openMenu}>
-          <Image src={menuIcon} alt="" width={24} height={24} />
+          <div className={styles.mobile_menu_icon}>
+            <MenuIcon />
+          </div>
         </button>
       ) : (
         <div className={styles.secondary_menu}>
