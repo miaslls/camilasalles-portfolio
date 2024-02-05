@@ -2,7 +2,7 @@
 
 import { useScopedI18n } from '@/locales/client';
 import SectionTitle from '@components/SectionTitle';
-import HandsIcon from '@/app/_components/icons/ServiceIcon';
+import HandsIcon from '@icons/ServiceIcon';
 
 export default function CollaborationSection() {
   const t = useScopedI18n('about.main.collaboration');

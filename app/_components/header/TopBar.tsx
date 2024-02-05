@@ -6,7 +6,7 @@ import { useScopedI18n } from '@/locales/client';
 import { useDevice } from '@providers/DeviceContextProvider';
 import { useMenu } from '@providers/MenuContextProvider';
 
-import MenuIcon from '../icons/MenuIcon';
+import MenuIcon from '@icons/MenuIcon';
 
 const LanguageNav = dynamic(() => import('@components/menu/LanguageNav'));
 

@@ -7,8 +7,8 @@ import { Tooltip } from 'react-tooltip';
 import { useScopedI18n } from '@/locales/client';
 import type { ProjectLinks } from '@data/projects';
 
-import GithubIcon from '../icons/GithubIcon';
-import PlayIcon from '../icons/PlayIcon';
+import GithubIcon from '@icons/GithubIcon';
+import PlayIcon from '@icons/PlayIcon';
 
 export default function ProjectLinks({
   live_demo_url,

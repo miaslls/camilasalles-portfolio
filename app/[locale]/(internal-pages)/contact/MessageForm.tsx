@@ -6,8 +6,8 @@ import { useScopedI18n } from '@/locales/client';
 import { handleSubmitMessage } from './handleSubmitMessage';
 import type { FormState } from './useMessageForm';
 
-import ClearIcon from '@/app/_components/icons/CloseIcon';
-import SendIcon from '@/app/_components/icons/CheckboxCircleIcon';
+import ClearIcon from '@icons/CloseIcon';
+import SendIcon from '@icons/CheckboxCircleIcon';
 
 type MessageFormProps = {
   formState: FormState;

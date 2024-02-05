@@ -7,10 +7,10 @@ import { Tooltip } from 'react-tooltip';
 import { useScopedI18n } from '@/locales/client';
 import { copyToClipboard } from '@lib/clipboard';
 
-import MailIcon from '@/app/_components/icons/MailOpenIcon';
-import LinkedinIcon from '@/app/_components/icons/LinkedinBoxIcon';
-import GithubIcon from '@/app/_components/icons/GithubIcon';
-import CopyIcon from '@/app/_components/icons/FileCopyIcon';
+import MailIcon from '@icons/MailOpenIcon';
+import LinkedinIcon from '@icons/LinkedinBoxIcon';
+import GithubIcon from '@icons/GithubIcon';
+import CopyIcon from '@icons/FileCopyIcon';
 
 export default function ContactInfo() {
   const t = useScopedI18n('contact.main.links');

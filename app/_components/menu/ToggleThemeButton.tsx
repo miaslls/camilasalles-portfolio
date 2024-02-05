@@ -4,8 +4,8 @@ import styles from './ToggleThemeButton.module.css';
 
 import { useScopedI18n } from '@/locales/client';
 import { useTheme } from '@providers/ThemeContextProvider';
-import SunIcon from '../icons/SunIcon';
-import MoonIcon from '../icons/MoonIcon';
+import SunIcon from '@icons/SunIcon';
+import MoonIcon from '@icons/MoonIcon';
 
 type ToggleThemeButtonProps = {
   isIconVariable: boolean;

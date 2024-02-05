@@ -5,9 +5,7 @@ import styles from './ViewAllLink.module.css';
 import Link from 'next/link';
 import { useScopedI18n } from '@/locales/client';
 import { useDevice } from '@providers/DeviceContextProvider';
-import ArrowIcon from '../icons/ArrowRightDouble';
-import arrowIcon_light from '@icons/light-accent-01/arrow-right-double-line.svg';
-import arrowIcon_dark from '@icons/dark-accent-01/arrow-right-double-line.svg';
+import ArrowIcon from '@icons/ArrowRightDouble';
 
 export default function ViewAllLink() {
   const t = useScopedI18n('unscoped');

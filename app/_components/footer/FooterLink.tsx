@@ -4,7 +4,7 @@ import styles from './FooterLink.module.css';
 
 import Link from 'next/link';
 import { useDevice } from '@providers/DeviceContextProvider';
-import ExternalLinkIcon from '../icons/ArrowRightUpIcon';
+import ExternalLinkIcon from '@icons/ArrowRightUpIcon';
 
 export type FooterLinkProps = {
   url: string;

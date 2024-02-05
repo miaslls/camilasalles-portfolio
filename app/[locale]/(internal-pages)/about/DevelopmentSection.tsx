@@ -3,7 +3,7 @@
 import { useScopedI18n } from '@/locales/client';
 import SectionTitle from '@components/SectionTitle';
 import TagList from '@components/TagList';
-import CodeIcon from '@/app/_components/icons/CodeSSlashIcon';
+import CodeIcon from '@icons/CodeSSlashIcon';
 
 export default function DevelopmentSection() {
   const t = useScopedI18n('about.main.development');

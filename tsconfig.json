@@ -24,9 +24,9 @@
       "@lib/*": ["./app/_lib/*"],
       "@data/*": ["./app/_data/*"],
       "@components/*": ["./app/_components/*"],
+      "@icons/*": ["./app/_components/icons/*"],
       "@providers/*": ["./app/_providers/*"],
-      "@images/*": ["./public/images/*"],
-      "@icons/*": ["./public/icons/*"]
+      "@images/*": ["./public/images/*"]
     }
   },
   "include": [

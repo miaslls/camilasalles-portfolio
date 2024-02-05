@@ -6,9 +6,9 @@ import { Tooltip } from 'react-tooltip';
 import { useDevice } from '@providers/DeviceContextProvider';
 import { useScopedI18n } from '@/locales/client';
 import FooterLink from './FooterLink';
-import GithubIcon from '../icons/GithubIcon';
-import LinkedinIcon from '../icons/LinkedinBoxIcon';
-import LocationIcon from '../icons/MapPinIcon';
+import GithubIcon from '@icons/GithubIcon';
+import LinkedinIcon from '@icons/LinkedinBoxIcon';
+import LocationIcon from '@icons/MapPinIcon';
 
 export default function Footer() {
   const t = useScopedI18n('tooltip.footer');

@@ -6,7 +6,7 @@ import { useScopedI18n } from '@/locales/client';
 import { useMessageForm } from './useMessageForm';
 import MessageForm from './MessageForm';
 import SectionTitle from '@components/SectionTitle';
-import MailIcon from '@/app/_components/icons/MailSendIcon';
+import MailIcon from '@icons/MailSendIcon';
 
 export default function MessageSection() {
   const t = useScopedI18n('contact.aside');

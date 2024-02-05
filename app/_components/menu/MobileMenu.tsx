@@ -11,7 +11,7 @@ import { useTheme } from '@providers/ThemeContextProvider';
 import MainMenu from './MainMenu';
 import LanguageNav from './LanguageNav';
 import ToggleThemeButton from './ToggleThemeButton';
-import CloseIcon from '../icons/CloseIcon';
+import CloseIcon from '@icons/CloseIcon';
 
 import girlieImg from '@images/girlie.svg';
 import pcImg_light from '@images/pc-light.svg';

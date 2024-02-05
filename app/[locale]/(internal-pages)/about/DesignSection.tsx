@@ -3,7 +3,7 @@
 import { useScopedI18n } from '@/locales/client';
 import SectionTitle from '@components/SectionTitle';
 import TagList from '@components/TagList';
-import DesignIcon from '@/app/_components/icons/PencilRulerIcon';
+import DesignIcon from '@icons/PencilRulerIcon';
 
 export default function DesignSection() {
   const t = useScopedI18n('about.main.design');

@@ -8,7 +8,7 @@ import { featuredProjects } from '@data/projects';
 import SectionTitle from '@components/SectionTitle';
 import ViewAllLink from '@components/project/ViewAllLink';
 import ProjectCard from '@components/project/ProjectCard';
-import StarIcon from '@/app/_components/icons/StarIcon';
+import StarIcon from '@icons/StarIcon';
 
 export default function FeaturedProjects() {
   const t = useScopedI18n('projects.main');

@@ -4,7 +4,7 @@ import { useScopedI18n } from '@/locales/client';
 import { projects } from '@data/projects';
 import SectionTitle from '@components/SectionTitle';
 import MiniProjectCard from '@components/project/MiniProjectCard';
-import ComputerIcon from '@/app/_components/icons/ComputerIcon';
+import ComputerIcon from '@icons/ComputerIcon';
 
 export default function AllProjects() {
   const t = useScopedI18n('projects.aside');

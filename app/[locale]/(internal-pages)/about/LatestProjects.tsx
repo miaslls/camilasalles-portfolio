@@ -5,7 +5,7 @@ import { latestProjects } from '@data/projects';
 import SectionTitle from '@components/SectionTitle';
 import ViewAllLink from '@components/project/ViewAllLink';
 import MiniProjectCard from '@components/project/MiniProjectCard';
-import MegaphoneIcon from '@/app/_components/icons/MegaphoneIcon';
+import MegaphoneIcon from '@icons/MegaphoneIcon';
 
 export default function LatestProjects() {
   const t = useScopedI18n('about.aside');
