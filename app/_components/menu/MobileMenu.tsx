@@ -11,9 +11,8 @@ import { useTheme } from '@providers/ThemeContextProvider';
 import MainMenu from './MainMenu';
 import LanguageNav from './LanguageNav';
 import ToggleThemeButton from './ToggleThemeButton';
+import CloseIcon from '../icons/CloseIcon';
 
-import closeIcon_light from '@icons/light/close-line.svg';
-import closeIcon_dark from '@icons/dark/close-line.svg';
 import girlieImg from '@images/girlie.svg';
 import pcImg_light from '@images/pc-light.svg';
 import officeImg_light from '@images/office-light.svg';
@@ -78,12 +77,7 @@ export default function MobileMenu() {
           <div className={styles.wrapper}>
             <div className={styles.header}>
               <button className={styles.close_btn} onClick={handleClick}>
-                <Image
-                  src={isDarkTheme ? closeIcon_light : closeIcon_dark}
-                  alt=""
-                  width={32}
-                  height={32}
-                />
+                <CloseIcon />
               </button>
 
               <div className={styles.secondary_menu}>

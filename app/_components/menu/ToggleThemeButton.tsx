@@ -6,6 +6,9 @@ import Image from 'next/image';
 import { useScopedI18n } from '@/locales/client';
 import { useTheme } from '@providers/ThemeContextProvider';
 
+import SunIcon from '../icons/SunIcon';
+import MoonIcon from '../icons/MoonIcon';
+
 import sunIcon_light from '@icons/light/sun-fill.svg';
 import moonIcon_light from '@icons/light/moon-fill.svg';
 import sunIcon_dark from '@icons/dark/sun-fill.svg';
@@ -39,12 +42,11 @@ export default function ToggleThemeButton({
       data-tooltip-content={t('theme')}
       data-tooltip-offset={8}
     >
-      <Image
-        src={isDarkTheme ? moonIcon : sunIcon}
-        alt=""
-        width={20}
-        height={20}
-      />
+      <div
+        className={`${styles.icon} ${isIconVariable ? styles.variable : ''}`}
+      >
+        {isDarkTheme ? <MoonIcon /> : <SunIcon />}
+      </div>
     </button>
   );
 }
