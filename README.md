@@ -9,7 +9,7 @@
 
 ## 🔗 Demo
 
-- [camilasalles-portfolio.vercel.app](https://camilasalles-portfolio.vercel.app/) (temp)
+- [camilasalles.dev](https://www.camilasalles.dev/)
 
 ## 🧮 Technologies / Dependencies
 
