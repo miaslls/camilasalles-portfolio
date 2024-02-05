@@ -32,4 +32,5 @@
 .btn_icon {
   width: 1.75rem;
   height: auto;
+  color: var(--accent-01);
 }

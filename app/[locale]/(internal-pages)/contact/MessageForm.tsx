@@ -1,17 +1,13 @@
 import styles from './MessageForm.module.css';
 
-import Image from 'next/image';
 import { ChangeEvent } from 'react';
 import { Tooltip } from 'react-tooltip';
-import { useTheme } from '@providers/ThemeContextProvider';
 import { useScopedI18n } from '@/locales/client';
 import { handleSubmitMessage } from './handleSubmitMessage';
 import type { FormState } from './useMessageForm';
 
-import clearIcon_light from '@icons/light-accent-01/close-line.svg';
-import clearIcon_dark from '@icons/dark-accent-01/close-line.svg';
-import sendIcon_light from '@icons/light-accent-01/checkbox-circle-line.svg';
-import sendIcon_dark from '@icons/dark-accent-01/checkbox-circle-line.svg';
+import ClearIcon from '@/app/_components/icons/CloseIcon';
+import SendIcon from '@/app/_components/icons/CheckboxCircleIcon';
 
 type MessageFormProps = {
   formState: FormState;
@@ -29,9 +25,6 @@ export default function MessageForm({
 }: MessageFormProps) {
   const t = useScopedI18n('contact.aside.form');
   const toolT = useScopedI18n('tooltip.form');
-
-  const { theme } = useTheme();
-  const isDarkTheme = theme === 'dark';
 
   return (
     <form
@@ -81,11 +74,9 @@ export default function MessageForm({
           data-tooltip-id="form"
           data-tooltip-content={toolT('clear')}
         >
-          <Image
-            className={styles.btn_icon}
-            src={isDarkTheme ? clearIcon_dark : clearIcon_light}
-            alt=""
-          />
+          <div className={styles.btn_icon}>
+            <ClearIcon />
+          </div>
         </button>
 
         <button
@@ -94,11 +85,9 @@ export default function MessageForm({
           data-tooltip-id="form"
           data-tooltip-content={toolT('submit')}
         >
-          <Image
-            className={styles.btn_icon}
-            src={isDarkTheme ? sendIcon_dark : sendIcon_light}
-            alt=""
-          />
+          <div className={styles.btn_icon}>
+            <SendIcon />
+          </div>
         </button>
       </div>
 
