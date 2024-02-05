@@ -3,25 +3,18 @@
 import styles from './FeaturedProjects_home.module.css';
 
 import { useScopedI18n } from '@/locales/client';
-import { useTheme } from '@providers/ThemeContextProvider';
 import { featuredProjects } from '@data/projects';
+
 import SectionTitle from '@components/SectionTitle';
 import ProjectCard from '@components/project/ProjectCard';
-
-import starIcon_light from '@icons/light/star-line.svg';
-import starIcon_dark from '@icons/dark/star-line.svg';
+import StarIcon from '../_components/icons/StarIcon';
 
 export default function FeaturedProjects_Home() {
   const t = useScopedI18n('home');
-  const { theme } = useTheme();
-  const isDarkTheme = theme === 'dark';
 
   return (
     <section className={`home_section ${styles.projects}`}>
-      <SectionTitle
-        title={t('featured_projects')}
-        icon={isDarkTheme ? starIcon_light : starIcon_dark}
-      />
+      <SectionTitle title={t('featured_projects')} icon={<StarIcon />} />
 
       <div className={styles.project_grid}>
         {featuredProjects.map((project) => (
