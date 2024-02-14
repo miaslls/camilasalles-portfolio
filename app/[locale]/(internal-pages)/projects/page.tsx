@@ -35,17 +35,13 @@ export default async function ProjectsPage({
   return (
     <div className="page_container">
       <main className="page_content">
-        <header className="content_header">
-          <h1 className="clippable">{t('title')}</h1>
+        <div className="wrapper">
+          <header className="content_header">
+            <h1 className="clippable">{t('title')}</h1>
+          </header>
 
-          {/* <p className="default">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ligula
-            tellus, gravida ut consequat quis, luctus nec neque. Fusce imperdiet
-            consectetur neque, sit amet imperdiet augue venenatis id.
-          </p> */}
-        </header>
-
-        <FeaturedProjects />
+          <FeaturedProjects />
+        </div>
       </main>
 
       <aside>
