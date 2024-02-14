@@ -2,6 +2,7 @@
 
 import { useScopedI18n } from '@/locales/client';
 import SectionTitle from '@components/SectionTitle';
+import SubtitleLink from '@components/SubtitleLink';
 import HandsIcon from '@icons/ServiceIcon';
 
 export default function CollaborationSection() {
@@ -9,13 +10,11 @@ export default function CollaborationSection() {
 
   return (
     <section className="about_section">
-      {/* <div className="wrapper"> */}
-      <SectionTitle title={t('title')} icon={<HandsIcon />} />
-
-      {/* TODO: contact me! BUTTON 🪲 */}
-      {/* </div> */}
-
-      <p className="default">{t('text')}</p>
+      <div className="wrapper">
+        <SectionTitle title={t('title')} icon={<HandsIcon />} />
+        <SubtitleLink href="contact" text={t('contact_link')} />
+        <p className="default">{t('text')}</p>
+      </div>
     </section>
   );
 }

@@ -1,7 +1,7 @@
 export default {
   unscoped: {
-    view_all: 'view all',
     dev_and_design: 'development & design',
+    view_all: 'view all',
   },
 
   tooltip: {
@@ -65,6 +65,7 @@ export default {
       },
       collaboration: {
         title: 'collaboration',
+        contact_link: 'contact me',
         text: "I seek like-minded collaborators who value both technical excellence and design finesse. If you're looking for a partner who can seamlessly bridge the gap between code and aesthetics, I'm here to bring your vision to life. Expect open communication, a collaborative spirit, and a dedication to exceeding expectations.",
       },
     },

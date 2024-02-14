@@ -1,7 +1,7 @@
 export default {
   unscoped: {
-    view_all: 'ver todos',
     dev_and_design: 'desenvolvimento & design',
+    view_all: 'ver todos',
   },
 
   tooltip: {
@@ -65,6 +65,7 @@ export default {
       },
       collaboration: {
         title: 'colaboração',
+        contact_link: 'entre em contato',
         text: 'Procuro colaboradores com ideias semelhantes que valorizam tanto a excelência técnica quanto a sutileza do design. Se você está procurando um parceiro que possa preencher a lacuna entre código e estética, estou aqui para dar vida à sua visão. Espere comunicação aberta, espírito colaborativo e dedicação para superar expectativas.',
       },
     },
