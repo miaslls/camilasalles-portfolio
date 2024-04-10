@@ -105,7 +105,7 @@ export const projects: Project[] = [
     bg_url: '/images/projects/miamood-01_bg.jpg',
     tags: ['Node.js', 'Express', 'EJS'],
     links: {
-      live_demo_url: 'miamood-01.camilasalles.dev',
+      live_demo_url: 'https://miamood-01.camilasalles.dev',
       github_single_url:
         'https://github.com/miaslls/MiaMood-MoodTracker#readme',
     },
