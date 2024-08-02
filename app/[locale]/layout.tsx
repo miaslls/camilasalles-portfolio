@@ -11,6 +11,7 @@ import { getTheme } from '@lib/theme';
 import Header from '@components/header/Header';
 import Footer from '@components/footer/Footer';
 import MobileMenu from '@components/menu/MobileMenu';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 
 const DeviceProvider = dynamic(
   () => import('@providers/DeviceContextProvider'),
@@ -131,6 +132,7 @@ export default function RootLayout({
                     position="bottom-center"
                     toastOptions={customToastOptions}
                   />
+                  <SpeedInsights />
                 </div>
               </I18nProviderClient>
             </MenuProvider>
