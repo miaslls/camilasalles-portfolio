@@ -81,7 +81,7 @@ export default {
       text: "I'm always eager to hear from potential clients and collaborators. Reach out if you have a project in mind!",
       links: {
         email: {
-          address: 'me@camilasalles.dev',
+          address: 'dev@camilasalles.dev',
           body: 'Sent%20from',
           toast: {
             copied: 'copied to clipboard!',

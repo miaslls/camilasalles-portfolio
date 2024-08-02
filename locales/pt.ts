@@ -81,7 +81,7 @@ export default {
       text: 'Sempre estou aberta a novos desafios e parcerias. Se tiver um projeto em mente, entre em contato!',
       links: {
         email: {
-          address: 'eu@camilasalles.dev',
+          address: 'dev@camilasalles.dev',
           body: 'Enviado%20de',
           toast: {
             copied: 'copiado!',
