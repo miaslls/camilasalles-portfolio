@@ -9,6 +9,7 @@ import SectionTitle from '@components/SectionTitle';
 import SubtitleLink from '@components/SubtitleLink';
 import ProjectCard from '@components/project/ProjectCard';
 import StarIcon from '@icons/StarIcon';
+import { UnavailablePreviewNotice } from '@/app/_components/project/UnavailablePreviewNotice';
 
 export default function FeaturedProjects() {
   const t = useScopedI18n('projects.main');
@@ -25,6 +26,8 @@ export default function FeaturedProjects() {
           text={unscopedT('view_all')}
         />
       )}
+
+      <UnavailablePreviewNotice />
 
       <div className={styles.project_grid}>
         {featuredProjects.map((project) => (

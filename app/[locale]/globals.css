@@ -5,14 +5,15 @@
   --light-color: #fff3e7;
   --accent-default: #112e3e;
 
+  --warning: #ff6600;
+  --warning-25: rgba(255, 102, 0, 0.25);
+
   --bg-color: var(--light-color);
   --fg-color: var(--dark-color);
 
   --accent-01: #3e5664;
   --accent-02: #78919a;
   --accent-03: #cdcac2;
-
-  --warning: #ff9900;
 
   --bg-90: rgba(255, 243, 231, 0.9);
   --bg-75: rgba(255, 243, 231, 0.75);
@@ -36,8 +37,6 @@
   --accent-01: #76a6bc;
   --accent-02: #3a6878;
   --accent-03: #0d212e;
-
-  --warning: #ff6600;
 
   --bg-90: rgba(9, 20, 30, 0.9);
   --bg-75: rgba(9, 20, 30, 0.75);

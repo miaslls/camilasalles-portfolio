@@ -21,8 +21,6 @@ export default {
       demo: 'demo live',
       repo: 'repositório',
       unavailable: 'indisponível',
-      unavailableNotice:
-        '* A visualização de alguns projetos está indisponível temporariamente devido a migração de servidor.',
     },
 
     contact: {
@@ -46,10 +44,11 @@ export default {
       featured_projects: 'em destaque',
       view_demo: 'ver demo live',
     },
-
     aside: {
       all_projects: 'todos os projetos',
     },
+    unavailablePreviewNotice:
+      'A visualização de alguns projetos está indisponível temporariamente devido a migração de servidor.',
   },
 
   about: {
