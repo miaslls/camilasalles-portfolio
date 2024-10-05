@@ -35,15 +35,17 @@ export default function ProjectCard({
           alt=""
         />
 
-        <Link
-          href={links.live_demo_url}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <div className={styles.btn_container}>
-            <button className={styles.view_demo}>{t('view_demo')}</button>
-          </div>
-        </Link>
+        {!links.live_demo_disabled && (
+          <Link
+            href={links.live_demo_url}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <div className={styles.btn_container}>
+              <button className={styles.view_demo}>{t('view_demo')}</button>
+            </div>
+          </Link>
+        )}
       </div>
 
       <TagList tags={tags} identifier={`project-${slug}`} />
