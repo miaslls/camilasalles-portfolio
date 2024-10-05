@@ -12,6 +12,7 @@ import PlayIcon from '@icons/PlayIcon';
 
 export default function ProjectLinks({
   live_demo_url,
+  live_demo_disabled,
   github_single_url,
   github_front_url,
   github_back_url,
@@ -80,12 +81,24 @@ export default function ProjectLinks({
           <Link
             href={live_demo_url}
             target="_blank"
+            scroll={false}
             className={styles.link}
             rel="noopener noreferrer"
-            data-tooltip-id="project_link"
-            data-tooltip-content={t('demo')}
+            data-tooltip-id={
+              !live_demo_disabled ? 'project_link' : 'project_link_disabled'
+            }
+            data-tooltip-content={
+              !live_demo_disabled ? t('demo') : t('unavailable')
+            }
+            onClick={(ev) => {
+              live_demo_disabled && ev.preventDefault();
+            }}
           >
-            <div className={styles.link_icon}>
+            <div
+              className={`${styles.link_icon} ${
+                live_demo_disabled ? styles.disabled : ''
+              }`}
+            >
               <PlayIcon />
             </div>
           </Link>
@@ -95,6 +108,14 @@ export default function ProjectLinks({
       <Tooltip
         id="project_link"
         className="custom tooltip"
+        place="left"
+        opacity={1}
+        offset={12}
+      />
+
+      <Tooltip
+        id="project_link_disabled"
+        className="custom tooltip warning"
         place="left"
         opacity={1}
         offset={12}

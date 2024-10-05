@@ -20,6 +20,9 @@ export default {
     project: {
       demo: 'demo live',
       repo: 'repositório',
+      unavailable: 'indisponível',
+      unavailableNotice:
+        '* A visualização de alguns projetos está indisponível temporariamente devido a migração de servidor.',
     },
 
     contact: {

@@ -20,6 +20,9 @@ export default {
     project: {
       demo: 'live demo',
       repo: 'repository',
+      unavailable: 'unavailable',
+      unavailableNotice:
+        "Some projects' live previews are temporarily unavailable due to server migration.",
     },
 
     contact: {

@@ -8,15 +8,17 @@
   --bg-color: var(--light-color);
   --fg-color: var(--dark-color);
 
+  --accent-01: #3e5664;
+  --accent-02: #78919a;
+  --accent-03: #cdcac2;
+
+  --warning: #ff9900;
+
   --bg-90: rgba(255, 243, 231, 0.9);
   --bg-75: rgba(255, 243, 231, 0.75);
   --bg-50: rgba(255, 243, 231, 0.5);
   --fg-25: rgba(9, 20, 30, 0.25);
   --dark-50: rgba(9, 20, 30, 0.5);
-
-  --accent-01: #3e5664;
-  --accent-02: #78919a;
-  --accent-03: #cdcac2;
 
   --top-bar-home: #102d3e;
 
@@ -31,14 +33,16 @@
   --bg-color: var(--dark-color);
   --fg-color: var(--light-color);
 
+  --accent-01: #76a6bc;
+  --accent-02: #3a6878;
+  --accent-03: #0d212e;
+
+  --warning: #ff6600;
+
   --bg-90: rgba(9, 20, 30, 0.9);
   --bg-75: rgba(9, 20, 30, 0.75);
   --bg-50: rgba(9, 20, 30, 0.5);
   --fg-25: rgba(255, 243, 231, 0.25);
-
-  --accent-01: #76a6bc;
-  --accent-02: #3a6878;
-  --accent-03: #0d212e;
 
   --top-bar-home: var(--dark-color);
 }
@@ -199,6 +203,10 @@ p.default {
   color: var(--light-color);
   border-radius: 1.5rem;
   font-size: 0.9rem;
+}
+
+.custom.tooltip.warning {
+  background: var(--warning);
 }
 
 #header.custom.tooltip,
