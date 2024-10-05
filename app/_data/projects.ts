@@ -18,18 +18,18 @@ export type Project = {
   img: StaticImageData;
   bg_url: string;
   tags: string[];
-  links: {
-    live_demo_url: string;
-    github_single_url?: string;
-    github_front_url?: string;
-    github_back_url?: string;
-  };
+  links: ProjectLinks;
   blur_data_url?: string;
   isFeatured?: boolean;
   featuredOrder?: number;
 };
 
-export type ProjectLinks = Project['links'];
+export type ProjectLinks = {
+  live_demo_url: string;
+  github_single_url?: string;
+  github_front_url?: string;
+  github_back_url?: string;
+};
 
 export const projects: Project[] = [
   {
@@ -49,7 +49,7 @@ export const projects: Project[] = [
     bg_url: '/images/projects/labareda_bg.jpg',
     tags: ['React', 'NestJS', 'TypeScript'],
     links: {
-      live_demo_url: 'https://www.drinksnbbq.com.br/',
+      live_demo_url: 'https://www.drinksnbbq.com.br/cardapio',
     },
     isFeatured: true,
   },
