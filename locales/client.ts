@@ -1,6 +1,9 @@
 'use client';
 
 import { createI18nClient } from 'next-international/client';
+import type { LocaleKeys } from './langTypes';
+
+type LocaleModule = () => Promise<{ default: LocaleKeys }>;
 
 export const {
   useI18n,
@@ -9,6 +12,6 @@ export const {
   useCurrentLocale,
   useChangeLocale,
 } = createI18nClient({
-  en: () => import('./en'),
-  pt: () => import('./pt'),
+  en: (() => import('./en')) as LocaleModule,
+  pt: (() => import('./pt')) as LocaleModule,
 });
